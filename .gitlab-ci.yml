@@ -1,0 +1,12 @@
+stages:
+  - deploy
+
+deploy:
+  stage: deploy
+  script:
+    - wget -qO- https://cli-assets.heroku.com/install-ubuntu.sh | sh
+    - echo "$HRKU-b12415dc-0493-44a8-9a7a-9d847471c2a9" | heroku auth:token
+    - git remote add heroku https://git.heroku.com/your-app-name.git
+    - git push heroku main
+  only:
+    - main
