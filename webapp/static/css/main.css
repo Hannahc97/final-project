@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to right, #aee4ed, #5fb7cf, #5a79c8);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+}
+
+h1 {
+    color: white;
+    font-family: "Honk", sans-serif;
+    font-size: 150px;
+    margin: 0;
+}
+
+p {
+    background-color: mediumslateblue;
+    color: black;
+    font-family: "consolas", sans-serif;
+    font-size: 24px;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#p1 {
+    background-color: coral;
+}
+#p2 {
+    color: greenyellow;
+}
+.even{
+    background-color: crimson;
+}
