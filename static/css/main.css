@@ -38,3 +38,7 @@ p {
 .even{
     background-color: crimson;
 }
+
+.custom-yellow-navbar {
+    background-color: #fec853; /* Custom yellow color */
+}
