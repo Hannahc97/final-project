@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block title %}Login Page{% endblock %}
+
+{% block content %}
+<form method="POST" action="" novalidate>
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.username.label (class="form-label") }}<br/>{{ form.username(class="form-control") }}<br/>
+        {% for error in form.username.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.password.label (class="form-label") }}<br/>{{ form.password(class="form-control") }}<br/>
+        {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div>
+        {{ form.remember_me.label (class="form-check-label") }}<br/>{{ form.remember_me(class="form-check-input") }}<br/>
+        {% for error in form.remember_me.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </div>
+    <div>{{ form.submit(class="btn btn-primary") }}</div>
+</form>
+{% endblock %}
+
