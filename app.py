@@ -1,6 +1,7 @@
 from flask import Flask
 from flask import render_template, redirect, url_for, flash
-from forms import LoginForm
+from forms import LoginForm, RegistrationForm
+from flask_sqlalchemy import SQLAlchemy
 import sys
 
 app = Flask(__name__)
@@ -16,17 +17,17 @@ def home():
 def login():
     form = LoginForm()
     if form.validate_on_submit():
-        flash(f'Login for {form.username.data}', 'succes')
-        return redirect(url_for('index.html'))
+        flash(f'Login for {form.email.data}', 'succes')
+        return redirect(url_for('home'))
     return render_template('login.html', title='Sign in', form=form)
 
-# @app.route('/register', methods=['GET', 'POST'])
-# def register():
-#     form = RegistrationForm()
-#     if form.validate_on_submit():
-#         flash(f'Registration for {form.username.data} received', 'success')
-#         return redirect(url_for('index'))
-#     return render_template('registration.html', title='Register', form=form)
+@app.route('/signup', methods=['GET', 'POST'])
+def signup():
+    form = RegistrationForm()
+    if form.validate_on_submit():
+        flash(f'Registration for {form.email.data} received', 'success')
+        return redirect(url_for('home'))
+    return render_template('sign_up.html', title='Register', form=form)
 
 if __name__ == '__main__':
     app.run(debug=True)
