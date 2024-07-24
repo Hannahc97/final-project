@@ -1,8 +1,8 @@
-from app import db, login
+import database
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
 
-
+db = database.DB
 # user_id: A unique identifier for each user, 
 # # email: The user's email address, which must be unique.
 # password_hash: The hashed password for secure authentication.

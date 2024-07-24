@@ -3,7 +3,7 @@ from flask import render_template, redirect, url_for, flash
 from forms import LoginForm, RegistrationForm
 from flask_sqlalchemy import SQLAlchemy
 import os
-from models import *  
+import database
 import sys
 import uuid
 
@@ -19,7 +19,9 @@ app.config['SECRET_KEY'] =  b'WR#&f&+%78er0we=%799eww+#7^90-;s'
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-db = SQLAlchemy(app)
+
+db = database.buildDb(app)
+from models import *  
 
 @app.route("/")
 @app.route('/home')
