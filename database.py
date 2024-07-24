@@ -11,8 +11,6 @@ class buildDb():
     db = False
     def build(self, app):
         db = SQLAlchemy(app)
-    
-    def getDb(self):
         global DB
         DB = self.db
-        return self.db
+    
