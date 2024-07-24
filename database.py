@@ -10,7 +10,7 @@ DB = ""
 class buildDb():
     db = False
     def build(self, app):
-        db = SQLAlchemy(app)
+        self.db = SQLAlchemy(app)
         global DB
         DB = self.db
     
