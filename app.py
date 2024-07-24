@@ -20,7 +20,7 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 # app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-db = database.buildDb(app)
+db = database.buildDb().build(app)
 from models import *  
 
 @app.route("/")

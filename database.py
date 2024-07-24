@@ -7,7 +7,7 @@ if uri.startswith("postgres://"):
 
 DB = ""
 
-class buildDb:
+class buildDb():
     db = False
     def build(self, app):
         db = SQLAlchemy(app)
