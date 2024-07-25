@@ -10,7 +10,20 @@ DB = ""
 class buildDb():
     db = False
     def build(self, app):
+        app.config['SQLALCHEMY_DATABASE_URI'] = uri
         self.db = SQLAlchemy(app)
         global DB
         DB = self.db
-    
+        return self.db
+
+# DB = None
+
+# class buildDb():
+#     def __init__(self):
+#         self.db = None
+
+#     def build(self, app):
+#         self.db = SQLAlchemy(app)
+#         global DB
+#         DB = self.db
+#         return self.db

@@ -1,18 +1,15 @@
 import database
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
+from extensions import login 
 
 db = database.DB
+
+
 # user_id: A unique identifier for each user, 
 # # email: The user's email address, which must be unique.
 # password_hash: The hashed password for secure authentication.
-# class User(UserMixin, db.Model):
-#     __tablename__ = 'users'
-#     user_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-#     email = db.Column(db.String(64), nullable=False, unique=True, index=True)
-#     password_hash = db.Column(db.String(256), nullable=False)
-
-class userRegister(db.Model):
+class userRegister(UserMixin, db.Model):
     __tablename__ = 'users'
     user_id = db.Column(db.String(64), primary_key=True, unique=True, nullable=False)
     email = db.Column(db.String(64), nullable=False, unique=True, index=True)
@@ -20,6 +17,17 @@ class userRegister(db.Model):
 
     def hashPassword(self):
         self.password_hash = generate_password_hash(self.password_hash)
+
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+    
+    def get_id(self):
+        return str(self.user_id)
+    
+@login.user_loader
+def load_user(user_id):
+    return userRegister.query.get(user_id)
+
 
 
 # Represents a quiz which contains multiple questions.
