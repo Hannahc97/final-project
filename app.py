@@ -21,9 +21,6 @@ app.config['SECRET_KEY'] =  b'WR#&f&+%78er0we=%799eww+#7^90-;s'
 basedir = os.path.abspath(os.path.dirname(__file__))
 
 
-
-
-
 login.init_app(app)
 login.login_view = 'login'
 
@@ -71,12 +68,17 @@ def signup():
 @app.route('/logout')
 def logout():
     logout_user()
-    return redirect(url_for('index'))
+    return redirect(url_for('home'))
 
-# @app.route('/dashboard')
-# @login_required
-# def dashboard():
-#     return render_template('dashboard.html')
+@app.route('/dashboard')
+@login_required
+def dashboard():
+    return render_template('dashboard.html')
+
+@app.route('/quiz')
+@login_required
+def quiz():
+    return render_template('quiz.html')
 
 
 if __name__ == '__main__':
