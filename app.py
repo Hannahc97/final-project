@@ -46,7 +46,7 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         flash(f'Login for {form.email.data}', 'success')
-        return redirect(url_for('home'))
+        return redirect(url_for('dashboard'))
     return render_template('login.html', title='Sign in', form=form)
 
 @app.route('/signup', methods=['GET', 'POST'])
