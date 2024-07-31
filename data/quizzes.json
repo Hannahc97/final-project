@@ -1,0 +1,692 @@
+[
+    {
+        "quiz_id": 1,
+        "title": "CPU, Memory and Program Execution",
+        "description": "Test your knowledge on CPU, Memory and Program Execution!",
+        "questions": [
+            {
+                "question_id": 1,
+                "text": "Which of the following is NOT one of the five basic parts of a computer system?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 1, "text": "Memory", "is_correct": false},
+                    {"answer_id": 2, "text": "Control Unit", "is_correct": false},
+                    {"answer_id": 3, "text": "Power Supply", "is_correct": true},
+                    {"answer_id": 4, "text": "Arithmetic/Logic Unit (ALU)", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 2,
+                "text": "What does CPU stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 5, "text": "Central Processing Unit", "is_correct": true},
+                    {"answer_id": 6, "text": "Central Peripheral Unit", "is_correct": false},
+                    {"answer_id": 7, "text": "Central Performance Unit", "is_correct": false},
+                    {"answer_id": 8, "text": "Central Programmable Unit", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 3,
+                "text": "Which part of the CPU performs arithmetic and logical operations?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 9, "text": "Control Unit", "is_correct": false},
+                    {"answer_id": 10, "text": "Arithmetic Logic Unit (ALU)", "is_correct": true},
+                    {"answer_id": 11, "text": "Register", "is_correct": false},
+                    {"answer_id": 12, "text": "Cache", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 4,
+                "text": "What is the main function of the Control Unit in the CPU?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 13, "text": "Perform calculations", "is_correct": false},
+                    {"answer_id": 14, "text": "Store data", "is_correct": false},
+                    {"answer_id": 15, "text": "Direct operations of the CPU", "is_correct": true},
+                    {"answer_id": 16, "text": "Handle input/output operations", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 5,
+                "text": "What does RAM stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 17, "text": "Readily Accessible Memory", "is_correct": false},
+                    {"answer_id": 18, "text": "Random Access Memory", "is_correct": true},
+                    {"answer_id": 19, "text": "Read-Only Memory", "is_correct": false},
+                    {"answer_id": 20, "text": "Rapid Action Memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 6,
+                "text": "What does the term \"random access\" in Random Access Memory (RAM) mean?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 21, "text": "The ability to access memory locations in any order", "is_correct": true},
+                    {"answer_id": 22, "text": "The ability to store data permanently", "is_correct": false},
+                    {"answer_id": 23, "text": "The ability to access data sequentially", "is_correct": false},
+                    {"answer_id": 24, "text": "The ability to compress data", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 7,
+                "text": "What is the primary function of cache memory?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 25, "text": "Store permanent data", "is_correct": false},
+                    {"answer_id": 26, "text": "Store temporary data during program execution", "is_correct": false},
+                    {"answer_id": 27, "text": "Speed up access to frequently used data", "is_correct": true},
+                    {"answer_id": 28, "text": "Provide long-term storage", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 8,
+                "text": "What is the first step in the Fetch/Execute cycle?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 29, "text": "Instruction Decode (ID)", "is_correct": false},
+                    {"answer_id": 30, "text": "Data Fetch (DF)", "is_correct": false},
+                    {"answer_id": 31, "text": "Instruction Fetch (IF)", "is_correct": true},
+                    {"answer_id": 32, "text": "Instruction Execution (EX)", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 9,
+                "text": "What does the CPU do during the \"Fetch\" step?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 33, "text": "Retrieves an instruction from memory", "is_correct": true},
+                    {"answer_id": 34, "text": "Translates the instruction into signals", "is_correct": false},
+                    {"answer_id": 35, "text": "Performs the operation defined by the instruction", "is_correct": false},
+                    {"answer_id": 36, "text": "Writes the result to memory or a register", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 10,
+                "text": "In the machine cycle what happens during the \"Decode\" step?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 37, "text": "The instruction is executed", "is_correct": false},
+                    {"answer_id": 38, "text": "The CPU retrieves an instruction from memory", "is_correct": false},
+                    {"answer_id": 39, "text": "The instruction is translated into signals", "is_correct": true},
+                    {"answer_id": 40, "text": "The result is stored in memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 11,
+                "text": "What is the purpose of the Program Counter (PC) in the CPU?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 41, "text": "To store the address of the next instruction to be executed", "is_correct": true},
+                    {"answer_id": 42, "text": "To count the number of instructions executed", "is_correct": false},
+                    {"answer_id": 43, "text": "To manage the flow of data between registers", "is_correct": false},
+                    {"answer_id": 44, "text": "To decode instructions", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 12,
+                "text": "Which of the following best describes the concept of virtual memory?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 45, "text": "Using secondary storage as an extension of RAM", "is_correct": true},
+                    {"answer_id": 46, "text": "Increasing the physical size of RAM", "is_correct": false},
+                    {"answer_id": 47, "text": "Storing frequently accessed data in the CPU cache", "is_correct": false},
+                    {"answer_id": 48, "text": "Encrypting data in RAM for security", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 13,
+                "text": "Which of the following best describes the property of memory addresses in a computer system?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 49, "text": "They are sequential and start at 1", "is_correct": false},
+                    {"answer_id": 50, "text": "They are sequential and start at 0", "is_correct": true},
+                    {"answer_id": 51, "text": "They are non-sequential and start at 1", "is_correct": false},
+                    {"answer_id": 52, "text": "They are non-sequential and start at 0", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 14,
+                "text": "Which of the following operations is NOT typically performed by the ALU?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 53, "text": "Addition", "is_correct": false},
+                    {"answer_id": 54, "text": "Subtraction", "is_correct": false},
+                    {"answer_id": 55, "text": "Data fetching", "is_correct": true},
+                    {"answer_id": 56, "text": "Logical comparisons", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 15,
+                "text": "What is the primary function of the input unit in a computer system?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 57, "text": "Store data", "is_correct": false},
+                    {"answer_id": 58, "text": "Perform computations", "is_correct": false},
+                    {"answer_id": 59, "text": "Control other units", "is_correct": false},
+                    {"answer_id": 60, "text": "Transfer data into the computer", "is_correct": true}
+                ]
+            },
+            {
+                "question_id": 16,
+                "text": "Which of the following is considered a peripheral device",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 61, "text": "Control Unit", "is_correct": false},
+                    {"answer_id": 62, "text": "ALU", "is_correct": false},
+                    {"answer_id": 63, "text": "Keyboard", "is_correct": true},
+                    {"answer_id": 64, "text": "Memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 17,
+                "text": "What happens when data does not \"fit\" in the finite capacity of a memory location?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 65, "text": "Data is automatically compressed", "is_correct": false},
+                    {"answer_id": 66, "text": "Data is stored in the next available location", "is_correct": false},
+                    {"answer_id": 67, "text": "Data overflow occurs", "is_correct": true},
+                    {"answer_id": 68, "text": "Data is discarded", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 18,
+                "text": "What happens during the \"Execute\" step of the instruction cycle?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 69, "text": "The instruction is fetched from memory", "is_correct": false},
+                    {"answer_id": 70, "text": "The instruction is translated into machine code", "is_correct": false},
+                    {"answer_id": 71, "text": "The CPU carries out the operations specified by the instruction", "is_correct": true},
+                    {"answer_id": 72, "text": "The result of the instruction is written back to memory or a register", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 19,
+                "text": "Which of the following best describes an interrupt in the context of program execution?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 73, "text": "A mechanism to handle errors in program execution", "is_correct": false},
+                    {"answer_id": 74, "text": "A signal that temporarily halts the CPU to prioritize a different task", "is_correct": true},
+                    {"answer_id": 75, "text": "A method to speed up the execution of instructions", "is_correct": false},
+                    {"answer_id": 76, "text": "A technique to optimize memory usage", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 20,
+                "text": "In the Instruction Fetch (IF) phase, where is the instruction moved to?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 77, "text": "ALU", "is_correct": false},
+                    {"answer_id": 78, "text": "Memory", "is_correct": false},
+                    {"answer_id": 79, "text": "Control Unit", "is_correct": true},
+                    {"answer_id": 80, "text": "Output Unit", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 21,
+                "text": "In the instruction \"ADD 4000, 2000, 2080\", what does the control unit do after decoding this instruction?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 81, "text": "Adds the values in memory locations 2000 and 2080, and stores the result in the ALU", "is_correct": false},
+                    {"answer_id": 82, "text": "Retrieves the data from memory locations 2000 and 2080, performs the addition, and stores the result in memory location 4000", "is_correct": true},
+                    {"answer_id": 83, "text": "Fetches the instruction from memory location 4000, decodes it, and adds the values", "is_correct": false},
+                    {"answer_id": 84, "text": "Stores the sum of the values in memory locations 2000 and 2080 in memory location 4000", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 22,
+                "text": "What is the significance of the finite capacity of memory locations?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 85, "text": "It limits the number of instructions that can be executed by the CPU", "is_correct": false},
+                    {"answer_id": 86, "text": "It ensures that data can be accessed randomly", "is_correct": false},
+                    {"answer_id": 87, "text": "It restricts the size of data that can be stored in each location, potentially leading to data overflow", "is_correct": true},
+                    {"answer_id": 88, "text": "It guarantees that memory is organised in a sequence of discrete locations", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 23,
+                "text": "How does the concept of 'memory words' improve the efficiency of memory usage?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 89, "text": "By allowing multiple bytes to be accessed simultaneously", "is_correct": true},
+                    {"answer_id": 90, "text": "By ensuring data is stored in non-contiguous memory locations", "is_correct": false},
+                    {"answer_id": 91, "text": "By reducing the finite capacity limitations of individual memory locations", "is_correct": false},
+                    {"answer_id": 92, "text": "By enabling faster decoding of instructions", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 24,
+                "text": "What is the primary reason for the use of discrete locations in memory organisation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 93, "text": "To enhance the speed of data retrieval", "is_correct": false},
+                    {"answer_id": 94, "text": "To facilitate the random access of data", "is_correct": false},
+                    {"answer_id": 95, "text": "To ensure each memory location has a unique address", "is_correct": true},
+                    {"answer_id": 96, "text": "To maximize the storage capacity of memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 25,
+                "text": "What is a key characteristic of RAM that differentiates it from other types of memory?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 97, "text": "It is volatile and loses its content when power is turned off", "is_correct": true},
+                    {"answer_id": 98, "text": "It stores data permanently", "is_correct": false},
+                    {"answer_id": 99, "text": "It is used primarily for input/output operations", "is_correct": false},
+                    {"answer_id": 100, "text": "It can only be accessed sequentially", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 26,
+                "text": "During the Instruction Execution (EX) phase, what happens if the ALU encounters an undefined operation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 101, "text": "It generates a predefined result", "is_correct": false},
+                    {"answer_id": 102, "text": "It skips the operation and moves to the next instruction", "is_correct": false},
+                    {"answer_id": 103, "text": "It raises an exception or error", "is_correct": true},
+                    {"answer_id": 104, "text": "It requests the control unit for further instructions", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 27,
+                "text": "How does the ALU handle logical operations such as AND, OR, and NOT?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 105, "text": "By using arithmetic circuits", "is_correct": false},
+                    {"answer_id": 106, "text": "By employing dedicated logic gates", "is_correct": true},
+                    {"answer_id": 107, "text": "By fetching additional data from memory", "is_correct": false},
+                    {"answer_id": 108, "text": "By interacting with the control unit for each operation", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 28,
+                "text": "What would likely happen if the control unit fails to update the Program Counter (PC) after an instruction is fetched?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 109, "text": "The same instruction would be fetched repeatedly", "is_correct": true},
+                    {"answer_id": 110, "text": "The next instruction would be skipped", "is_correct": false},
+                    {"answer_id": 111, "text": "The ALU would perform an undefined operation", "is_correct": false},
+                    {"answer_id": 112, "text": "The fetched instruction would not be decoded", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 29,
+                "text": "In the context of computer memory, what is a primary benefit of hierarchical memory organisation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 113, "text": "It reduces the complexity of the control unit", "is_correct": false},
+                    {"answer_id": 114, "text": "It optimizes the speed and cost of memory access", "is_correct": true},
+                    {"answer_id": 115, "text": "It ensures all data fits into the fastest memory available", "is_correct": false},
+                    {"answer_id": 116, "text": "It simplifies the process of data storage and retrieval", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 30,
+                "text": "What is the significance of the binary object file format?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 117, "text": "It allows easy modification of program instructions", "is_correct": false},
+                    {"answer_id": 118, "text": "It enables the computer to run software by interpreting binary instructions", "is_correct": true},
+                    {"answer_id": 119, "text": "It increases the readability of the program for humans", "is_correct": false},
+                    {"answer_id": 120, "text": "It reduces the size of the program in memory", "is_correct": false}
+                ]
+            }
+        ]
+    },
+    {
+        "quiz_id": 2,
+        "title": "Compilation Interpretation & Java Virtual Machine",
+        "description": "Test your knowledge on Compilation Interpretation & Java Virtual Machine!",
+        "questions":[
+            {
+               "question_id": 31,
+                "text": "What is a high-level programming language?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 121, "text": "Machine code", "is_correct": false},
+                    {"answer_id": 122, "text": "Assembly code", "is_correct": false},
+                    {"answer_id": 123, "text": "Java", "is_correct": true},
+                    {"answer_id": 124, "text": "Opcodes", "is_correct": false}
+                ] 
+            },
+            {
+                "question_id": 32,
+                "text": "Which program converts assembly code to machine code?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 125, "text": "Compiler", "is_correct": false},
+                    {"answer_id": 126, "text": "Assembler", "is_correct": true},
+                    {"answer_id": 127, "text": "Linker", "is_correct": false},
+                    {"answer_id": 128, "text": "Loader", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 33,
+                "text": "What is the role of a linker?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 129, "text": "Converts source code to object code", "is_correct": false},
+                    {"answer_id": 130, "text": "Loads programs into memory", "is_correct": false},
+                    {"answer_id": 131, "text": "Combines different assembled parts into a whole", "is_correct": true},
+                    {"answer_id": 132, "text": "Executes programs", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 34,
+                "text": "Which of the following languages is typically compiled?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 133, "text": "JavaScript", "is_correct": false},
+                    {"answer_id": 134, "text": "Python", "is_correct": false},
+                    {"answer_id": 135, "text": "Java", "is_correct": false},
+                    {"answer_id": 136, "text": "C++", "is_correct": true}
+                ]
+            },
+            {
+                "question_id": 35,
+                "text": "What does an interpreter do?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 137, "text": "Converts source code to object code", "is_correct": false},
+                    {"answer_id": 138, "text": "Follows the source code and executes it directly", "is_correct": true},
+                    {"answer_id": 139, "text": "Combines different assembled parts into a whole", "is_correct": false},
+                    {"answer_id": 140, "text": "Loads programs into memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 36,
+                "text": "What is a disadvantage of interpretation?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 141, "text": "Harder than compiling", "is_correct": false},
+                    {"answer_id": 142, "text": "Hardware dependent", "is_correct": false},
+                    {"answer_id": 143, "text": "Slow execution", "is_correct": true},
+                    {"answer_id": 144, "text": "Cannot run on different platforms", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 37,
+                "text": "What does JVM stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 145, "text": "Java Visual Machine", "is_correct": false},
+                    {"answer_id": 146, "text": "Java Virtual Model", "is_correct": false},
+                    {"answer_id": 147, "text": "Java Virtual Machine", "is_correct": true},
+                    {"answer_id": 148, "text": "Java Visual Model", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 38,
+                "text": "Which language does the Java compiler translate Java source code into?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 149, "text": "Machine code", "is_correct": false},
+                    {"answer_id": 150, "text": "Assembly code", "is_correct": false},
+                    {"answer_id": 151, "text": "Bytecode", "is_correct": true},
+                    {"answer_id": 152, "text": "High-level code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 39,
+                "text": "What is the primary advantage of Java's bytecode?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 153, "text": "Faster execution", "is_correct": false},
+                    {"answer_id": 154, "text": "Platform independence", "is_correct": true},
+                    {"answer_id": 155, "text": "Easier to read", "is_correct": false},
+                    {"answer_id": 156, "text": "Smaller file size", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 40,
+                "text": "What does JIT stand for in the context of JVM?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 157, "text": "Java Intermediate Translation", "is_correct": false},
+                    {"answer_id": 158, "text": "Just-In-Time", "is_correct": true},
+                    {"answer_id": 159, "text": "Java Integrated Tool", "is_correct": false},
+                    {"answer_id": 160, "text": "Java Interpretation Technology", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 41,
+                "text": "Which of the following is a characteristic of low-level languages?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 161, "text": "Easier for humans to read and write", "is_correct": false},
+                    {"answer_id": 162, "text": "Harder for humans to read and write", "is_correct": true},
+                    {"answer_id": 163, "text": "Platform independent", "is_correct": false},
+                    {"answer_id": 164, "text": "Interpreted directly", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 42,
+                "text": "In the compilation process, what is the role of the loader?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 165, "text": "Converts source code to object code", "is_correct": false},
+                    {"answer_id": 166, "text": "Loads the program into memory at a given location", "is_correct": true},
+                    {"answer_id": 167, "text": "Combines different assembled parts into a whole", "is_correct": false},
+                    {"answer_id": 168, "text": "Optimizes the object code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 43,
+                "text": "Why is compilation generally more efficient than interpretation?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 169, "text": "Compilation is done once for each program", "is_correct": true},
+                    {"answer_id": 170, "text": "Compiled programs are easier to debug", "is_correct": false},
+                    {"answer_id": 171, "text": "Interpreters are hardware dependent", "is_correct": false},
+                    {"answer_id": 172, "text": "Compiled programs run slower", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 44,
+                "text": "What is cross-compilation?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 173, "text": "Compiler runs on the same platform as the target code", "is_correct": false},
+                    {"answer_id": 174, "text": "Compiler runs on a different platform than the target code", "is_correct": true},
+                    {"answer_id": 175, "text": "Interpreter runs on the same platform as the source code", "is_correct": false},
+                    {"answer_id": 176, "text": "Interpreter runs on a different platform than the source code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 45,
+                "text": "Which of the following is an advantage of interpretation?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 177, "text": "Faster execution", "is_correct": false},
+                    {"answer_id": 178, "text": "Platform independence", "is_correct": false},
+                    {"answer_id": 179, "text": "Facilitates interactive debugging and testing", "is_correct": true},
+                    {"answer_id": 180, "text": "Generates object code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 46,
+                "text": "What is an intermediate language in the context of combined compilation and interpretation?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 181, "text": "High-level code", "is_correct": false},
+                    {"answer_id": 182, "text": "Machine code", "is_correct": false},
+                    {"answer_id": 183, "text": "A language between high and low level that can be efficiently interpreted", "is_correct": true},
+                    {"answer_id": 184, "text": "Assembly code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 47,
+                "text": "Why is Java considered platform-independent?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 185, "text": "It compiles directly to machine code", "is_correct": false},
+                    {"answer_id": 186, "text": "It uses a single compiler for all platforms", "is_correct": false},
+                    {"answer_id": 187, "text": "It compiles to bytecode that can be interpreted by JVM on any platform", "is_correct": true},
+                    {"answer_id": 188, "text": "It does not require compilation", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 48,
+                "text": "What is the primary function of a virtual machine?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 189, "text": "To convert high-level code to machine code", "is_correct": false},
+                    {"answer_id": 190, "text": "To execute an instruction stream in software", "is_correct": true},
+                    {"answer_id": 191, "text": "To manage hardware resources", "is_correct": false},
+                    {"answer_id": 192, "text": "To link different parts of a program", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 49,
+                "text": "How does JIT compilation improve performance?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 193, "text": "By interpreting code directly", "is_correct": false},
+                    {"answer_id": 194, "text": "By pre-compiling all code", "is_correct": false},
+                    {"answer_id": 195, "text": "By compiling bytecode to machine code just before execution", "is_correct": true},
+                    {"answer_id": 196, "text": "By optimizing source code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 50,
+                "text": "What is the main difference between a stack machine and a register machine?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 197, "text": "Stack machines use a stack for intermediate results, register machines use registers", "is_correct": true},
+                    {"answer_id": 198, "text": "Stack machines are faster than register machines", "is_correct": false},
+                    {"answer_id": 199, "text": "Register machines are used in virtual machines", "is_correct": false},
+                    {"answer_id": 200, "text": "Stack machines cannot handle complex expressions", "is_correct": false}
+                ]
+            }
+            [
+                {
+                    "question_id": 51,
+                    "text": "What is the primary disadvantage of using a virtual machine for program execution?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 201, "text": "Lack of platform independence", "is_correct": false},
+                        {"answer_id": 202, "text": "Increased memory usage", "is_correct": false},
+                        {"answer_id": 203, "text": "Slower execution compared to native machine code", "is_correct": true},
+                        {"answer_id": 204, "text": "Difficult debugging process", "is_correct": false}
+                    ]
+                },
+                {
+                    "question_id": 52,
+                    "text": "Which of the following best describes the role of the Java Runtime Environment (JRE)?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 205, "text": "Compiles Java source code to bytecode", "is_correct": False},
+                        {"answer_id": 206, "text": "Executes Java bytecode using the JVM", "is_correct": True},
+                        {"answer_id": 207, "text": "Translates high-level Java code to machine code", "is_correct": False},
+                        {"answer_id": 208, "text": "Links different parts of a Java program", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 53,
+                    "text": "Why might a JIT compiler be preferred over a traditional interpreter in certain scenarios?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 209, "text": "It reduces the need for platform-specific code", "is_correct": False},
+                        {"answer_id": 210, "text": "It compiles the entire program ahead of time", "is_correct": False},
+                        {"answer_id": 211, "text": "It improves execution speed by compiling code at runtime", "is_correct": True},
+                        {"answer_id": 212, "text": "It simplifies the source code", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 54,
+                    "text": "What is one key advantage of bytecode over directly compiling to machine code?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 213, "text": "Faster execution on all platforms", "is_correct": False},
+                        {"answer_id": 214, "text": "Easier to read and debug", "is_correct": False},
+                        {"answer_id": 215, "text": "Greater portability across different hardware architectures", "is_correct": True},
+                        {"answer_id": 216, "text": "Simpler to optimize for specific hardware features", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 55,
+                    "text": "In the context of Java, what is the primary role of the 'javac' tool?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 217, "text": "Execute Java programs", "is_correct": False},
+                        {"answer_id": 218, "text": "Compile Java source code to bytecode", "is_correct": True},
+                        {"answer_id": 219, "text": "Interpret Java bytecode", "is_correct": False},
+                        {"answer_id": 220, "text": "Link Java programs", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 56,
+                    "text": "What is a significant challenge in cross-compilation?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 221, "text": "Maintaining code readability", "is_correct": False},
+                        {"answer_id": 222, "text": "Ensuring code executes correctly on the target platform", "is_correct": True},
+                        {"answer_id": 223, "text": "Linking object code", "is_correct": False},
+                        {"answer_id": 224, "text": "Loading the program into memory", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 57,
+                    "text": "Why is the concept of a stack important in JVM architecture?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 225, "text": "It provides a fixed memory allocation for variables", "is_correct": False},
+                        {"answer_id": 226, "text": "It allows dynamic memory management", "is_correct": False},
+                        {"answer_id": 227, "text": "It supports the execution of recursive methods", "is_correct": True},
+                        {"answer_id": 228, "text": "It facilitates the use of global variables", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 58,
+                    "text": "Which of the following JVM instruction groups is primarily responsible for method invocation?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 229, "text": "Stack Operations", "is_correct": False},
+                        {"answer_id": 230, "text": "Integer Arithmetic", "is_correct": False},
+                        {"answer_id": 231, "text": "Branching", "is_correct": False},
+                        {"answer_id": 232, "text": "Invoking a method / return from a method", "is_correct": True}
+                    ]
+                },
+                {
+                    "question_id": 59,
+                    "text": "How does the JVM ensure security during program execution?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 233, "text": "By using hardware-based encryption", "is_correct": False},
+                        {"answer_id": 234, "text": "By verifying bytecode before execution", "is_correct": True},
+                        {"answer_id": 235, "text": "By limiting the use of certain instructions", "is_correct": False},
+                        {"answer_id": 236, "text": "By running all code in a virtual environment", "is_correct": False}
+                    ]
+                },
+                {
+                    "question_id": 60,
+                    "text": "What is a key feature of the picoJava II chip in relation to JVM?",
+                    "difficulty_level": 3,
+                    "answers": [
+                        {"answer_id": 237, "text": "It compiles Java code directly to machine code", "is_correct": False},
+                        {"answer_id": 238, "text": "It interprets Java bytecode in hardware for embedded applications", "is_correct": True},
+                        {"answer_id": 239, "text": "It optimizes Java code for desktop applications", "is_correct": False},
+                        {"answer_id": 240, "text": "It supports multiple high-level programming languages", "is_correct": False}
+                    ]
+                }
+            ]
+            
+
+
+
+
+            ]
+            
+
+
+
+
+
+
+        ],
+
+    }
+]
