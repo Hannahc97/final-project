@@ -560,133 +560,1614 @@
                     {"answer_id": 199, "text": "Register machines are used in virtual machines", "is_correct": false},
                     {"answer_id": 200, "text": "Stack machines cannot handle complex expressions", "is_correct": false}
                 ]
+            },
+            {
+                "question_id": 51,
+                "text": "What is the primary disadvantage of using a virtual machine for program execution?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 201, "text": "Lack of platform independence", "is_correct": false},
+                    {"answer_id": 202, "text": "Increased memory usage", "is_correct": false},
+                    {"answer_id": 203, "text": "Slower execution compared to native machine code", "is_correct": true},
+                    {"answer_id": 204, "text": "Difficult debugging process", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 52,
+                "text": "Which of the following best describes the role of the Java Runtime Environment (JRE)?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 205, "text": "Compiles Java source code to bytecode", "is_correct": false},
+                    {"answer_id": 206, "text": "Executes Java bytecode using the JVM", "is_correct": true},
+                    {"answer_id": 207, "text": "Translates high-level Java code to machine code", "is_correct": false},
+                    {"answer_id": 208, "text": "Links different parts of a Java program", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 53,
+                "text": "Why might a JIT compiler be preferred over a traditional interpreter in certain scenarios?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 209, "text": "It reduces the need for platform-specific code", "is_correct": false},
+                    {"answer_id": 210, "text": "It compiles the entire program ahead of time", "is_correct": false},
+                    {"answer_id": 211, "text": "It improves execution speed by compiling code at runtime", "is_correct": true},
+                    {"answer_id": 212, "text": "It simplifies the source code", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 54,
+                "text": "What is one key advantage of bytecode over directly compiling to machine code?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 213, "text": "Faster execution on all platforms", "is_correct": false},
+                    {"answer_id": 214, "text": "Easier to read and debug", "is_correct": false},
+                    {"answer_id": 215, "text": "Greater portability across different hardware architectures", "is_correct": true},
+                    {"answer_id": 216, "text": "Simpler to optimize for specific hardware features", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 55,
+                "text": "In the context of Java, what is the primary role of the 'javac' tool?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 217, "text": "Execute Java programs", "is_correct": false},
+                    {"answer_id": 218, "text": "Compile Java source code to bytecode", "is_correct": true},
+                    {"answer_id": 219, "text": "Interpret Java bytecode", "is_correct": false},
+                    {"answer_id": 220, "text": "Link Java programs", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 56,
+                "text": "What is a significant challenge in cross-compilation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 221, "text": "Maintaining code readability", "is_correct": false},
+                    {"answer_id": 222, "text": "Ensuring code executes correctly on the target platform", "is_correct": true},
+                    {"answer_id": 223, "text": "Linking object code", "is_correct": false},
+                    {"answer_id": 224, "text": "Loading the program into memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 57,
+                "text": "Why is the concept of a stack important in JVM architecture?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 225, "text": "It provides a fixed memory allocation for variables", "is_correct": false},
+                    {"answer_id": 226, "text": "It allows dynamic memory management", "is_correct": false},
+                    {"answer_id": 227, "text": "It supports the execution of recursive methods", "is_correct": true},
+                    {"answer_id": 228, "text": "It facilitates the use of global variables", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 58,
+                "text": "Which of the following JVM instruction groups is primarily responsible for method invocation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 229, "text": "Stack Operations", "is_correct": false},
+                    {"answer_id": 230, "text": "Integer Arithmetic", "is_correct": false},
+                    {"answer_id": 231, "text": "Branching", "is_correct": false},
+                    {"answer_id": 232, "text": "Invoking a method / return from a method", "is_correct": true}
+                ]
+            },
+            {
+                "question_id": 59,
+                "text": "How does the JVM ensure security during program execution?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 233, "text": "By using hardware-based encryption", "is_correct": false},
+                    {"answer_id": 234, "text": "By verifying bytecode before execution", "is_correct": true},
+                    {"answer_id": 235, "text": "By limiting the use of certain instructions", "is_correct": false},
+                    {"answer_id": 236, "text": "By running all code in a virtual environment", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 60,
+                "text": "What is a key feature of the picoJava II chip in relation to JVM?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 237, "text": "It compiles Java code directly to machine code", "is_correct": false},
+                    {"answer_id": 238, "text": "It interprets Java bytecode in hardware for embedded applications", "is_correct": true},
+                    {"answer_id": 239, "text": "It optimizes Java code for desktop applications", "is_correct": false},
+                    {"answer_id": 240, "text": "It supports multiple high-level programming languages", "is_correct": false}
+                ]
             }
-            [
-                {
-                    "question_id": 51,
-                    "text": "What is the primary disadvantage of using a virtual machine for program execution?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 201, "text": "Lack of platform independence", "is_correct": false},
-                        {"answer_id": 202, "text": "Increased memory usage", "is_correct": false},
-                        {"answer_id": 203, "text": "Slower execution compared to native machine code", "is_correct": true},
-                        {"answer_id": 204, "text": "Difficult debugging process", "is_correct": false}
-                    ]
-                },
-                {
-                    "question_id": 52,
-                    "text": "Which of the following best describes the role of the Java Runtime Environment (JRE)?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 205, "text": "Compiles Java source code to bytecode", "is_correct": False},
-                        {"answer_id": 206, "text": "Executes Java bytecode using the JVM", "is_correct": True},
-                        {"answer_id": 207, "text": "Translates high-level Java code to machine code", "is_correct": False},
-                        {"answer_id": 208, "text": "Links different parts of a Java program", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 53,
-                    "text": "Why might a JIT compiler be preferred over a traditional interpreter in certain scenarios?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 209, "text": "It reduces the need for platform-specific code", "is_correct": False},
-                        {"answer_id": 210, "text": "It compiles the entire program ahead of time", "is_correct": False},
-                        {"answer_id": 211, "text": "It improves execution speed by compiling code at runtime", "is_correct": True},
-                        {"answer_id": 212, "text": "It simplifies the source code", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 54,
-                    "text": "What is one key advantage of bytecode over directly compiling to machine code?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 213, "text": "Faster execution on all platforms", "is_correct": False},
-                        {"answer_id": 214, "text": "Easier to read and debug", "is_correct": False},
-                        {"answer_id": 215, "text": "Greater portability across different hardware architectures", "is_correct": True},
-                        {"answer_id": 216, "text": "Simpler to optimize for specific hardware features", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 55,
-                    "text": "In the context of Java, what is the primary role of the 'javac' tool?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 217, "text": "Execute Java programs", "is_correct": False},
-                        {"answer_id": 218, "text": "Compile Java source code to bytecode", "is_correct": True},
-                        {"answer_id": 219, "text": "Interpret Java bytecode", "is_correct": False},
-                        {"answer_id": 220, "text": "Link Java programs", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 56,
-                    "text": "What is a significant challenge in cross-compilation?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 221, "text": "Maintaining code readability", "is_correct": False},
-                        {"answer_id": 222, "text": "Ensuring code executes correctly on the target platform", "is_correct": True},
-                        {"answer_id": 223, "text": "Linking object code", "is_correct": False},
-                        {"answer_id": 224, "text": "Loading the program into memory", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 57,
-                    "text": "Why is the concept of a stack important in JVM architecture?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 225, "text": "It provides a fixed memory allocation for variables", "is_correct": False},
-                        {"answer_id": 226, "text": "It allows dynamic memory management", "is_correct": False},
-                        {"answer_id": 227, "text": "It supports the execution of recursive methods", "is_correct": True},
-                        {"answer_id": 228, "text": "It facilitates the use of global variables", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 58,
-                    "text": "Which of the following JVM instruction groups is primarily responsible for method invocation?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 229, "text": "Stack Operations", "is_correct": False},
-                        {"answer_id": 230, "text": "Integer Arithmetic", "is_correct": False},
-                        {"answer_id": 231, "text": "Branching", "is_correct": False},
-                        {"answer_id": 232, "text": "Invoking a method / return from a method", "is_correct": True}
-                    ]
-                },
-                {
-                    "question_id": 59,
-                    "text": "How does the JVM ensure security during program execution?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 233, "text": "By using hardware-based encryption", "is_correct": False},
-                        {"answer_id": 234, "text": "By verifying bytecode before execution", "is_correct": True},
-                        {"answer_id": 235, "text": "By limiting the use of certain instructions", "is_correct": False},
-                        {"answer_id": 236, "text": "By running all code in a virtual environment", "is_correct": False}
-                    ]
-                },
-                {
-                    "question_id": 60,
-                    "text": "What is a key feature of the picoJava II chip in relation to JVM?",
-                    "difficulty_level": 3,
-                    "answers": [
-                        {"answer_id": 237, "text": "It compiles Java code directly to machine code", "is_correct": False},
-                        {"answer_id": 238, "text": "It interprets Java bytecode in hardware for embedded applications", "is_correct": True},
-                        {"answer_id": 239, "text": "It optimizes Java code for desktop applications", "is_correct": False},
-                        {"answer_id": 240, "text": "It supports multiple high-level programming languages", "is_correct": False}
-                    ]
-                }
+        ]
+    },
+    {
+        "quiz_id": 3,
+        "title": "Computer Organisation and Architecture",
+        "description": "Test your knowledge on Computer Organisation and Architecture!",
+        "questions":[
+            {
+                "question_id": 61,
+                "text": "What type of memory is commonly implemented in Dynamic RAM (DRAM)?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 241, "text": "Main memory", "is_correct": true},
+                    {"answer_id": 242, "text": "Read-only memory", "is_correct": false},
+                    {"answer_id": 243, "text": "Cache memory", "is_correct": false},
+                    {"answer_id": 244, "text": "Secondary storage", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 62,
+                "text": "Which type of memory cannot be modified once it is programmed?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 245, "text": "RAM", "is_correct": false},
+                    {"answer_id": 246, "text": "ROM", "is_correct": true},
+                    {"answer_id": 247, "text": "EEPROM", "is_correct": false},
+                    {"answer_id": 248, "text": "Cache memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 63,
+                "text": "In the von Neumann architecture, what is stored in the instruction register?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 249, "text": "Data", "is_correct": false},
+                    {"answer_id": 250, "text": "Instructions", "is_correct": true},
+                    {"answer_id": 251, "text": "Addresses", "is_correct": false},
+                    {"answer_id": 252, "text": "Results", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 64,
+                "text": "Which I/O mechanism involves the CPU constantly checking the status of an I/O device?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 253, "text": "Interrupt Driven I/O", "is_correct": false},
+                    {"answer_id": 254, "text": "Direct Memory Access (DMA)", "is_correct": false},
+                    {"answer_id": 255, "text": "Programmed I/O", "is_correct": true},
+                    {"answer_id": 256, "text": "SCSI I/O", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 65,
+                "text": "What does DMA stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 257, "text": "Direct Machine Access", "is_correct": false},
+                    {"answer_id": 258, "text": "Direct Memory Access", "is_correct": true},
+                    {"answer_id": 259, "text": "Dynamic Memory Allocation", "is_correct": false},
+                    {"answer_id": 260, "text": "Device Memory Access", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 66,
+                "text": "Which type of system architecture features multiple processors sharing bus, clock, memory, and peripherals?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 261, "text": "Single-Processor Systems", "is_correct": false},
+                    {"answer_id": 262, "text": "Multiprocessor Systems", "is_correct": true},
+                    {"answer_id": 263, "text": "Clustered Systems", "is_correct": false},
+                    {"answer_id": 264, "text": "Embedded Systems", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 67,
+                "text": "What is the main advantage of a symmetric multiprocessor system over an asymmetric one?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 265, "text": "Increased throughput", "is_correct": false},
+                    {"answer_id": 266, "text": "Lower cost", "is_correct": false},
+                    {"answer_id": 267, "text": "Equal utilisation of processors", "is_correct": true},
+                    {"answer_id": 268, "text": "Easier programming", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 68,
+                "text": "What is a common example of a multicore system?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 269, "text": "Supercomputer", "is_correct": false},
+                    {"answer_id": 270, "text": "Mainframe", "is_correct": false},
+                    {"answer_id": 271, "text": "Blade server", "is_correct": true},
+                    {"answer_id": 272, "text": "Laptop", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 69,
+                "text": "What is the primary purpose of a device driver in a computer system?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 273, "text": "To control the CPU", "is_correct": false},
+                    {"answer_id": 274, "text": "To manage memory", "is_correct": false},
+                    {"answer_id": 275, "text": "To provide a uniform interface to the device", "is_correct": true},
+                    {"answer_id": 276, "text": "To execute programs", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 70,
+                "text": "Which storage device is typically the fastest?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 277, "text": "Hard Disk Drive (HDD)", "is_correct": false},
+                    {"answer_id": 278, "text": "Solid State Drive (SSD)", "is_correct": true},
+                    {"answer_id": 279, "text": "Optical Disk", "is_correct": false},
+                    {"answer_id": 280, "text": "Magnetic Tape", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 71,
+                "text": "What is a key characteristic of Dynamic RAM (DRAM)?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 281, "text": "Non-volatile", "is_correct": false},
+                    {"answer_id": 282, "text": "Volatile", "is_correct": true},
+                    {"answer_id": 283, "text": "Read-only", "is_correct": false},
+                    {"answer_id": 284, "text": "Programmable", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 72,
+                "text": "What role does the device controller play in a computer system?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 285, "text": "It interfaces the CPU with I/O devices", "is_correct": true},
+                    {"answer_id": 286, "text": "It manages memory allocation", "is_correct": false},
+                    {"answer_id": 287, "text": "It controls the execution of programs", "is_correct": false},
+                    {"answer_id": 288, "text": "It handles interrupts from hardware", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 73,
+                "text": "Which I/O mechanism is preferred for moving large amounts of data?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 289, "text": "Programmed I/O", "is_correct": false},
+                    {"answer_id": 290, "text": "Interrupt Driven I/O", "is_correct": false},
+                    {"answer_id": 291, "text": "Direct Memory Access (DMA)", "is_correct": true},
+                    {"answer_id": 292, "text": "Manual Data Transfer", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 74,
+                "text": "How does the CPU interact with main memory during execution?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 293, "text": "By sending and receiving data directly from the cache", "is_correct": false},
+                    {"answer_id": 294, "text": "By loading instructions from main memory and storing results back to it", "is_correct": true},
+                    {"answer_id": 295, "text": "By constantly polling the memory for updates", "is_correct": false},
+                    {"answer_id": 296, "text": "By using secondary storage as an intermediary", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 75,
+                "text": "What is the primary function of cache memory in a computer system?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 297, "text": "To store data permanently", "is_correct": false},
+                    {"answer_id": 298, "text": "To hold frequently accessed data for quick retrieval", "is_correct": true},
+                    {"answer_id": 299, "text": "To manage I/O operations", "is_correct": false},
+                    {"answer_id": 300, "text": "To interface with peripheral devices", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 76,
+                "text": "What is the primary disadvantage of Programmed I/O?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 301, "text": "It requires the CPU to be constantly busy checking I/O status", "is_correct": true},
+                    {"answer_id": 302, "text": "It cannot handle high-speed devices", "is_correct": false},
+                    {"answer_id": 303, "text": "It does not support interrupts", "is_correct": false},
+                    {"answer_id": 304, "text": "It requires specialised hardware", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 77,
+                "text": "In a multiprocessor system, what does the term 'graceful degradation' refer to?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 305, "text": "The system continues to operate even if one processor fails", "is_correct": true},
+                    {"answer_id": 306, "text": "The system gradually slows down under heavy load", "is_correct": false},
+                    {"answer_id": 307, "text": "The system loses data when a processor fails", "is_correct": false},
+                    {"answer_id": 308, "text": "The system needs frequent maintenance", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 78,
+                "text": "What is the key difference between EEPROM and ROM?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 309, "text": "EEPROM can be electrically erased and reprogrammed", "is_correct": true},
+                    {"answer_id": 310, "text": "ROM is volatile while EEPROM is non-volatile", "is_correct": false},
+                    {"answer_id": 311, "text": "ROM is used for main memory", "is_correct": false},
+                    {"answer_id": 312, "text": "EEPROM is read-only", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 79,
+                "text": "Which mechanism does the CPU use to load instructions for execution?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 313, "text": "Fetch/Decode/Execute cycle", "is_correct": true},
+                    {"answer_id": 314, "text": "Direct Memory Access", "is_correct": false},
+                    {"answer_id": 315, "text": "Interrupt-driven I/O", "is_correct": false},
+                    {"answer_id": 316, "text": "Cache memory", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 80,
+                "text": "Why are multiprocessor systems more cost-effective than single-processor systems?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 317, "text": "They use less power", "is_correct": false},
+                    {"answer_id": 318, "text": "They share peripherals, storage, and power", "is_correct": true},
+                    {"answer_id": 319, "text": "They require less memory", "is_correct": false},
+                    {"answer_id": 320, "text": "They are easier to program", "is_correct": false}
+                ]
+            },
+            {
+                "question_id": 81,
+                "text": "In the context of I/O, what does 'polling' refer to?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 321, "text": "The CPU continuously checks the status of an I/O device", "is_correct": "true"},
+                    {"answer_id": 322, "text": "The CPU waits for an interrupt signal from an I/O device", "is_correct": "false"},
+                    {"answer_id": 323, "text": "The I/O device sends data directly to memory", "is_correct": "false"},
+                    {"answer_id": 324, "text": "The I/O device operates independently of the CPU", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 82,
+                "text": "What is a key characteristic of the von Neumann architecture regarding memory operations?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 325, "text": "Instructions and data are stored separately", "is_correct": "false"},
+                    {"answer_id": 326, "text": "Instructions and data share the same memory space", "is_correct": "true"},
+                    {"answer_id": 327, "text": "Only data is stored in memory", "is_correct": "false"},
+                    {"answer_id": 328, "text": "Instructions are executed directly from the cache", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 83,
+                "text": "How does the CPU handle an interrupt signal from an I/O device?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 329, "text": "It immediately stops all operations and addresses the interrupt", "is_correct": "false"},
+                    {"answer_id": 330, "text": "It finishes the current instruction before handling the interrupt", "is_correct": "true"},
+                    {"answer_id": 331, "text": "It ignores the interrupt until the I/O device sends another signal", "is_correct": "false"},
+                    {"answer_id": 332, "text": "It transfers control to a device driver to handle the interrupt", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 84,
+                "text": "What is the primary benefit of Direct Memory Access (DMA) over other I/O mechanisms?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 333, "text": "It reduces the number of interrupts", "is_correct": "false"},
+                    {"answer_id": 334, "text": "It increases the speed of data transfer", "is_correct": "false"},
+                    {"answer_id": 335, "text": "It allows the CPU to focus on other tasks", "is_correct": "false"},
+                    {"answer_id": 336, "text": "All of the above", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 85,
+                "text": "Why is secondary storage necessary in a computer system?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 337, "text": "Main memory is volatile and limited in size", "is_correct": "true"},
+                    {"answer_id": 338, "text": "It is faster than main memory", "is_correct": "false"},
+                    {"answer_id": 339, "text": "It provides temporary storage for programs", "is_correct": "false"},
+                    {"answer_id": 340, "text": "It is used for executing instructions", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 86,
+                "text": "What is the role of a device driver in the context of I/O operations?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 341, "text": "It directly controls the hardware devices", "is_correct": "false"},
+                    {"answer_id": 342, "text": "It translates I/O requests from the operating system into device-specific operations", "is_correct": "true"},
+                    {"answer_id": 343, "text": "It manages the CPU's interactions with memory", "is_correct": "false"},
+                    {"answer_id": 344, "text": "It handles high-speed data transfer between devices", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 87,
+                "text": "What is the primary advantage of a symmetric multiprocessor (SMP) system?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 345, "text": "It allows processors to be used equally, improving load balancing", "is_correct": "true"},
+                    {"answer_id": 346, "text": "It simplifies the programming model", "is_correct": "false"},
+                    {"answer_id": 347, "text": "It reduces the cost of system design", "is_correct": "false"},
+                    {"answer_id": 348, "text": "It provides better support for single-threaded applications", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 88,
+                "text": "In a clustered system, what does 'high-availability' refer to?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 349, "text": "The ability to add more storage on demand", "is_correct": "false"},
+                    {"answer_id": 350, "text": "The ability to maintain operation despite failures", "is_correct": "true"},
+                    {"answer_id": 351, "text": "The ability to perform high-speed computations", "is_correct": "false"},
+                    {"answer_id": 352, "text": "The ability to run on low power", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 89,
+                "text": "Why is the fetch/decode/execute cycle essential in CPU operations?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 353, "text": "It allows the CPU to process instructions systematically", "is_correct": "true"},
+                    {"answer_id": 354, "text": "It enables direct memory access", "is_correct": "false"},
+                    {"answer_id": 355, "text": "It manages the CPU's power consumption", "is_correct": "false"},
+                    {"answer_id": 356, "text": "It speeds up the overall processing time", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 90,
+                "text": "What is the purpose of the stack in a CPU's architecture?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 357, "text": "To store frequently accessed data for quick retrieval", "is_correct": "false"},
+                    {"answer_id": 358, "text": "To manage local variables and method calls", "is_correct": "true"},
+                    {"answer_id": 359, "text": "To handle direct memory access operations", "is_correct": "false"},
+                    {"answer_id": 360, "text": "To interface with I/O devices", "is_correct": "false"}
+                ]
+            }
+        ]
+    },
+    {
+        "quiz_id": 4,
+        "title": "Application Layer:",
+        "description": "Test your knowledge on the Application Layer!",
+        "questions":[
+            {
+                "question_id": 91,
+                "text": "What is the highest layer in the TCP/IP stack?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 361, "text": "Physical Layer", "is_correct": "false"},
+                    {"answer_id": 362, "text": "Transport Layer", "is_correct": "false"},
+                    {"answer_id": 363, "text": "Network Layer", "is_correct": "false"},
+                    {"answer_id": 364, "text": "Application Layer", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 92,
+                "text": "Which protocol is used for web communication?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 365, "text": "FTP", "is_correct": "false"},
+                    {"answer_id": 366, "text": "SMTP", "is_correct": "false"},
+                    {"answer_id": 367, "text": "HTTP", "is_correct": "true"},
+                    {"answer_id": 368, "text": "DNS", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 93,
+                "text": "Which protocol is used for sending emails?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 369, "text": "HTTP", "is_correct": "false"},
+                    {"answer_id": 370, "text": "SMTP", "is_correct": "true"},
+                    {"answer_id": 371, "text": "FTP", "is_correct": "false"},
+                    {"answer_id": 372, "text": "DNS", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 94,
+                "text": "What is the default port number for HTTP?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 373, "text": "21", "is_correct": "false"},
+                    {"answer_id": 374, "text": "25", "is_correct": "false"},
+                    {"answer_id": 375, "text": "80", "is_correct": "true"},
+                    {"answer_id": 376, "text": "443", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 95,
+                "text": "What does DNS stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 377, "text": "Domain Name System", "is_correct": "true"},
+                    {"answer_id": 378, "text": "Data Network System", "is_correct": "false"},
+                    {"answer_id": 379, "text": "Digital Network Service", "is_correct": "false"},
+                    {"answer_id": 380, "text": "Domain Network Service", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 96,
+                "text": "Which architecture involves clients and servers?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 381, "text": "P2P", "is_correct": "false"},
+                    {"answer_id": 382, "text": "Client-Server", "is_correct": "true"},
+                    {"answer_id": 383, "text": "Hybrid", "is_correct": "false"},
+                    {"answer_id": 384, "text": "Distributed", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 97,
+                "text": "What does SMTP stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 385, "text": "Simple Mail Transfer Protocol", "is_correct": "true"},
+                    {"answer_id": 386, "text": "Simple Mail Transmission Protocol", "is_correct": "false"},
+                    {"answer_id": 387, "text": "Secure Mail Transfer Protocol", "is_correct": "false"},
+                    {"answer_id": 388, "text": "Secure Mail Transmission Protocol", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 98,
+                "text": "What type of IP address does a server in a client-server architecture usually have?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 389, "text": "Dynamic IP address", "is_correct": "false"},
+                    {"answer_id": 390, "text": "Temporary IP address", "is_correct": "false"},
+                    {"answer_id": 391, "text": "Permanent IP address", "is_correct": "true"},
+                    {"answer_id": 392, "text": "Local IP address", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 99,
+                "text": "Which HTTP method is used to request data from a specified resource?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 393, "text": "POST", "is_correct": "false"},
+                    {"answer_id": 394, "text": "GET", "is_correct": "true"},
+                    {"answer_id": 395, "text": "PUT", "is_correct": "false"},
+                    {"answer_id": 396, "text": "DELETE", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 100,
+                "text": "What is the main purpose of a domain name in DNS?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 397, "text": "To identify the MAC address of a host", "is_correct": "false"},
+                    {"answer_id": 398, "text": "To translate human-readable names into IP addresses", "is_correct": "true"},
+                    {"answer_id": 399, "text": "To manage email delivery", "is_correct": "false"},
+                    {"answer_id": 400, "text": "To secure network communications", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 101,
+                "text": "Which transport protocol provides reliable data transfer for HTTP?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 401, "text": "UDP", "is_correct": "false"},
+                    {"answer_id": 402, "text": "TCP", "is_correct": "true"},
+                    {"answer_id": 403, "text": "ICMP", "is_correct": "false"},
+                    {"answer_id": 404, "text": "ARP", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 102,
+                "text": "In a P2P architecture, how do peers typically communicate?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 405, "text": "Through a central server", "is_correct": "false"},
+                    {"answer_id": 406, "text": "Directly with each other", "is_correct": "true"},
+                    {"answer_id": 407, "text": "Using a proxy server", "is_correct": "false"},
+                    {"answer_id": 408, "text": "Via DNS servers", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 103,
+                "text": "What is the function of a socket in network communication?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 409, "text": "To store network addresses", "is_correct": "false"},
+                    {"answer_id": 410, "text": "To manage hardware interfaces", "is_correct": "false"},
+                    {"answer_id": 411, "text": "To act as an endpoint for sending and receiving data", "is_correct": "true"},
+                    {"answer_id": 412, "text": "To translate domain names into IP addresses", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 104,
+                "text": "What is a common use of port 443?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 413, "text": "Sending emails", "is_correct": "false"},
+                    {"answer_id": 414, "text": "Secure web traffic (HTTPS)", "is_correct": "true"},
+                    {"answer_id": 415, "text": "File transfers", "is_correct": "false"},
+                    {"answer_id": 416, "text": "DNS queries", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 105,
+                "text": "Which of the following is a key characteristic of HTTP/1.1?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 417, "text": "Non-persistent connections", "is_correct": "false"},
+                    {"answer_id": 418, "text": "Persistent connections", "is_correct": "true"},
+                    {"answer_id": 419, "text": "Connectionless protocol", "is_correct": "false"},
+                    {"answer_id": 420, "text": "Designed for video streaming", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 106,
+                "text": "What is the purpose of the Mail Access Protocol?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 421, "text": "To send emails between mail servers", "is_correct": "false"},
+                    {"answer_id": 422, "text": "To retrieve emails from mail servers", "is_correct": "true"},
+                    {"answer_id": 423, "text": "To secure email communications", "is_correct": "false"},
+                    {"answer_id": 424, "text": "To translate email addresses", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 107,
+                "text": "Which DNS record type is used to map a hostname to an IP address?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 425, "text": "CNAME", "is_correct": "false"},
+                    {"answer_id": 426, "text": "MX", "is_correct": "false"},
+                    {"answer_id": 427, "text": "A", "is_correct": "true"},
+                    {"answer_id": 428, "text": "NS", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 108,
+                "text": "What does the 'GET' method do in an HTTP request?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 429, "text": "Submits data to be processed", "is_correct": "false"},
+                    {"answer_id": 430, "text": "Requests data from a specified resource", "is_correct": "true"},
+                    {"answer_id": 431, "text": "Deletes the specified resource", "is_correct": "false"},
+                    {"answer_id": 432, "text": "Establishes a tunnel to the server", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 109,
+                "text": "Which protocol is primarily used for resolving domain names to IP addresses?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 433, "text": "HTTP", "is_correct": "false"},
+                    {"answer_id": 434, "text": "SMTP", "is_correct": "false"},
+                    {"answer_id": 435, "text": "DNS", "is_correct": "true"},
+                    {"answer_id": 436, "text": "FTP", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 110,
+                "text": "What is a key advantage of the P2P architecture?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 437, "text": "Simplified management", "is_correct": "false"},
+                    {"answer_id": 438, "text": "Centralised control", "is_correct": "false"},
+                    {"answer_id": 439, "text": "Self-scalability", "is_correct": "true"},
+                    {"answer_id": 440, "text": "Fixed IP addresses for peers", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 111,
+                "text": "How does the DNS hierarchy improve scalability and reliability?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 441, "text": "By centralising all DNS queries to a single server", "is_correct": "false"},
+                    {"answer_id": 442, "text": "By distributing the database across multiple servers", "is_correct": "true"},
+                    {"answer_id": 443, "text": "By using a peer-to-peer architecture for DNS resolution", "is_correct": "false"},
+                    {"answer_id": 444, "text": "By caching all DNS records on client machines", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 112,
+                "text": "What is the role of the authoritative DNS server?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 445, "text": "To store the primary DNS records for a domain", "is_correct": "true"},
+                    {"answer_id": 446, "text": "To forward DNS queries to the root DNS server", "is_correct": "false"},
+                    {"answer_id": 447, "text": "To handle local DNS queries within an ISP", "is_correct": "false"},
+                    {"answer_id": 448, "text": "To cache DNS records for faster resolution", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 113,
+                "text": "Which component in the email system is responsible for storing incoming messages?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 449, "text": "SMTP server", "is_correct": "false"},
+                    {"answer_id": 450, "text": "Mailbox", "is_correct": "true"},
+                    {"answer_id": 451, "text": "User agent", "is_correct": "false"},
+                    {"answer_id": 452, "text": "Mail queue", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 114,
+                "text": "What is a primary benefit of using persistent HTTP connections?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 453, "text": "Reduced latency for multiple requests", "is_correct": "true"},
+                    {"answer_id": 454, "text": "Enhanced security for data transmission", "is_correct": "false"},
+                    {"answer_id": 455, "text": "Simplified server-side processing", "is_correct": "false"},
+                    {"answer_id": 456, "text": "Lower memory usage on the client side", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 115,
+                "text": "In the context of HTTP, what does 'stateless' mean?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 457, "text": "The server maintains the state of each client session", "is_correct": "false"},
+                    {"answer_id": 458, "text": "The server does not maintain any information about past client requests", "is_correct": "true"},
+                    {"answer_id": 459, "text": "The client stores all state information", "is_correct": "false"},
+                    {"answer_id": 460, "text": "The server uses cookies to track client sessions", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 116,
+                "text": "Why is TCP preferred over UDP for HTTP communication?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 461, "text": "TCP is faster than UDP", "is_correct": "false"},
+                    {"answer_id": 462, "text": "TCP provides reliable data transfer", "is_correct": "true"},
+                    {"answer_id": 463, "text": "UDP does not support large data transfers", "is_correct": "false"},
+                    {"answer_id": 464, "text": "UDP is not compatible with HTTP", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 117,
+                "text": "What is a significant drawback of using non-persistent HTTP connections?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 465, "text": "Increased server processing time", "is_correct": "false"},
+                    {"answer_id": 466, "text": "Higher latency due to multiple TCP handshakes", "is_correct": "true"},
+                    {"answer_id": 467, "text": "Greater security risks", "is_correct": "false"},
+                    {"answer_id": 468, "text": "Incompatibility with modern browsers", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 118,
+                "text": "Which SMTP command is used to start the transfer of the message body?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 469, "text": "HELO", "is_correct": "false"},
+                    {"answer_id": 470, "text": "MAIL FROM", "is_correct": "false"},
+                    {"answer_id": 471, "text": "RCPT TO", "is_correct": "false"},
+                    {"answer_id": 472, "text": "DATA", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 119,
+                "text": "What does a Type MX DNS record specify?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 473, "text": "The IP address of a host", "is_correct": "false"},
+                    {"answer_id": 474, "text": "The mail server for a domain", "is_correct": "true"},
+                    {"answer_id": 475, "text": "The canonical name for an alias", "is_correct": "false"},
+                    {"answer_id": 476, "text": "The authoritative name server for a domain", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 120,
+                "text": "Why might an organisation prefer to use IMAP over POP3 for email retrieval?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 477, "text": "IMAP is more secure than POP3", "is_correct": "false"},
+                    {"answer_id": 478, "text": "IMAP keeps all messages on the server, allowing access from multiple devices", "is_correct": "true"},
+                    {"answer_id": 479, "text": "IMAP is faster than POP3", "is_correct": "false"},
+                    {"answer_id": 480, "text": "IMAP allows for better spam filtering", "is_correct": "false"}
+                ]
+            }
+        ]
+    },
+    {
+        "quiz_id": 5,
+        "title": "Transport Layer",
+        "description": "Test your knowledge on the Transport Layer!",
+        "questions":[
+            {
+                "question_id": 121,
+                "text": "What does UDP stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 481, "text": "User Datagram Protocol", "is_correct": "true"},
+                    {"answer_id": 482, "text": "Uniform Data Protocol", "is_correct": "false"},
+                    {"answer_id": 483, "text": "Unified Datagram Protocol", "is_correct": "false"},
+                    {"answer_id": 484, "text": "User Data Protocol", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 122,
+                "text": "What does TCP stand for?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 485, "text": "Transmission Control Protocol", "is_correct": "true"},
+                    {"answer_id": 486, "text": "Transport Control Protocol", "is_correct": "false"},
+                    {"answer_id": 487, "text": "Transfer Control Protocol", "is_correct": "false"},
+                    {"answer_id": 488, "text": "Transaction Control Protocol", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 123,
+                "text": "Which layer provides logical communication between application processes running on different hosts?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 489, "text": "Physical Layer", "is_correct": "false"},
+                    {"answer_id": 490, "text": "Link Layer", "is_correct": "false"},
+                    {"answer_id": 491, "text": "Network Layer", "is_correct": "false"},
+                    {"answer_id": 492, "text": "Transport Layer", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 124,
+                "text": "Which transport protocol provides reliable, in-order delivery?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 493, "text": "UDP", "is_correct": "false"},
+                    {"answer_id": 494, "text": "IP", "is_correct": "false"},
+                    {"answer_id": 495, "text": "TCP", "is_correct": "true"},
+                    {"answer_id": 496, "text": "HTTP", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 125,
+                "text": "Which transport protocol is connectionless and provides best-effort delivery?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 497, "text": "TCP", "is_correct": "false"},
+                    {"answer_id": 498, "text": "UDP", "is_correct": "true"},
+                    {"answer_id": 499, "text": "FTP", "is_correct": "false"},
+                    {"answer_id": 500, "text": "SMTP", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 126,
+                "text": "What is the primary purpose of a port number in networking?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 501, "text": "To identify the IP address of a host", "is_correct": "false"},
+                    {"answer_id": 502, "text": "To identify a specific process or service on a host", "is_correct": "true"},
+                    {"answer_id": 503, "text": "To encrypt data", "is_correct": "false"},
+                    {"answer_id": 504, "text": "To route data between networks", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 127,
+                "text": "Which protocol uses port 80 by default?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 505, "text": "FTP", "is_correct": "false"},
+                    {"answer_id": 506, "text": "SMTP", "is_correct": "false"},
+                    {"answer_id": 507, "text": "HTTP", "is_correct": "true"},
+                    {"answer_id": 508, "text": "DNS", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 128,
+                "text": "Which layer is responsible for multiplexing and demultiplexing in networking?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 509, "text": "Application Layer", "is_correct": "false"},
+                    {"answer_id": 510, "text": "Transport Layer", "is_correct": "true"},
+                    {"answer_id": 511, "text": "Network Layer", "is_correct": "false"},
+                    {"answer_id": 512, "text": "Link Layer", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 129,
+                "text": "What is the size of the UDP header?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 513, "text": "8 bytes", "is_correct": "true"},
+                    {"answer_id": 514, "text": "16 bytes", "is_correct": "false"},
+                    {"answer_id": 515, "text": "20 bytes", "is_correct": "false"},
+                    {"answer_id": 516, "text": "32 bytes", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 130,
+                "text": "Which field in a TCP segment header is used to acknowledge the receipt of data?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 517, "text": "Sequence Number", "is_correct": "false"},
+                    {"answer_id": 518, "text": "Source Port", "is_correct": "false"},
+                    {"answer_id": 519, "text": "Acknowledgment Number", "is_correct": "true"},
+                    {"answer_id": 520, "text": "Destination Port", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 131,
+                "text": "Which transport protocol is typically used for streaming multimedia applications?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 521, "text": "TCP", "is_correct": "false"},
+                    {"answer_id": 522, "text": "FTP", "is_correct": "false"},
+                    {"answer_id": 523, "text": "SMTP", "is_correct": "false"},
+                    {"answer_id": 524, "text": "UDP", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 132,
+                "text": "What does a TCP three-way handshake involve?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 525, "text": "SYN, ACK, SYN-ACK", "is_correct": "false"},
+                    {"answer_id": 526, "text": "SYN, SYN-ACK, ACK", "is_correct": "true"},
+                    {"answer_id": 527, "text": "ACK, SYN-ACK, SYN", "is_correct": "false"},
+                    {"answer_id": 528, "text": "SYN-ACK, SYN, ACK", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 133,
+                "text": "Which protocol uses the 'best effort' delivery model?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 529, "text": "TCP", "is_correct": "false"},
+                    {"answer_id": 530, "text": "UDP", "is_correct": "true"},
+                    {"answer_id": 531, "text": "HTTP", "is_correct": "false"},
+                    {"answer_id": 532, "text": "FTP", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 134,
+                "text": "What is the primary function of the TCP flow control mechanism?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 533, "text": "To ensure packets arrive in order", "is_correct": "false"},
+                    {"answer_id": 534, "text": "To prevent the sender from overwhelming the receiver", "is_correct": "true"},
+                    {"answer_id": 535, "text": "To encrypt data during transmission", "is_correct": "false"},
+                    {"answer_id": 536, "text": "To verify the integrity of data", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 135,
+                "text": "What is multiplexing in the context of the transport layer?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 537, "text": "Combining multiple data streams into one", "is_correct": "true"},
+                    {"answer_id": 538, "text": "Splitting data into smaller segments", "is_correct": "false"},
+                    {"answer_id": 539, "text": "Directing data to the correct application", "is_correct": "false"},
+                    {"answer_id": 540, "text": "Ensuring data integrity", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 136,
+                "text": "Which type of multiplexing is used by TCP?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 541, "text": "Time Division Multiplexing (TDM)", "is_correct": "false"},
+                    {"answer_id": 542, "text": "Frequency Division Multiplexing (FDM)", "is_correct": "false"},
+                    {"answer_id": 543, "text": "Port-based multiplexing", "is_correct": "true"},
+                    {"answer_id": 544, "text": "Wave Division Multiplexing (WDM)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 137,
+                "text": "What mechanism does UDP use to detect errors in transmitted segments?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 545, "text": "Checksum", "is_correct": "true"},
+                    {"answer_id": 546, "text": "Sequence Number", "is_correct": "false"},
+                    {"answer_id": 547, "text": "Acknowledgment Number", "is_correct": "false"},
+                    {"answer_id": 548, "text": "Flow Control", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 138,
+                "text": "Which field in a UDP segment helps to identify the receiving application?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 549, "text": "Source Port", "is_correct": "false"},
+                    {"answer_id": 550, "text": "Destination Port", "is_correct": "true"},
+                    {"answer_id": 551, "text": "Length", "is_correct": "false"},
+                    {"answer_id": 552, "text": "Checksum", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 139,
+                "text": "How does TCP handle segment retransmission in case of packet loss?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 553, "text": "Using the checksum", "is_correct": "false"},
+                    {"answer_id": 554, "text": "Using sequence numbers and acknowledgment numbers", "is_correct": "true"},
+                    {"answer_id": 555, "text": "Using flow control", "is_correct": "false"},
+                    {"answer_id": 556, "text": "Using encryption", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 140,
+                "text": "What is the primary difference between TCP and UDP in terms of reliability?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 557, "text": "TCP is reliable, UDP is not", "is_correct": "true"},
+                    {"answer_id": 558, "text": "UDP is reliable, TCP is not", "is_correct": "false"},
+                    {"answer_id": 559, "text": "Both are equally reliable", "is_correct": "false"},
+                    {"answer_id": 560, "text": "Neither provide reliability", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 141,
+                "text": "What additional mechanism does RDT 3.0 introduce to handle packet loss?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 561, "text": "Sequence numbers", "is_correct": "false"},
+                    {"answer_id": 562, "text": "Acknowledgments", "is_correct": "false"},
+                    {"answer_id": 563, "text": "Countdown timer", "is_correct": "true"},
+                    {"answer_id": 564, "text": "Checksum", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 142,
+                "text": "How does TCP's fast retransmit mechanism improve performance?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 565, "text": "By reducing the size of the segments", "is_correct": "false"},
+                    {"answer_id": 566, "text": "By retransmitting the segment before the timer expires if duplicate ACKs are received", "is_correct": "true"},
+                    {"answer_id": 567, "text": "By increasing the window size", "is_correct": "false"},
+                    {"answer_id": 568, "text": "By reducing the need for acknowledgments", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 143,
+                "text": "What is the purpose of the window size parameter in TCP?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 569, "text": "To control the flow of data", "is_correct": "true"},
+                    {"answer_id": 570, "text": "To encrypt the data", "is_correct": "false"},
+                    {"answer_id": 571, "text": "To verify data integrity", "is_correct": "false"},
+                    {"answer_id": 572, "text": "To manage port numbers", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 144,
+                "text": "What happens during the SYN flooding attack in the context of TCP?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 573, "text": "Multiple SYN requests are sent to overwhelm the server", "is_correct": "true"},
+                    {"answer_id": 574, "text": "Multiple ACKs are sent to confuse the server", "is_correct": "false"},
+                    {"answer_id": 575, "text": "Multiple FIN requests are sent to close the connection", "is_correct": "false"},
+                    {"answer_id": 576, "text": "Multiple RST requests are sent to reset the connection", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 145,
+                "text": "How does TCP ensure data is delivered in the correct order?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 577, "text": "By using port numbers", "is_correct": "false"},
+                    {"answer_id": 578, "text": "By using sequence numbers", "is_correct": "true"},
+                    {"answer_id": 579, "text": "By using checksums", "is_correct": "false"},
+                    {"answer_id": 580, "text": "By using timers", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 146,
+                "text": "Which transport protocol is typically used for DNS queries?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 581, "text": "TCP", "is_correct": "false"},
+                    {"answer_id": 582, "text": "FTP", "is_correct": "false"},
+                    {"answer_id": 583, "text": "SMTP", "is_correct": "false"},
+                    {"answer_id": 584, "text": "UDP", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 147,
+                "text": "What is the key difference between TCP and UDP multiplexing?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 585, "text": "TCP uses connection-oriented multiplexing; UDP uses connectionless multiplexing", "is_correct": "true"},
+                    {"answer_id": 586, "text": "TCP uses port numbers; UDP does not", "is_correct": "false"},
+                    {"answer_id": 587, "text": "UDP uses sequence numbers; TCP does not", "is_correct": "false"},
+                    {"answer_id": 588, "text": "TCP uses a checksum; UDP does not", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 148,
+                "text": "In TCP, what does the sequence number represent?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 589, "text": "The total number of segments sent", "is_correct": "false"},
+                    {"answer_id": 590, "text": "The byte stream number of the first byte in the segment", "is_correct": "true"},
+                    {"answer_id": 591, "text": "The port number of the destination", "is_correct": "false"},
+                    {"answer_id": 592, "text": "The total size of the segment", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 149,
+                "text": "Why does UDP have a smaller header size compared to TCP?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 593, "text": "UDP does not provide reliability, ordering, or flow control", "is_correct": "true"},
+                    {"answer_id": 594, "text": "UDP does not use port numbers", "is_correct": "false"},
+                    {"answer_id": 595, "text": "UDP does not use IP addresses", "is_correct": "false"},
+                    {"answer_id": 596, "text": "UDP does not use checksums", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 150,
+                "text": "What is the purpose of the TCP three-way handshake?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 597, "text": "To establish a connection and synchronize sequence numbers", "is_correct": "true"},
+                    {"answer_id": 598, "text": "To encrypt data", "is_correct": "false"},
+                    {"answer_id": 599, "text": "To terminate a connection", "is_correct": "false"},
+                    {"answer_id": 600, "text": "To multiplex data streams", "is_correct": "false"}
+                ]
+            }
+        ]
+    },
+    {
+        "quiz_id": 6,
+        "title": "Binary trees",
+        "description": "Test your knowledge on Binary trees!",
+        "questions":[
+            {
+                "question_id": 151,
+                "text": "What is a binary tree?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 601, "text": "A tree with each node having up to three children", "is_correct": "false"},
+                    {"answer_id": 602, "text": "A tree with each node having up to two children", "is_correct": "true"},
+                    {"answer_id": 603, "text": "A tree with each node having one child", "is_correct": "false"},
+                    {"answer_id": 604, "text": "A tree with no children", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 152,
+                "text": "In a binary search tree, where are nodes with values less than the parent node placed?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 605, "text": "Right child", "is_correct": "false"},
+                    {"answer_id": 606, "text": "Left child", "is_correct": "true"},
+                    {"answer_id": 607, "text": "Root node", "is_correct": "false"},
+                    {"answer_id": 608, "text": "Leaf node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 153,
+                "text": "Which of the following is an application of a binary search tree?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 609, "text": "Storing unsorted data", "is_correct": "false"},
+                    {"answer_id": 610, "text": "Organizing a file system", "is_correct": "true"},
+                    {"answer_id": 611, "text": "Network protocols", "is_correct": "false"},
+                    {"answer_id": 612, "text": "Weather prediction", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 154,
+                "text": "In a binary search tree, which traversal method visits nodes in sorted order?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 613, "text": "Preorder", "is_correct": "false"},
+                    {"answer_id": 614, "text": "Inorder", "is_correct": "true"},
+                    {"answer_id": 615, "text": "Postorder", "is_correct": "false"},
+                    {"answer_id": 616, "text": "Level order", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 155,
+                "text": "What is the time complexity of searching in a balanced binary search tree?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 617, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 618, "text": "O(n^2)", "is_correct": "false"},
+                    {"answer_id": 619, "text": "O(log n)", "is_correct": "true"},
+                    {"answer_id": 620, "text": "O(1)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 156,
+                "text": "Which node is the root in a binary search tree?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 621, "text": "The first node inserted", "is_correct": "true"},
+                    {"answer_id": 622, "text": "The last node inserted", "is_correct": "false"},
+                    {"answer_id": 623, "text": "The middle node", "is_correct": "false"},
+                    {"answer_id": 624, "text": "The largest node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 157,
+                "text": "What is the height of a tree?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 625, "text": "Number of edges", "is_correct": "false"},
+                    {"answer_id": 626, "text": "Number of nodes", "is_correct": "false"},
+                    {"answer_id": 627, "text": "Number of leaves", "is_correct": "false"},
+                    {"answer_id": 628, "text": "Length of the longest path from root to a leaf", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 158,
+                "text": "Which traversal method visits the root node first?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 629, "text": "Inorder", "is_correct": "false"},
+                    {"answer_id": 630, "text": "Preorder", "is_correct": "true"},
+                    {"answer_id": 631, "text": "Postorder", "is_correct": "false"},
+                    {"answer_id": 632, "text": "Level order", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 159,
+                "text": "What defines a balanced tree?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 633, "text": "All levels have the same number of nodes", "is_correct": "false"},
+                    {"answer_id": 634, "text": "Each node has two children", "is_correct": "false"},
+                    {"answer_id": 635, "text": "The height of left and right subtrees of any node differ by at most one", "is_correct": "true"},
+                    {"answer_id": 636, "text": "The tree has no leaf nodes", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 160,
+                "text": "What type of tree has nodes with values only greater than the root on the right?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 637, "text": "AVL Tree", "is_correct": "false"},
+                    {"answer_id": 638, "text": "Red-Black Tree", "is_correct": "false"},
+                    {"answer_id": 639, "text": "Binary Search Tree", "is_correct": "true"},
+                    {"answer_id": 640, "text": "Binary Tree", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 161,
+                "text": "Which operation on a binary search tree can cause it to become unbalanced?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 641, "text": "Search", "is_correct": "false"},
+                    {"answer_id": 642, "text": "Insertion", "is_correct": "true"},
+                    {"answer_id": 643, "text": "Traversal", "is_correct": "false"},
+                    {"answer_id": 644, "text": "Printing", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 162,
+                "text": "What is the time complexity for inserting an element into a binary search tree in the worst case?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 645, "text": "O(n)", "is_correct": "true"},
+                    {"answer_id": 646, "text": "O(log n)", "is_correct": "false"},
+                    {"answer_id": 647, "text": "O(1)", "is_correct": "false"},
+                    {"answer_id": 648, "text": "O(n^2)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 163,
+                "text": "Which case in deletion involves finding the left-most node of the right subtree?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 649, "text": "Deleting a leaf node", "is_correct": "false"},
+                    {"answer_id": 650, "text": "Deleting a node with one child", "is_correct": "false"},
+                    {"answer_id": 651, "text": "Deleting a node with two children", "is_correct": "true"},
+                    {"answer_id": 652, "text": "Deleting the root node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 164,
+                "text": "In a binary search tree, which traversal method is used to get the reverse sorted order of elements?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 653, "text": "Inorder", "is_correct": "false"},
+                    {"answer_id": 654, "text": "Preorder", "is_correct": "false"},
+                    {"answer_id": 655, "text": "Postorder", "is_correct": "false"},
+                    {"answer_id": 656, "text": "Reverse Inorder", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 165,
+                "text": "Which tree traversal algorithm is used by search operations in a BST?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 657, "text": "Depth-First Search", "is_correct": "true"},
+                    {"answer_id": 658, "text": "Breadth-First Search", "is_correct": "false"},
+                    {"answer_id": 659, "text": "Binary Search", "is_correct": "false"},
+                    {"answer_id": 660, "text": "Level Order Traversal", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 166,
+                "text": "What does the leaf node of a tree signify?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 661, "text": "A node with one child", "is_correct": "false"},
+                    {"answer_id": 662, "text": "A node with two children", "is_correct": "false"},
+                    {"answer_id": 663, "text": "A node with no children", "is_correct": "true"},
+                    {"answer_id": 664, "text": "The root node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 167,
+                "text": "What is a perfectly balanced binary tree?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 665, "text": "A tree where each node has the same number of children", "is_correct": "false"},
+                    {"answer_id": 666, "text": "A tree where all levels are fully filled", "is_correct": "true"},
+                    {"answer_id": 667, "text": "A tree where the height of left and right subtrees of any node differ by at most one", "is_correct": "false"},
+                    {"answer_id": 668, "text": "A tree where all leaf nodes are at the same level", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 168,
+                "text": "In a BST, what is the maximum number of children a node can have?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 669, "text": "1", "is_correct": "false"},
+                    {"answer_id": 670, "text": "2", "is_correct": "true"},
+                    {"answer_id": 671, "text": "3", "is_correct": "false"},
+                    {"answer_id": 672, "text": "4", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 169,
+                "text": "Which type of tree traversal is best suited for evaluating arithmetic expressions?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 673, "text": "Preorder", "is_correct": "false"},
+                    {"answer_id": 674, "text": "Inorder", "is_correct": "false"},
+                    {"answer_id": 675, "text": "Postorder", "is_correct": "true"},
+                    {"answer_id": 676, "text": "Level Order", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 170,
+                "text": "Which of the following is true for a node with two children in a BST?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 677, "text": "It can be deleted without reordering", "is_correct": "false"},
+                    {"answer_id": 678, "text": "Its in-order predecessor is the maximum value node in its left subtree.", "is_correct": "false"},
+                    {"answer_id": 679, "text": "Its in-order successor is the minimum value node in its right subtree", "is_correct": "false"},
+                    {"answer_id": 680, "text": "Both B and C are correct", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 171,
+                "text": "Which is not a valid property of a binary search tree?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 681, "text": "Left subtree has nodes with values less than the root", "is_correct": "false"},
+                    {"answer_id": 682, "text": "Right subtree has nodes with values greater than the root", "is_correct": "false"},
+                    {"answer_id": 683, "text": "In-order traversal gives nodes in non-decreasing order", "is_correct": "false"},
+                    {"answer_id": 684, "text": "A node with only one child has its child as a leaf node", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 172,
+                "text": "What is the primary advantage of using a binary search tree over a linked list?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 685, "text": "Faster deletion", "is_correct": "false"},
+                    {"answer_id": 686, "text": "Easier implementation", "is_correct": "false"},
+                    {"answer_id": 687, "text": "Balanced height", "is_correct": "false"},
+                    {"answer_id": 688, "text": "Faster search", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 173,
+                "text": "What is the average-case time complexity for searching in a binary search tree?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 689, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 690, "text": "O(log n)", "is_correct": "true"},
+                    {"answer_id": 691, "text": "O(1)", "is_correct": "false"},
+                    {"answer_id": 692, "text": "O(n log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 174,
+                "text": "In which scenario does a BST degenerate into a linked list?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 693, "text": "When nodes are inserted in random order", "is_correct": "false"},
+                    {"answer_id": 694, "text": "When nodes are inserted in increasing order", "is_correct": "true"},
+                    {"answer_id": 695, "text": "When nodes are deleted randomly", "is_correct": "false"},
+                    {"answer_id": 696, "text": "When nodes have only one child", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 175,
+                "text": "If a BST is traversed in pre-order, which of the following is true?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 697, "text": "Root is visited first", "is_correct": "true"},
+                    {"answer_id": 698, "text": "Leaf nodes are visited first", "is_correct": "false"},
+                    {"answer_id": 699, "text": "Nodes are visited in sorted order", "is_correct": "false"},
+                    {"answer_id": 700, "text": "Nodes are visited level by level", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 176,
+                "text": "What is the time complexity of deleting a node with two children in a BST?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 701, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 702, "text": "O(log n)", "is_correct": "true"},
+                    {"answer_id": 703, "text": "O(n log n)", "is_correct": "false"},
+                    {"answer_id": 704, "text": "O(1)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 177,
+                "text": "What distinguishes a binary search tree from other binary trees?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 705, "text": "Nodes can have up to two children", "is_correct": "false"},
+                    {"answer_id": 706, "text": "It has a root node", "is_correct": "false"},
+                    {"answer_id": 707, "text": "All nodes are connected by edges", "is_correct": "false"},
+                    {"answer_id": 708, "text": "It maintains a sorted order property", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 178,
+                "text": "When deleting a node with two children in a BST, which node typically replaces it?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 709, "text": "Left child", "is_correct": "false"},
+                    {"answer_id": 710, "text": "Right child", "is_correct": "false"},
+                    {"answer_id": 711, "text": "In-order predecessor or successor", "is_correct": "true"},
+                    {"answer_id": 712, "text": "Root node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 179,
+                "text": "Which of the following is a characteristic of a balanced binary search tree?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 713, "text": "All leaf nodes are at the same depth", "is_correct": "false"},
+                    {"answer_id": 714, "text": "The height difference between left and right subtrees is no more than one", "is_correct": "true"},
+                    {"answer_id": 715, "text": "It contains only unique values", "is_correct": "false"},
+                    {"answer_id": 716, "text": "It does not have a root node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 180,
+                "text": "How does a BST handle duplicate values?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 717, "text": "Inserts all duplicates in the right subtree", "is_correct": "false"},
+                    {"answer_id": 718, "text": "Inserts all duplicates in the left subtree", "is_correct": "false"},
+                    {"answer_id": 719, "text": "Does not allow duplicates", "is_correct": "true"},
+                    {"answer_id": 720, "text": "Inserts duplicates randomly", "is_correct": "false"}
+                ]
+            }
+        ]
+    },
+    {
+        "quiz_id": 7,
+        "title": "Conceptual & Logical Design",
+        "description": "Test your knowledge on Conceptual & Logical Design!",
+        "questions":[        
+            {
+                "question_id": 181,
+                "text": "What is a database?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 721, "text": "A collection of scattered data", "is_correct": "false"},
+                    {"answer_id": 722, "text": "A large collection of persistent data", "is_correct": "true"},
+                    {"answer_id": 723, "text": "A type of application software", "is_correct": "false"},
+                    {"answer_id": 724, "text": "A programming language", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 182,
+                "text": "Who invented the concept of relational databases?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 725, "text": "Larry Page", "is_correct": "false"},
+                    {"answer_id": 726, "text": "Bill Gates", "is_correct": "false"},
+                    {"answer_id": 727, "text": "Edgar Codd", "is_correct": "true"},
+                    {"answer_id": 728, "text": "Steve Jobs", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 183,
+                "text": "Which of the following is a primary feature of a database?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 729, "text": "Inconsistent data storage", "is_correct": "false"},
+                    {"answer_id": 730, "text": "Accessible from a single application only", "is_correct": "false"},
+                    {"answer_id": 731, "text": "Concurrently accessible and modifiable", "is_correct": "true"},
+                    {"answer_id": 732, "text": "Volatile data storage", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 184,
+                "text": "What does ER stand for in ER Diagram?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 733, "text": "Entity-Relation", "is_correct": "false"},
+                    {"answer_id": 734, "text": "Entity-Relationship", "is_correct": "true"},
+                    {"answer_id": 735, "text": "Entity-Resource", "is_correct": "false"},
+                    {"answer_id": 736, "text": "Entity-Retainer", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 185,
+                "text": "What symbol is typically used to represent entities in an ER diagram?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 737, "text": "Circle", "is_correct": "false"},
+                    {"answer_id": 738, "text": "Diamond", "is_correct": "false"},
+                    {"answer_id": 739, "text": "Rectangle", "is_correct": "true"},
+                    {"answer_id": 740, "text": "Triangle", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 186,
+                "text": "Which SQL command is used to create a table?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 741, "text": "INSERT", "is_correct": "false"},
+                    {"answer_id": 742, "text": "CREATE TABLE", "is_correct": "true"},
+                    {"answer_id": 743, "text": "SELECT", "is_correct": "false"},
+                    {"answer_id": 744, "text": "UPDATE", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 187,
+                "text": "What is the primary key in a table?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 745, "text": "A field that can be null", "is_correct": "false"},
+                    {"answer_id": 746, "text": "A field that uniquely identifies each record", "is_correct": "true"},
+                    {"answer_id": 747, "text": "A field that contains duplicate values", "is_correct": "false"},
+                    {"answer_id": 748, "text": "A field that stores primary data", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 188,
+                "text": "What does 'VARCHAR' stand for in SQL?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 749, "text": "Variable Character", "is_correct": "true"},
+                    {"answer_id": 750, "text": "Virtual Character", "is_correct": "false"},
+                    {"answer_id": 751, "text": "Verified Character", "is_correct": "false"},
+                    {"answer_id": 752, "text": "Vector Character", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 189,
+                "text": "Which command is used to delete a table in SQL?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 753, "text": "REMOVE TABLE", "is_correct": "false"},
+                    {"answer_id": 754, "text": "DELETE TABLE", "is_correct": "false"},
+                    {"answer_id": 755, "text": "DROP TABLE", "is_correct": "true"},
+                    {"answer_id": 756, "text": "CLEAR TABLE", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 190,
+                "text": "What is a 'tuple' in a relational database?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 757, "text": "A column", "is_correct": "false"},
+                    {"answer_id": 758, "text": "A row", "is_correct": "true"},
+                    {"answer_id": 759, "text": "A field", "is_correct": "false"},
+                    {"answer_id": 760, "text": "A table", "is_correct": "false"}
+                ]
+            }
+            
+        ]
+        
+    ]
+            
+
+
+        ]
+            
+
+        ]
+                
+
+
+
+
+            }
+
+
             ]
             
 
 
-
-
             ]
             
-
-
-
-
-
-
-        ],
-
+        ]
+        
     }
+    
 ]
+        
+
+
+
+        ]
