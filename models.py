@@ -11,9 +11,10 @@ db = database.DB
 # password_hash: The hashed password for secure authentication.
 class userRegister(UserMixin, db.Model):
     __tablename__ = 'users'
-    user_id = db.Column(db.String(64), primary_key=True, unique=True, nullable=False)
+    user_id = db.Column(db.String(64), primary_key=True, nullable=False, unique=True, index=True)
     email = db.Column(db.String(64), nullable=False, unique=True, index=True)
     password_hash = db.Column(db.String(64), nullable=False)
+    difficulty_level = db.Column(db.Integer, nullable=False)
 
     def hashPassword(self):
         self.password_hash = generate_password_hash(self.password_hash)
@@ -24,9 +25,13 @@ class userRegister(UserMixin, db.Model):
     def get_id(self):
         return str(self.user_id)
     
+    def difficulty_level_status(self):
+        return self.difficulty_level
+    
 @login.user_loader
 def load_user(user_id):
     return userRegister.query.get(user_id)
+
 
 
 
