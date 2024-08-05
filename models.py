@@ -71,7 +71,7 @@ def load_user(user_id):
 # is_correct: A boolean indicating if this answer is correct
 class quizResults(db.Model):
     __tablename__ = 'quizresults'
-    user_id = db.Column(db.String(64), primary_key=True, nullable=False, unique=True, index=True)
+    user_id = db.Column(db.String(64),primary_key=True, nullable=False, unique=True, index=True)
     results = db.Column(db.String(256), nullable=False)
     quiz_title = db.Column(db.String(256), nullable=False)
     quiz_id = db.Column(db.Integer, nullable=False)
