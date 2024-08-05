@@ -4,7 +4,7 @@ import json
 
 QUIZZES = quizzes.QUIZZES #Holds the list of quizzes imported from the quizzes.py
 
-NON_ADAPTIVE_LIMIT = 1 # max no of questions that can be asked in non-adaptive
+NON_ADAPTIVE_LIMIT = 5 # max no of questions that can be asked in non-adaptive
 
 
 
