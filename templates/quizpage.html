@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+    <style>
+        /* Ensure consistent typography and hierarchy */
+        body {
+            font-family: "consolas", sans-serif;
+            /* Gradient background with fallback color */
+            background: linear-gradient(to right, #aee4ed, #5fb7cf, #5a79c8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            flex-direction: column;
+        }
+        
+        /* Main and scoreboard containers styling */
+        .quiz-container,
+        .scoreboard-container {
+            background: #fff;
+            border-radius: 20px;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            width: 90%;
+            max-width: 600px; /* Adjust maximum width */
+            padding: 30px;
+            text-align: center;
+            margin: 30px auto; /* Center and add margin on top and bottom */
+            overflow-y: auto; /* Ensure the container can scroll if content overflows */
+            position: relative; /* Ensure relative positioning */
+        }
+        
+        /* Header section with question number, timer, and score */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        /* Styling for question number, timer, and score elements */
+        #question-number,
+        #timer,
+        #score {
+            font-size: 1.2em;
+            color: #777;
+        }
+        
+        /* Timer element with color transition */
+        #timer {
+            color: #e74c3c; /* Initial color */
+            transition: color 0.3s ease-in-out; /* Smooth transition for color change */
+        }
+        
+        /* Progress bar container */
+        .progress-container {
+            width: 100%;
+            background: #f2f2f2;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 30px 0;
+        }
+        
+        /* Progress bar with width transition */
+        .progress-bar {
+            width: 0;
+            height: 10px;
+            background: #0acf83;
+            transition: width 0.5s ease-in-out;
+        }
+        
+        /* Main section with question text */
+        main {
+            margin: 30px 0;
+        }
+        
+        /* Question text styling */
+        h2 {
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+        
+        /* Options container */
+        .options {
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        /* Styling for answer options */
+        label {
+            background: #f8f9fa;
+            border-radius: 12px;
+            padding: 15px;
+            margin: 10px 0;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.6s, box-shadow 0.3s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Radio input styling */
+        input[type="radio"] {
+            margin-right: 12px;
+        }
+        
+        /* Footer section with next button */
+        footer {
+            display: flex;
+            justify-content: center;
+        }
+        
+        /* Next and restart buttons styling */
+        #next-button,
+        #restart-button {
+            background: #0acf83;
+            color: #fff;
+            border: none;
+            border-radius: 12px;
+            padding: 15px 30px;
+            margin-top: 15px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Hover effect for options */
+        .options label:hover {
+            background-color: #e0e0e0; /* Lighter background on hover */
+            transform: translateY(-3px); /* Move up slightly on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+        }
+        
+        /* Hover effect for progress bar */
+        .progress-bar:hover {
+            background-color: #09ca73; /* Brighter color on hover */
+        }
+        
+        /* Hover effect for next and restart buttons */
+        #next-button:hover,
+        #restart-button:hover {
+            background-color: #09ca73; /* Brighter color on hover */
+            transform: scale(1.05); /* Slightly larger scale on hover */
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Slightly larger shadow on hover */
+        }
+        
+        /* Scoreboard container and table styling */
+        .scoreboard-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        /* Scoreboard table header and cell styling */
+        .scoreboard-container th,
+        .scoreboard-container td {
+            border: 1px solid #ddd;
+            padding: 12px;
+        }
+        
+        .scoreboard-container th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        
+        /* Question text and options animation transitions */
+        #question-text {
+            transition: opacity 0.4s ease-in-out; /* Smooth opacity transition */
+        }
+        
+        .options label:hover {
+            opacity: 0.9; /* Slight opacity decrease on hover */
+        }
+        
+        /* Responsive styles */
+        @media screen and (max-width: 768px) {
+            .quiz-container,
+            .scoreboard-container {
+            width: 90%; /* Adjust width for smaller screens */
+            max-width: 90%; /* Ensure maximum width doesn't exceed screen size */
+            }
+        
+            h2 {
+            font-size: 1.8em; /* Adjust font size */
+            }
+        
+            #next-button,
+            #restart-button {
+            padding: 12px 24px; /* Adjust button padding */
+            font-size: 1em; /* Adjust button font size */
+            }
+        
+            .options label {
+            padding: 12px; /* Smaller padding for options */
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .quiz-container,
+            .scoreboard-container {
+            padding: 20px; /* Adjust padding for smaller screens */
+            }
+        
+            h2 {
+            font-size: 1.6em; /* Further adjust font size */
+            }
+        
+            #next-button,
+            #restart-button {
+            padding: 10px 20px; /* Adjust button padding */
+            font-size: 0.9em; /* Adjust button font size */
+            }
+        
+            .options label {
+            padding: 12px; /* Smaller padding for options */
+            }
+        }
+        
+        @media screen and (max-width: 450px) {
+            .quiz-container,
+            .scoreboard-container {
+            padding: 15px; /* Adjust padding for very small screens */
+            }
+        
+            h2 {
+            font-size: 1.4em; /* Further adjust font size */
+            }
+        
+            #next-button,
+            #restart-button {
+            padding: 8px 16px; /* Adjust button padding */
+            font-size: 0.8em; /* Adjust button font size */
+            }
+        
+            .options label {
+            padding: 10px; /* Smaller padding for options */
+            }
+        }
+        
+    </style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Quiz - {{TITLE}}</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+    </head>
+
+    <body>
+    <div class="quiz-container">
+        <header>
+        <span id="question-number">1/10</span>
+        <!-- <span id="timer">30</span> -->
+        <span id="score">Score: 0</span>
+        </header>
+        <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+        </div>
+
+        <main>
+        <h2 id="question-text"> question</h2>
+        <div class="options">
+            <label>
+            <input type="radio" name="answer" value="Tracks with eyes">
+            <span>Tracks with eyes</span>
+            </label>
+            <label>
+            <input type="radio" name="answer" value="Tries to follow">
+            <span>Tries to follow</span>
+            </label>
+            <label>
+            <input type="radio" name="answer" value="Gets excited">
+            <span>Gets excited</span>
+            </label>
+            <label>
+            <input type="radio" name="answer" value="Different reaction">
+            <span>Different reaction</span>
+            </label>
+        </div>
+        </main>
+        <footer>
+        <button id="next-button">Continue</button>
+        </footer>
+    </div>
+    <div class="scoreboard-container" id="scoreboard-container" style="display: none;">
+        <h2>Scoreboard</h2>
+        <table id="scoreboard">
+        <thead>
+            <tr>
+            <th>Question</th>
+            <th>Your Answer</th>
+            <th>Correct Answer</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+        </table>
+        <button id="restart-button" onclick=submitQuiz()>Back To Quizzes</button>
+    </div>
+    </body>
+
+    </html>
+
+    <script>
+        const userAnswers = [];
+        function getCookie(name) {
+            // Split the cookies into an array
+            const cookies = document.cookie.split('; ');
+            
+            // Loop through the array to find the cookie
+            for (let cookie of cookies) {
+                // Split the cookie into a name and value
+                const [cookieName, cookieValue] = cookie.split('=');
+                
+                // Check if the current cookie name matches the name we're looking for
+                if (cookieName === name) {
+                    return decodeURIComponent(cookieValue);
+                }
+            }
+            // Return null if the cookie was not found
+            return null;
+        }
+        // Function to send the payload as JSON
+        function sendResults(results) {
+            const xhr = new XMLHttpRequest();
+            const url = '/quiz-results';
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "application/json");
+
+            // Convert the results array to a JSON string
+            const data = JSON.stringify(results);
+
+            // Send the request with the JSON payload
+            xhr.send(data);
+
+            // Optional: handle the response
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        console.log("Results successfully sent");
+                    } else {
+                        console.error("Error sending results");
+                    }
+                }
+            };
+        }
+        function submitQuiz(){
+            var quiz_title = "{{TITLE}}"
+            var quiz_description = "{{DESCRIPTION}}"
+            var difficulty = "{{QUIZ_DIFFICULTY}}"
+            var quiz_id = {{QUIZ_ID}}
+            current_url = window.location.origin
+            results = []
+            userAnswers.forEach((answer, index) => {
+
+                var isTrue = true
+                var user_answer = answer.yourAnswer;
+                var correct_answer = answer.correctAnswer;
+                if (user_answer != correct_answer){
+                    isTrue = false
+                }
+                var question = answer.question
+                results.push({
+                    "question":question,
+                    "answer":correct_answer,
+                    "user_answer":user_answer,
+                    "isTrue":isTrue
+                })
+                
+
+            });
+            payload = {
+                "uuid":getCookie("uuid"),
+                "quiz_id":quiz_id,
+                "quiz_difficulty":difficulty,
+                "title":quiz_description,
+                "description":quiz_description,
+                "results":results
+            }
+            sendResults(payload)
+            window.location.href = current_url + "/quiz"
+        }
+        document.addEventListener("DOMContentLoaded", () => {
+        const quizData = {{QUIZ_INFORMATION | safe}}
+
+        let currentQuestionIndex = 0;
+        let score = 0;
+        let timerInterval;
+        
+
+        const questionNumberElement = document.getElementById("question-number");
+        const questionTextElement = document.getElementById("question-text");
+        const optionsContainer = document.querySelector(".options");
+        const nextButton = document.getElementById("next-button");
+        const timerElement = document.getElementById("timer");
+        const scoreElement = document.getElementById("score");
+        const progressBar = document.getElementById("progress-bar");
+        const scoreboardContainer = document.getElementById("scoreboard-container");
+        const scoreboardBody = document.querySelector("#scoreboard tbody");
+        const restartButton = document.getElementById("restart-button");
+
+
+        // Function to save progress to localStorage
+        function saveProgress() {
+            localStorage.setItem(
+            "quizProgress",
+            JSON.stringify({
+                currentQuestionIndex,
+                score,
+                userAnswers
+            })
+            );
+        }
+
+        // Function to retrieve progress from localStorage
+        function retrieveProgress() {
+            const savedProgress = localStorage.getItem("quizProgress");
+            if (savedProgress) {
+            const {
+                currentQuestionIndex: savedIndex,
+                score: savedScore,
+                userAnswers: savedAnswers
+            } = JSON.parse(savedProgress);
+            if (savedIndex < quizData.length) {
+                currentQuestionIndex = savedIndex;
+                score = savedScore;
+                userAnswers.push(...savedAnswers);
+                loadQuestion();
+            } else {
+                displayResults();
+            }
+            } else {
+            initializeQuiz();
+            }
+        }
+
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+            }
+            return array;
+        }
+
+        function initializeQuiz() {
+            shuffleArray(quizData);
+            loadQuestion();
+        }
+
+        function loadQuestion() {
+            const currentQuestion = quizData[currentQuestionIndex];
+            questionNumberElement.textContent = `${currentQuestionIndex + 1}/${
+            quizData.length
+            }`;
+            questionTextElement.textContent = currentQuestion.question;
+
+            optionsContainer.innerHTML = "";
+            const shuffledOptions = shuffleArray([...currentQuestion.options]);
+            shuffledOptions.forEach((option) => {
+            const label = document.createElement("label");
+            const input = document.createElement("input");
+            input.type = "radio";
+            input.name = "answer";
+            input.value = option;
+
+            const span = document.createElement("span");
+            span.textContent = option;
+
+            label.appendChild(input);
+            label.appendChild(span);
+            optionsContainer.appendChild(label);
+            });
+
+            updateProgressBar();
+            resetTimer();
+        }
+
+        function updateProgressBar() {
+            const progress = (currentQuestionIndex / quizData.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function resetTimer() {
+            clearInterval(timerInterval);
+            let timeLeft = 30;
+            timerElement.textContent = timeLeft;
+
+            timerInterval = setInterval(() => {
+            timeLeft--;
+            timerElement.textContent = timeLeft;
+
+            // Color change when timer is running low
+            if (timeLeft <= 10) {
+                timerElement.style.color = "#e74c3c"; // Change to red
+            }
+
+            // Add additional visual cues as needed (e.g., animations, background color changes)
+
+            if (timeLeft <= 0) {
+                clearInterval(timerInterval);
+                handleNextButtonClick(); // Automatically move to next question or end quiz
+            }
+            }, 1000);
+        }
+
+        function handleNextButtonClick() {
+            const selectedOption = document.querySelector(
+            'input[name="answer"]:checked'
+            );
+            if (selectedOption) {
+            userAnswers.push({
+                question: quizData[currentQuestionIndex].question,
+                yourAnswer: selectedOption.value,
+                correctAnswer: quizData[currentQuestionIndex].correct
+            });
+
+            if (selectedOption.value === quizData[currentQuestionIndex].correct) {
+                score++;
+                scoreElement.textContent = `Score: ${score}`;
+            }
+            } else {
+            userAnswers.push({
+                question: quizData[currentQuestionIndex].question,
+                yourAnswer: "No answer selected",
+                correctAnswer: quizData[currentQuestionIndex].correct
+            });
+            }
+
+            currentQuestionIndex++;
+            if (currentQuestionIndex < quizData.length) {
+            saveProgress(); // Save progress before loading next question
+            loadQuestion();
+            } else {
+            saveProgress(); // Save progress before displaying results
+            displayResults();
+            }
+
+            document
+            .querySelectorAll('input[name="answer"]')
+            .forEach((input) => (input.checked = false));
+        }
+
+        function displayResults() {
+            clearInterval(timerInterval);
+            questionNumberElement.textContent = "Quiz Completed";
+            questionTextElement.textContent = `Your score is ${score}/${quizData.length}`;
+
+            optionsContainer.innerHTML = "";
+            nextButton.style.display = "none";
+            scoreboardContainer.style.display = "block";
+            renderScoreboard();
+            localStorage.removeItem("quizProgress"); // Clear saved progress after displaying results
+        }
+
+        function renderScoreboard() {
+            scoreboardBody.innerHTML = "";
+            userAnswers.forEach((answer, index) => {
+            const row = document.createElement("tr");
+            const questionCell = document.createElement("td");
+            const yourAnswerCell = document.createElement("td");
+            const correctAnswerCell = document.createElement("td");
+
+            questionCell.textContent = `Q${index + 1}: ${answer.question}`;
+            yourAnswerCell.textContent = answer.yourAnswer;
+            correctAnswerCell.textContent = answer.correctAnswer;
+
+            row.appendChild(questionCell);
+            row.appendChild(yourAnswerCell);
+            row.appendChild(correctAnswerCell);
+            scoreboardBody.appendChild(row);
+            });
+        }
+
+        function restartQuiz() {
+            currentQuestionIndex = 0;
+            score = 0;
+            userAnswers.length = 0;
+            scoreElement.textContent = `Score: ${score}`;
+            nextButton.textContent = "Continue";
+            nextButton.style.display = "block";
+            scoreboardContainer.style.display = "none";
+            nextButton.removeEventListener("click", restartQuiz);
+            nextButton.addEventListener("click", handleNextButtonClick);
+            localStorage.removeItem("quizProgress"); // Clear saved progress on restart
+            initializeQuiz();
+        }
+
+        nextButton.addEventListener("click", handleNextButtonClick);
+        restartButton.addEventListener("click", restartQuiz);
+
+        // Check localStorage for saved progress when DOM is loaded
+        retrieveProgress();
+        });
+
+    </script>

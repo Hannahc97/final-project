@@ -41,12 +41,12 @@ def load_user(user_id):
 # # title: The title of the quiz, 
 # # description: A short description of the quiz
 # questions: A relationship to the Question model, indicating that a quiz can have multiple questions
-class Quiz(db.Model):
-    __tablename__ = 'quizzes'
-    quiz_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    title = db.Column(db.String(128), nullable=False)
-    description = db.Column(db.String(256))
-    questions = db.relationship('Question', backref='quiz', lazy=True)
+# class Quiz(db.Model):
+#     __tablename__ = 'quizzes'
+#     quiz_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
+#     title = db.Column(db.String(128), nullable=False)
+#     description = db.Column(db.String(256))
+#     questions = db.relationship('Question', backref='quiz', lazy=True)
 
 # Represents individual questions in a quiz.
 # Contains the text of the question and relates to the possible answers.
@@ -55,13 +55,13 @@ class Quiz(db.Model):
 # text: The text of the question
 # difficulty level from 1 (easy) to 5 (hard)
 # answers: A relationship to the Answer model, indicating that a question can have multiple answers
-class Question(db.Model):
-    __tablename__ = 'questions'
-    question_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
-    text = db.Column(db.String(256), nullable=False)
-    difficulty = db.Column(db.Integer, nullable=False)  
-    answers = db.relationship('Answer', backref='question', lazy=True)
+# class Question(db.Model):
+#     __tablename__ = 'questions'
+#     question_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
+#     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
+#     text = db.Column(db.String(256), nullable=False)
+#     difficulty = db.Column(db.Integer, nullable=False)  
+#     answers = db.relationship('Answer', backref='question', lazy=True)
 
 # Represents possible answers for a question.
 # Contains the text of the answer and a boolean indicating if it's the correct answer
@@ -69,12 +69,13 @@ class Question(db.Model):
 # question_id: A foreign key linking the answer to a specific question
 # text: The text of the answer
 # is_correct: A boolean indicating if this answer is correct
-class Answer(db.Model):
-    __tablename__ = 'answers'
-    answer_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    question_id = db.Column(db.Integer, db.ForeignKey('questions.question_id'), nullable=False)
-    text = db.Column(db.String(256), nullable=False)
-    is_correct = db.Column(db.Boolean, nullable=False)
+class quizResults(db.Model):
+    __tablename__ = 'quizresults'
+    user_id = db.Column(db.String(64), primary_key=True, nullable=False, unique=True, index=True)
+    results = db.Column(db.String(256), nullable=False)
+    quiz_title = db.Column(db.String(256), nullable=False)
+    quiz_id = db.Column(db.Integer, nullable=False)
+    difficulty_level = db.Column(db.Integer, nullable=False)
 
 # Tracks which quizzes a user has taken and their scores.
 # Records the relationship between a user and a quiz, including the score and completion time
@@ -83,13 +84,13 @@ class Answer(db.Model):
 # quiz_id: A foreign key linking to a specific quiz
 # score: The score the user achieved on the quiz
 # completed_at: The date and time when the user completed the quiz
-class UserQuiz(db.Model):
-    __tablename__ = 'user_quizzes'
-    user_quiz_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
-    quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
-    score = db.Column(db.Integer)
-    completed_at = db.Column(db.DateTime)
+# class UserQuiz(db.Model):
+#     __tablename__ = 'user_quizzes'
+#     user_quiz_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
+#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
+#     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
+#     score = db.Column(db.Integer)
+#     completed_at = db.Column(db.DateTime)
 
 # Tracks the answers provided by users for each question in a quiz.
 # Records the selected answers for each question by a user during a quiz attempt.
@@ -98,13 +99,13 @@ class UserQuiz(db.Model):
 # question_id: A foreign key linking to a specific question
 # answer_id: A foreign key linking to a specific answer
 # answered_at: The date and time when the user answered the question
-class UserAnswer(db.Model):
-    __tablename__ = 'user_answers'
-    user_answer_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    user_quiz_id = db.Column(db.Integer, db.ForeignKey('user_quizzes.user_quiz_id'), nullable=False)
-    question_id = db.Column(db.Integer, db.ForeignKey('questions.question_id'), nullable=False)
-    answer_id = db.Column(db.Integer, db.ForeignKey('answers.answer_id'), nullable=False)
-    answered_at = db.Column(db.DateTime)
+# class UserAnswer(db.Model):
+#     __tablename__ = 'user_answers'
+#     user_answer_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
+#     user_quiz_id = db.Column(db.Integer, db.ForeignKey('user_quizzes.user_quiz_id'), nullable=False)
+#     question_id = db.Column(db.Integer, db.ForeignKey('questions.question_id'), nullable=False)
+#     answer_id = db.Column(db.Integer, db.ForeignKey('answers.answer_id'), nullable=False)
+#     answered_at = db.Column(db.DateTime)
 
 # Track the performance of a user on different difficulty levels
 # user_performance_id: A unique identifier for each performance record.

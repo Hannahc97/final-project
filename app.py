@@ -19,7 +19,7 @@ app = Flask(__name__)
 
 db = database.buildDb().build(app)
 
-from models import userRegister, Quiz, Question, Answer, UserQuiz, UserAnswer, UserPerformance
+from models import userRegister, quizResults
 
 app.config['SECRET_KEY'] =  b'WR#&f&+%78er0we=%799eww+#7^90-;s'
 
@@ -89,35 +89,63 @@ def dashboard():
 @app.route('/quiz')
 @login_required
 def quiz():
-    uuid_cookie = request.cookies.get('uuid')
-    user = userRegister.query.filter_by(user_id=uuid_cookie).first()
-    quiz_info = ""
-    for quiz in QUIZZES:
-        quizTitle = quiz["title"]
+    
+
+    # Get the full URL
+    if "http"  == request.url.split(":")[0]:
+        domain = "http://127.0.0.1:5000"
+    else:
+        domain = "https://" + request.host
+    uuid_cookie = request.cookies.get('uuid') # retrieves a cookie named uuid, which stores a unique identifier for the user.
+    user = userRegister.query.filter_by(user_id=uuid_cookie).first() # queries the db to find the user associated with the uuid cookie
+    quiz_info = "" # Initializes an empty string that will be used to accumulate HTML content for each quiz.
+    for quiz in QUIZZES: # For each quiz in the QUIZZES list:
+        quizTitle = quiz["title"] # Retrieves the quiz title, description, and ID.
         quizDescription = quiz["description"]
         quiz_id = quiz["quiz_id"]
-        adaptive_url = f"http://127.0.0.1:5000/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status())
-        non_adaptive_url = f"http://127.0.0.1:5000/quiz-page?quiz_id={quiz_id}"
-        quiz_info += f"Title: {quizTitle}<br> Description: {quizDescription}<br>Adaptive Quiz: {adaptive_url}<br>Non Adaptive Quiz: {non_adaptive_url}<br><br>"
+        adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status())
+        non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" # Constructs URLs for both adaptive and non-adaptive quizzes
+        quiz_info += f"Title: {quizTitle}<br> Description: {quizDescription}<br><a href='{adaptive_url}'>Adaptive Quiz</a><br><a href='{non_adaptive_url}'>Non Adaptive Quiz</a><br><br>" 
+        # Each quiz's information is formatted into a string that includes the title, description, and links to both types of quizzes, appending it to quiz_info.
 
-    return render_template('quiz.html',QUIZZES=quiz_info)
+    return render_template('quiz.html',QUIZZES=quiz_info) # renders the quiz.html template, passing the accumulated quiz_info string as a context variable named QUIZZES. This will be used in the template to display the list of quizzes.
 
 @app.route('/quiz-page')
 @login_required
-def quizpage():
-    quiz_id = request.args.get("quiz_id")
-    difficulty_level = request.args.get("difficulty_level")
-    if not difficulty_level:
-        quiz = quizbuilder(int(quiz_id)).generateNonAdaptive()
-    else:
-        quiz = quizbuilder(int(quiz_id),int(difficulty_level)).generateAdaptive()
-    return jsonify(quiz)
+def quizpage(): 
+    quiz_id = request.args.get("quiz_id") # retrieves the quiz_id parameter from the URL query string.
+    difficulty_level = request.args.get("difficulty_level") # retrieves the difficulty_level parameter from the URL query string, if provided.
+    if not difficulty_level:  # If difficulty_level is not provided, it creates an instance of the quizbuilder class with the quiz_id and calls the generateNonAdaptive method to generate a non-adaptive quiz.
+        quiz = quizbuilder(int(quiz_id))
+        generated_quiz = quiz.generateNonAdaptive()
+        formattedQuiz = quiz.jsFormat()
+    else: # If difficulty_level is provided, it creates an instance of the quizbuilder with quiz_id and difficulty_level, and calls the generateAdaptive method to generate an adaptive quiz.
+        quiz = quizbuilder(int(quiz_id),int(difficulty_level))
+        generated_quiz = quiz.generateAdaptive()
+        formattedQuiz = quiz.jsFormat()    
+    return render_template('quizpage.html', QUIZ_INFORMATION=formattedQuiz, QUIZ_ID=quiz_id, QUIZ_DIFFICULTY=difficulty_level,TITLE=generated_quiz["title"], DESCRIPTION=generated_quiz["description"])
+
+
+
+@app.route('/quiz-results', methods=['POST'])
+@login_required
+def quizresults(): 
+    data = request.get_json()
+    uuid = data.get("uuid")
+    quiz_id = data.get("quiz_id")
+    quiz_difficulty = data.get("quiz_difficulty")
+    if quiz_difficulty == "None":
+        quiz_difficulty = "0"
+    title = data.get("title")
+    results = str(data.get("results"))
+    try:
+        quiz_submission = quizResults(user_id=uuid, results=results, quiz_title=title, quiz_id=quiz_id, difficulty_level=int(quiz_difficulty))
+        db.session.add(quiz_submission)
+        db.session.commit()
     
-
-    return render_template('quiz.html',QUIZZES=quiz_info)
-
-
-
+        return "Saved Successfully" ,200
+    except Exception as e:
+        return f"Error Saving Results: {e}", 500
 
 
 
@@ -125,3 +153,7 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 # DATABASE_URL = sys.argv["DATABASE_URL"]
+
+
+# insert the code pen and adapt it to my quiz
+# 
