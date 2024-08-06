@@ -51,7 +51,7 @@ def login():
             return redirect(url_for('login'))
         login_user(user, remember=form.remember_me.data)
         flash(f'Login for {form.email.data}', 'success')
-        resp = make_response(redirect(url_for('dashboard')))
+        resp = make_response(redirect(url_for('quiz')))
         resp.set_cookie('uuid', user.get_id(), expires=datetime.now() + timedelta(days=365*10))
         return resp 
     return render_template('login.html', title='Sign in', form=form)
