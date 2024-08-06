@@ -1017,7 +1017,7 @@ QUIZZES = [
     },
     {
         "quiz_id": 4,
-        "title": "Application Layer:",
+        "title": "Application Layer",
         "description": "Test your knowledge on the Application Layer!",
         "questions":[
             {

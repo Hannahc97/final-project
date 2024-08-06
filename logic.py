@@ -1,11 +1,43 @@
 import random # shuffle questions 
 from data import quizzes # importing quiz data from py file 
 import json
+import ast
 
 QUIZZES = quizzes.QUIZZES #Holds the list of quizzes imported from the quizzes.py
 
-NON_ADAPTIVE_LIMIT = 5 # max no of questions that can be asked in non-adaptive
+NON_ADAPTIVE_LIMIT = 10 # max no of questions that can be asked in non-adaptive
 
+def calculateDifficulty(current_difficulty, results):
+    score = 0
+    for result in ast.literal_eval(results):
+        if "'isTrue': True" in str(result):
+            score += 1
+    
+    if score <= 3:
+        if current_difficulty == 1 or current_difficulty == 2:
+            return 1
+        if current_difficulty == 3:
+            return 2
+
+    if score <= 6:
+        if current_difficulty == 1:
+            return 1
+        if current_difficulty == 2 or current_difficulty == 3:
+            return 2
+    if score >= 7 and score < 10:
+        if current_difficulty == 1:
+            return 2
+        if current_difficulty == 2 or current_difficulty == 3:
+            return 3
+    if score == 10:
+        if current_difficulty == 1:
+            return 2
+        if current_difficulty == 2 or current_difficulty == 3:
+            return 3
+
+    
+
+    
 
 
 class quiz(): # class named quiz 

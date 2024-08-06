@@ -2135,39 +2135,903 @@
                     {"answer_id": 759, "text": "A field", "is_correct": "false"},
                     {"answer_id": 760, "text": "A table", "is_correct": "false"}
                 ]
+            },
+            {
+                "question_id": 191,
+                "text": "Which of the following best describes a weak entity?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 761, "text": "An entity that cannot exist without a dependent entity", "is_correct": "true"},
+                    {"answer_id": 762, "text": "An entity that is independent of other entities", "is_correct": "false"},
+                    {"answer_id": 763, "text": "An entity with no attributes", "is_correct": "false"},
+                    {"answer_id": 764, "text": "An entity with multiple primary keys", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 192,
+                "text": "In an ER diagram, how are relationships typically represented?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 765, "text": "Circles", "is_correct": "false"},
+                    {"answer_id": 766, "text": "Diamonds", "is_correct": "true"},
+                    {"answer_id": 767, "text": "Rectangles", "is_correct": "false"},
+                    {"answer_id": 768, "text": "Triangles", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 193,
+                "text": "What is the purpose of a foreign key in a relational database?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 769, "text": "To uniquely identify records within the table", "is_correct": "false"},
+                    {"answer_id": 770, "text": "To create a link between two tables", "is_correct": "true"},
+                    {"answer_id": 771, "text": "To store foreign language characters", "is_correct": "false"},
+                    {"answer_id": 772, "text": "To improve query performance", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 194,
+                "text": "Which of the following is an example of a composite primary key?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 773, "text": "A single column primary key", "is_correct": "false"},
+                    {"answer_id": 774, "text": "A primary key consisting of two or more columns", "is_correct": "true"},
+                    {"answer_id": 775, "text": "A primary key that is auto-incremented", "is_correct": "false"},
+                    {"answer_id": 776, "text": "A primary key that references another table", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 195,
+                "text": "In SQL, which clause is used to filter records?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 777, "text": "SELECT", "is_correct": "false"},
+                    {"answer_id": 778, "text": "WHERE", "is_correct": "true"},
+                    {"answer_id": 779, "text": "FROM", "is_correct": "false"},
+                    {"answer_id": 780, "text": "GROUP BY", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 196,
+                "text": "What does the 'NOT NULL' constraint ensure in SQL?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 781, "text": "The field must have a default value", "is_correct": "false"},
+                    {"answer_id": 782, "text": "The field cannot have duplicate values", "is_correct": "false"},
+                    {"answer_id": 783, "text": "The field cannot be left empty", "is_correct": "true"},
+                    {"answer_id": 784, "text": "The field must be a primary key", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 197,
+                "text": "What is a 'schema' in the context of databases?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 785, "text": "A graphical representation of data", "is_correct": "false"},
+                    {"answer_id": 786, "text": "A logical structure that defines the organisation of data in a database", "is_correct": "true"},
+                    {"answer_id": 787, "text": "A programming language used for databases", "is_correct": "false"},
+                    {"answer_id": 788, "text": "A type of query", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 198,
+                "text": "What is the result of the SQL query: SELECT * FROM table_name WHERE condition;?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 789, "text": "It creates a new table", "is_correct": "false"},
+                    {"answer_id": 790, "text": "It inserts new records", "is_correct": "false"},
+                    {"answer_id": 791, "text": "It retrieves records that meet the specified condition", "is_correct": "true"},
+                    {"answer_id": 792, "text": "It deletes records", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 199,
+                "text": "Which of the following is an example of a relational database management system (RDBMS)?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 793, "text": "Microsoft Word", "is_correct": "false"},
+                    {"answer_id": 794, "text": "Oracle", "is_correct": "true"},
+                    {"answer_id": 795, "text": "Adobe Photoshop", "is_correct": "false"},
+                    {"answer_id": 796, "text": "Windows OS", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 200,
+                "text": "Which of the following is an example of a relational database management system (RDBMS)?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 797, "text": "Adding redundancy to the data", "is_correct": "false"},
+                    {"answer_id": 798, "text": "Structuring data to reduce redundancy and improve integrity", "is_correct": "true"},
+                    {"answer_id": 799, "text": "Increasing the complexity of the databasep", "is_correct": "false"},
+                    {"answer_id": 800, "text": "Simplifying data to make it less secure", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 201,
+                "text": "In the context of database design, what is 'referential integrity'?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 801, "text": "Ensuring data is encrypted", "is_correct": "false"},
+                    {"answer_id": 802, "text": "Ensuring that foreign key values in one table correspond to primary key values in another table", "is_correct": "true"},
+                    {"answer_id": 803, "text": "Ensuring all tables have primary keys", "is_correct": "false"},
+                    {"answer_id": 804, "text": "Ensuring all queries are optimised", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 202,
+                "text": "Which SQL clause is used to group rows that have the same values in specified columns into summary rows?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 805, "text": "HAVING", "is_correct": "false"},
+                    {"answer_id": 806, "text": "GROUP BY", "is_correct": "true"},
+                    {"answer_id": 807, "text": "ORDER BY", "is_correct": "false"},
+                    {"answer_id": 808, "text": "JOIN", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 203,
+                "text": "What does the 'CASCADE' option do when specified in a foreign key constraint?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 809, "text": "Deletes the foreign key constraint", "is_correct": "false"},
+                    {"answer_id": 810, "text": "Deletes the rows in the child table when the corresponding rows in the parent table are deleted", "is_correct": "true"},
+                    {"answer_id": 811, "text": "Prevents deletion of the rows in the parent table", "is_correct": "false"},
+                    {"answer_id": 812, "text": "Updates the rows in the child table when the corresponding rows in the parent table are updated", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 204,
+                "text": "In an ER diagram, what does a double rectangle represent?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 813, "text": "A weak entity", "is_correct": "true"},
+                    {"answer_id": 814, "text": "A strong entity", "is_correct": "false"},
+                    {"answer_id": 815, "text": "An attribute", "is_correct": "false"},
+                    {"answer_id": 816, "text": "A relationship", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 205,
+                "text": "Which of the following best describes a 'many-to-many' relationship?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 817, "text": "Each entity instance in one entity set is associated with zero or one instance in another entity set", "is_correct": "false"},
+                    {"answer_id": 818, "text": "Each entity instance in one entity set is associated with one or more instances in another entity set", "is_correct": "false"},
+                    {"answer_id": 819, "text": "Multiple instances in one entity set are associated with multiple instances in another entity set", "is_correct": "true"},
+                    {"answer_id": 820, "text": "Each entity instance in one entity set is associated with only one instance in another entity set", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 206,
+                "text": "Which SQL statement is used to add a new column to an existing table?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 821, "text": "MODIFY TABLE", "is_correct": "false"},
+                    {"answer_id": 822, "text": "ALTER TABLE", "is_correct": "true"},
+                    {"answer_id": 823, "text": "UPDATE TABLE", "is_correct": "false"},
+                    {"answer_id": 824, "text": "ADD TABLE", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 207,
+                "text": "What does 'BCNF' stand for in database normalization?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 825, "text": "Basic Column Normal Form", "is_correct": "false"},
+                    {"answer_id": 826, "text": "Boyce-Codd Normal Form", "is_correct": "true"},
+                    {"answer_id": 827, "text": "Binary Code Normal Form", "is_correct": "false"},
+                    {"answer_id": 828, "text": "Base Column Normal Form", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 208,
+                "text": "In a relational database, what is a 'trigger'?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 829, "text": "A command to manually update data", "is_correct": "false"},
+                    {"answer_id": 830, "text": "A rule that automatically performs a specified action when certain conditions are met", "is_correct": "true"},
+                    {"answer_id": 831, "text": "A type of join", "is_correct": "false"},
+                    {"answer_id": 832, "text": "A field that uniquely identifies a record", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 209,
+                "text": "Which of the following is NOT a type of SQL join?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 833, "text": "INNER JOIN", "is_correct": "false"},
+                    {"answer_id": 834, "text": "OUTER JOIN", "is_correct": "false"},
+                    {"answer_id": 835, "text": "LEFT JOIN", "is_correct": "false"},
+                    {"answer_id": 836, "text": "TOP JOIN", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 210,
+                "text": "What is a composite attribute in an ER diagram?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 837, "text": "An attribute that cannot be divided", "is_correct": "false"},
+                    {"answer_id": 838, "text": "An attribute composed of multiple components", "is_correct": "true"},
+                    {"answer_id": 839, "text": "An attribute that serves as a foreign key", "is_correct": "false"},
+                    {"answer_id": 840, "text": "An attribute that serves as a primary key", "is_correct": "false"}
+                ]
+            } 
+        ]
+    },
+    {
+        "quiz_id": 8,
+        "title": "Complexity Analysis, Stacks, Queues and Heaps",
+        "description": "Test your knowledge on Complexity Analysis, Stacks, Queues and Heaps!",
+        "questions":[    
+            {
+                "question_id": 211,
+                "text": "What principle does a stack follow?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 841, "text": "First-In-First-Out (FIFO)", "is_correct": "false"},
+                    {"answer_id": 842, "text": "Last-In-First-Out (LIFO)", "is_correct": "true"},
+                    {"answer_id": 843, "text": "Last-In-First-In (LIFI)", "is_correct": "false"},
+                    {"answer_id": 844, "text": "First-In-Last-Out (FILO)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 212,
+                "text": "Which of the following operations is used to remove the top element of a stack?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 845, "text": "push", "is_correct": "false"},
+                    {"answer_id": 846, "text": "pop", "is_correct": "true"},
+                    {"answer_id": 847, "text": "enqueue", "is_correct": "false"},
+                    {"answer_id": 848, "text": "dequeue", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 213,
+                "text": "In a queue, where is the new element inserted?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 849, "text": "Front", "is_correct": "false"},
+                    {"answer_id": 850, "text": "Rear", "is_correct": "true"},
+                    {"answer_id": 851, "text": "Middle", "is_correct": "false"},
+                    {"answer_id": 852, "text": "Random position", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 214,
+                "text": "What is the time complexity of the push operation in a stack implemented using an array?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 853, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 854, "text": "O(n log n)", "is_correct": "false"},
+                    {"answer_id": 855, "text": "O(1)", "is_correct": "true"},
+                    {"answer_id": 856, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 215,
+                "text": "Which data structure uses the First-In-First-Out (FIFO) principle?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 857, "text": "Stack", "is_correct": "false"},
+                    {"answer_id": 858, "text": "Queue", "is_correct": "true"},
+                    {"answer_id": 859, "text": "Array", "is_correct": "false"},
+                    {"answer_id": 860, "text": "Linked list", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 216,
+                "text": "What is the time complexity of the dequeue operation in a queue implemented using an array?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 861, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 862, "text": "O(n log n)", "is_correct": "false"},
+                    {"answer_id": 863, "text": "O(1)", "is_correct": "true"},
+                    {"answer_id": 864, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 217,
+                "text": "In a max-heap, where is the largest element found?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 865, "text": "At the root", "is_correct": "true"},
+                    {"answer_id": 866, "text": "At the leftmost leaf", "is_correct": "false"},
+                    {"answer_id": 867, "text": "At the rightmost leaf", "is_correct": "false"},
+                    {"answer_id": 868, "text": "Anywhere in the heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 218,
+                "text": "What does the heap property ensure in a max-heap?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 869, "text": "Parent node is always smaller than its children", "is_correct": "false"},
+                    {"answer_id": 870, "text": "Parent node is always greater than its children", "is_correct": "true"},
+                    {"answer_id": 871, "text": "All nodes are equal", "is_correct": "false"},
+                    {"answer_id": 872, "text": "All leaves are at the same level", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 219,
+                "text": "What is the time complexity of the Max-Heapify operation?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 873, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 874, "text": "O(log n)", "is_correct": "true"},
+                    {"answer_id": 875, "text": "O(1)", "is_correct": "false"},
+                    {"answer_id": 876, "text": "O(n log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 220,
+                "text": "Which sorting algorithm uses a binary heap?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 877, "text": "Quick Sort", "is_correct": "false"},
+                    {"answer_id": 878, "text": "Merge Sort", "is_correct": "false"},
+                    {"answer_id": 879, "text": "Bubble Sort", "is_correct": "false"},
+                    {"answer_id": 880, "text": "Heap Sort", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 221,
+                "text": "What happens when you try to pop from an empty stack?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 881, "text": "It returns a null value", "is_correct": "false"},
+                    {"answer_id": 882, "text": "It throws an overflow error", "is_correct": "false"},
+                    {"answer_id": 883, "text": "It throws an underflow error", "is_correct": "true"},
+                    {"answer_id": 884, "text": "It adds a new element to the stack", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 222,
+                "text": "In an array-based implementation of a queue, what formula is used to calculate the position of the tail after an enqueue operation?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 885, "text": "(tail + 1) % size", "is_correct": "true"},
+                    {"answer_id": 886, "text": "(tail + size) % size", "is_correct": "false"},
+                    {"answer_id": 887, "text": "(tail - 1) % size", "is_correct": "false"},
+                    {"answer_id": 888, "text": "(tail * 2) % size", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 223,
+                "text": "What is the time complexity of inserting an element into a max-heap?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 889, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 890, "text": "O(log n)", "is_correct": "true"},
+                    {"answer_id": 891, "text": "O(1)", "is_correct": "false"},
+                    {"answer_id": 892, "text": "O(n log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 224,
+                "text": "During the insertion sort, what is the worst-case time complexity?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 893, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 894, "text": "O(n log n)", "is_correct": "false"},
+                    {"answer_id": 895, "text": "O(n^2)", "is_correct": "true"},
+                    {"answer_id": 896, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 225,
+                "text": "Which data structure is best suited for implementing recursion?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 897, "text": "Queue", "is_correct": "false"},
+                    {"answer_id": 898, "text": "Stack", "is_correct": "true"},
+                    {"answer_id": 899, "text": "Heap", "is_correct": "false"},
+                    {"answer_id": 900, "text": "Graph", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 226,
+                "text": "In a circular queue, what happens when the head and tail pointers are equal?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 901, "text": "The queue is empty", "is_correct": "true"},
+                    {"answer_id": 902, "text": "The queue is full", "is_correct": "false"},
+                    {"answer_id": 903, "text": "The queue is half full", "is_correct": "false"},
+                    {"answer_id": 904, "text": "The queue is in an invalid state", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 227,
+                "text": "What is the height of a complete binary tree with n nodes?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 905, "text": "log2(n)", "is_correct": "true"},
+                    {"answer_id": 906, "text": "n", "is_correct": "false"},
+                    {"answer_id": 907, "text": "nlog2(n)", "is_correct": "false"},
+                    {"answer_id": 908, "text": "log2 (n+1)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 228,
+                "text": "What does the ‘enqueue’ operation do in a queue?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 909, "text": "Removes an element from the front", "is_correct": "false"},
+                    {"answer_id": 910, "text": "Adds an element to the rear", "is_correct": "true"},
+                    {"answer_id": 911, "text": "Checks if the queue is full", "is_correct": "false"},
+                    {"answer_id": 912, "text": "Checks if the queue is empty", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 229,
+                "text": "In the context of heaps, what is the 'heapify' operation?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 913, "text": "Adding an element to the heap", "is_correct": "false"},
+                    {"answer_id": 914, "text": "Removing the root of the heap", "is_correct": "false"},
+                    {"answer_id": 915, "text": "Adjusting the heap to maintain the heap property", "is_correct": "true"},
+                    {"answer_id": 916, "text": "Sorting the elements in the heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 230,
+                "text": "Which operation in heapsort involves repeatedly extracting the maximum element?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 917, "text": "Insertion", "is_correct": "false"},
+                    {"answer_id": 918, "text": "Heapify", "is_correct": "false"},
+                    {"answer_id": 919, "text": "Max-Heapify", "is_correct": "false"},
+                    {"answer_id": 920, "text": "Extract-Max", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 231,
+                "text": "In a stack, how can you implement a minimum function to return the minimum element in constant time?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 921, "text": "Use an additional stack to keep track of minimum values", "is_correct": "true"},
+                    {"answer_id": 922, "text": "Use a variable to keep track of the minimum value", "is_correct": "false"},
+                    {"answer_id": 923, "text": "Use a queue to track the minimum values", "is_correct": "false"},
+                    {"answer_id": 924, "text": "Use a linked list to store the minimum values", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 232,
+                "text": "What is the amortized time complexity of enqueue and dequeue operations in a dynamic array-based queue implementation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 925, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 926, "text": "O(log n)", "is_correct": "false"},
+                    {"answer_id": 927, "text": "O(1)", "is_correct": "true"},
+                    {"answer_id": 928, "text": "O(n^2)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 233,
+                "text": "In heapsort, what is the time complexity of building a max-heap from an unsorted array of n elements?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 929, "text": "O(n log n)", "is_correct": "true"},
+                    {"answer_id": 930, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 931, "text": "O(n^2)", "is_correct": "false"},
+                    {"answer_id": 932, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 234,
+                "text": "What is the key difference between a priority queue and a regular queue?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 933, "text": "Elements are sorted by their values", "is_correct": "true"},
+                    {"answer_id": 934, "text": "Elements are processed in the order they arrive", "is_correct": "false"},
+                    {"answer_id": 935, "text": "Only the largest element can be dequeued", "is_correct": "false"},
+                    {"answer_id": 936, "text": "Only the smallest element can be dequeued", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 235,
+                "text": "In the context of heaps, what is the ‘extract-max’ operation?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 937, "text": "It removes and returns the root of a max-heap", "is_correct": "true"},
+                    {"answer_id": 938, "text": "It adds a new element to the heap", "is_correct": "false"},
+                    {"answer_id": 939, "text": "It finds the maximum element without removing it", "is_correct": "false"},
+                    {"answer_id": 940, "text": "It restructures the heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 236,
+                "text": "Why does heapsort have a better worst-case time complexity compared to quicksort?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 941, "text": "It does not involve recursion", "is_correct": "false"},
+                    {"answer_id": 942, "text": "It uses a binary tree structure", "is_correct": "false"},
+                    {"answer_id": 943, "text": "It always divides the input in half", "is_correct": "false"},
+                    {"answer_id": 944, "text": "It does not depend on the choice of pivot", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 237,
+                "text": "What is the purpose of the 'build-max-heap' function in heapsort?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 945, "text": "To sort the elements in ascending order", "is_correct": "false"},
+                    {"answer_id": 946, "text": "To convert an unsorted array into a max-heap", "is_correct": "true"},
+                    {"answer_id": 947, "text": "To find the maximum element in the array", "is_correct": "false"},
+                    {"answer_id": 948, "text": "To insert a new element into the heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 238,
+                "text": "Which data structure can be used to implement both stack and queue operations efficiently?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 949, "text": "Array", "is_correct": "false"},
+                    {"answer_id": 950, "text": "Linked list", "is_correct": "true"},
+                    {"answer_id": 951, "text": "Heap", "is_correct": "false"},
+                    {"answer_id": 952, "text": "Graph", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 239,
+                "text": "What is the purpose of the 'decrease-key' operation in a heap?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 953, "text": "To increase the value of a node", "is_correct": "false"},
+                    {"answer_id": 954, "text": "To decrease the value of a node", "is_correct": "true"},
+                    {"answer_id": 955, "text": "To remove a node from the heap", "is_correct": "false"},
+                    {"answer_id": 956, "text": "To find the minimum value in the heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 240,
+                "text": "In a min-heap, how do you ensure the minimum element is always at the root?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 957, "text": "By maintaining the heap property during insertion and deletion", "is_correct": "true"},
+                    {"answer_id": 958, "text": "By sorting the elements after each insertion", "is_correct": "false"},
+                    {"answer_id": 959, "text": "By performing a level-order traversal after each deletion", "is_correct": "false"},
+                    {"answer_id": 960, "text": "By using an additional array to track the minimum element", "is_correct": "false"}
+                ]
             }
-            
         ]
-        
-    ]
-            
-
-
-        ]
-            
-
-        ]
-                
-
-
-
-
+    },
+    {
+        "quiz_id": 9,
+        "title": "Sorting and Hash tables",
+        "description": "Test your knowledge on Sorting and Hash tables!",
+        "questions":[    
+            {
+                "question_id": 241,
+                "text": "What is the main characteristic of insertion sort?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 961, "text": "It uses a binary tree", "is_correct": "false"},
+                    {"answer_id": 962, "text": "It uses the divide-and-conquer method", "is_correct": "false"},
+                    {"answer_id": 963, "text": "It is simple and intuitive", "is_correct": "true"},
+                    {"answer_id": 964, "text": "It requires a heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 242,
+                "text": "Which sorting algorithm is based on the divide-and-conquer method?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 965, "text": "Insertion Sort", "is_correct": "false"},
+                    {"answer_id": 966, "text": "Bubble Sort", "is_correct": "false"},
+                    {"answer_id": 967, "text": "Merge Sort", "is_correct": "true"},
+                    {"answer_id": 968, "text": "Selection Sort", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 243,
+                "text": "In a max-heap, where is the largest element stored?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 969, "text": "At any leaf node", "is_correct": "false"},
+                    {"answer_id": 970, "text": "At the root node", "is_correct": "true"},
+                    {"answer_id": 971, "text": "In the middle of the array", "is_correct": "false"},
+                    {"answer_id": 972, "text": "At the last node", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 244,
+                "text": "What is the time complexity of insertion sort in the worst case?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 973, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 974, "text": "O(n log n)", "is_correct": "false"},
+                    {"answer_id": 975, "text": "O(n^2)", "is_correct": "true"},
+                    {"answer_id": 976, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 245,
+                "text": "Which operation does not belong to heapsort?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 977, "text": "Heapify", "is_correct": "false"},
+                    {"answer_id": 978, "text": "Extract-Max", "is_correct": "false"},
+                    {"answer_id": 979, "text": "Insertion", "is_correct": "false"},
+                    {"answer_id": 980, "text": "Merge", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 246,
+                "text": "What does the 'heapify' operation do in a heap?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 981, "text": "Removes the root element", "is_correct": "false"},
+                    {"answer_id": 982, "text": "Adds a new element to the heap", "is_correct": "false"},
+                    {"answer_id": 983, "text": "Maintains the heap property", "is_correct": "true"},
+                    {"answer_id": 984, "text": "Sorts the elements in the heap", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 247,
+                "text": "What is the main advantage of heapsort?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 985, "text": "It is simple and intuitive", "is_correct": "false"},
+                    {"answer_id": 986, "text": "It works well with linked lists", "is_correct": "false"},
+                    {"answer_id": 987, "text": "It has O(n log n) time complexity", "is_correct": "true"},
+                    {"answer_id": 988, "text": "It is stable", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 248,
+                "text": "In a hash table, what is a 'bucket'?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 989, "text": "A storage device", "is_correct": "false"},
+                    {"answer_id": 990, "text": "A linked list used to handle collisions", "is_correct": "true"},
+                    {"answer_id": 991, "text": "An element of the hash table", "is_correct": "false"},
+                    {"answer_id": 992, "text": "A type of sorting algorithm", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 249,
+                "text": "What is the primary purpose of a hash function?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 993, "text": "To sort data", "is_correct": "false"},
+                    {"answer_id": 994, "text": "To compress data", "is_correct": "false"},
+                    {"answer_id": 995, "text": "To map data to fixed-size values", "is_correct": "true"},
+                    {"answer_id": 996, "text": "To encrypt data", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 250,
+                "text": "Which sorting algorithm is considered inefficient for large datasets but performs well on small datasets?",
+                "difficulty_level": 1,
+                "answers": [
+                    {"answer_id": 997, "text": "Quick Sort", "is_correct": "false"},
+                    {"answer_id": 998, "text": "Merge Sort", "is_correct": "false"},
+                    {"answer_id": 999, "text": "Insertion Sort", "is_correct": "true"},
+                    {"answer_id": 1000, "text": "Heapsort", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 251,
+                "text": "Which of the following steps is NOT part of the heapsort algorithm?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1001, "text": "Build-Max-Heap", "is_correct": "false"},
+                    {"answer_id": 1002, "text": "Merge subarrays", "is_correct": "true"},
+                    {"answer_id": 1003, "text": "Swap the root with the last element", "is_correct": "false"},
+                    {"answer_id": 1004, "text": "Reduce the heap size", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 252,
+                "text": "In merge sort, what happens during the merging phase?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1005, "text": "The array is divided into smaller subarrays", "is_correct": "false"},
+                    {"answer_id": 1006, "text": "The subarrays are combined into a sorted array", "is_correct": "true"},
+                    {"answer_id": 1007, "text": "The largest element is placed at the end", "is_correct": "false"},
+                    {"answer_id": 1008, "text": "Elements are shifted to their correct positions", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 253,
+                "text": "What is the time complexity of heapsort in the worst case?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1009, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 1010, "text": "O(n log n)", "is_correct": "true"},
+                    {"answer_id": 1011, "text": "O(n^2)", "is_correct": "false"},
+                    {"answer_id": 1012, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 254,
+                "text": "In quicksort, what is the purpose of the pivot element?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1013, "text": "To find the median of the array", "is_correct": "false"},
+                    {"answer_id": 1014, "text": "To divide the array into two subarrays", "is_correct": "true"},
+                    {"answer_id": 1015, "text": "To merge sorted arrays", "is_correct": "false"},
+                    {"answer_id": 1016, "text": "To heapify the array", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 255,
+                "text": "What is the key disadvantage of using a simple hash function?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1017, "text": "It is too slow", "is_correct": "false"},
+                    {"answer_id": 1018, "text": "It cannot handle large datasets", "is_correct": "false"},
+                    {"answer_id": 1019, "text": "It can cause many collisions", "is_correct": "true"},
+                    {"answer_id": 1020, "text": "It requires sorting of elements", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 256,
+                "text": "In a hash table, what happens when a collision occurs?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1021, "text": "The data is discarded", "is_correct": "false"},
+                    {"answer_id": 1022, "text": "The data is rehashed", "is_correct": "false"},
+                    {"answer_id": 1023, "text": "A collision resolution strategy is used", "is_correct": "true"},
+                    {"answer_id": 1024, "text": "The table size is doubled", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 257,
+                "text": "Which of the following is a collision resolution strategy in hash tables?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1025, "text": "Merging", "is_correct": "false"},
+                    {"answer_id": 1026, "text": "Chaining", "is_correct": "true"},
+                    {"answer_id": 1027, "text": "Sorting", "is_correct": "false"},
+                    {"answer_id": 1028, "text": "Heapifying", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 258,
+                "text": "What is the purpose of the 'Extract-Max' operation in a max-heap?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1029, "text": "To remove and return the largest element", "is_correct": "true"},
+                    {"answer_id": 1030, "text": "To add a new element to the heap", "is_correct": "false"},
+                    {"answer_id": 1031, "text": "To sort the heap", "is_correct": "false"},
+                    {"answer_id": 1032, "text": "To decrease the key of the root", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 259,
+                "text": "What is the main advantage of using quicksort over other sorting algorithms?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1033, "text": "It is stable", "is_correct": "false"},
+                    {"answer_id": 1034, "text": "It has a guaranteed O(n log n) time complexity", "is_correct": "false"},
+                    {"answer_id": 1035, "text": "It has a small constant factor and is usually faster in practice", "is_correct": "true"},
+                    {"answer_id": 1036, "text": "It uses additional memory for merging", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 260,
+                "text": "Which of the following best describes a 'load factor' in a hash table?",
+                "difficulty_level": 2,
+                "answers": [
+                    {"answer_id": 1037, "text": "The number of elements in the table", "is_correct": "false"},
+                    {"answer_id": 1038, "text": "The size of the table", "is_correct": "false"},
+                    {"answer_id": 1039, "text": "The ratio of the number of elements to the table size", "is_correct": "true"},
+                    {"answer_id": 1040, "text": "The time complexity of hash function", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 261,
+                "text": "What is the time complexity of quicksort in the worst case?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1041, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 1042, "text": "O(n log n)", "is_correct": "false"},
+                    {"answer_id": 1043, "text": "O(n^2)", "is_correct": "true"},
+                    {"answer_id": 1044, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 262,
+                "text": "Why is merge sort preferred for sorting linked lists over arrays?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1045, "text": "It has a lower time complexity", "is_correct": "false"},
+                    {"answer_id": 1046, "text": "It does not require additional space", "is_correct": "false"},
+                    {"answer_id": 1047, "text": "It performs well with sequential access", "is_correct": "true"},
+                    {"answer_id": 1048, "text": "It is a stable sorting algorithm", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 263,
+                "text": "Which sorting algorithm is NOT stable?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1049, "text": "Merge Sort", "is_correct": "false"},
+                    {"answer_id": 1050, "text": "Insertion Sort", "is_correct": "false"},
+                    {"answer_id": 1051, "text": "Quick Sort", "is_correct": "true"},
+                    {"answer_id": 1052, "text": "Bubble Sort", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 264,
+                "text": "What is the average-case time complexity of quicksort?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1053, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 1054, "text": "O(n log n)", "is_correct": "true"},
+                    {"answer_id": 1055, "text": "O(n^2)", "is_correct": "false"},
+                    {"answer_id": 1056, "text": "O(log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 265,
+                "text": "In a hash table with chaining, what is the expected time complexity for search operations?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1057, "text": "O(1)", "is_correct": "true"},
+                    {"answer_id": 1058, "text": "O(log n)", "is_correct": "false"},
+                    {"answer_id": 1059, "text": "O(n)", "is_correct": "false"},
+                    {"answer_id": 1060, "text": "O(n log n)", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 266,
+                "text": "What is the main disadvantage of merge sort despite its efficiency?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1061, "text": "It is not stable", "is_correct": "false"},
+                    {"answer_id": 1062, "text": "It has a high time complexity", "is_correct": "false"},
+                    {"answer_id": 1063, "text": "It requires additional memory proportional to the size of the input array", "is_correct": "true"},
+                    {"answer_id": 1064, "text": "It performs poorly on small datasets", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 267,
+                "text": "Which operation is the most time-consuming in the process of heapsort?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1065, "text": "Build-Max-Heap", "is_correct": "true"},
+                    {"answer_id": 1066, "text": "Heapify", "is_correct": "true"},
+                    {"answer_id": 1067, "text": "Swap", "is_correct": "false"},
+                    {"answer_id": 1068, "text": "Extract-Max", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 268,
+                "text": "How does quicksort handle elements equal to the pivot?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1069, "text": "Places them all in the left subarray", "is_correct": "false"},
+                    {"answer_id": 1070, "text": "Places them all in the right subarray", "is_correct": "false"},
+                    {"answer_id": 1071, "text": "Leaves them in their original positions", "is_correct": "false"},
+                    {"answer_id": 1072, "text": "It depends on the implementation", "is_correct": "true"}
+                ]
+            },
+            {
+                "question_id": 269,
+                "text": "What is the main purpose of rehashing in a hash table?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1073, "text": "To reduce the load factor", "is_correct": "true"},
+                    {"answer_id": 1074, "text": "To increase the load factor", "is_correct": "false"},
+                    {"answer_id": 1075, "text": "To merge buckets", "is_correct": "false"},
+                    {"answer_id": 1076, "text": "To sort the elements", "is_correct": "false"}
+                ]
+            },
+            {
+                "question_id": 270,
+                "text": "What is the main advantage of using double hashing over linear probing in hash tables?",
+                "difficulty_level": 3,
+                "answers": [
+                    {"answer_id": 1077, "text": "It requires less memory", "is_correct": "false"},
+                    {"answer_id": 1078, "text": "It reduces the likelihood of primary clustering", "is_correct": "true"},
+                    {"answer_id": 1079, "text": "It is easier to implement", "is_correct": "false"},
+                    {"answer_id": 1080, "text": "It has a lower time complexity", "is_correct": "false"}
+                ]
             }
-
-
-            ]
-            
-
-
-            ]
-            
         ]
-        
     }
-    
 ]
-        
 
 
-
-        ]

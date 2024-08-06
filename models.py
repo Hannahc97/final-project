@@ -1,3 +1,4 @@
+import json
 import database
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask_login import UserMixin
@@ -14,19 +15,25 @@ class userRegister(UserMixin, db.Model):
     user_id = db.Column(db.String(64), primary_key=True, nullable=False, unique=True, index=True)
     email = db.Column(db.String(64), nullable=False, unique=True, index=True)
     password_hash = db.Column(db.String(64), nullable=False)
-    difficulty_level = db.Column(db.Integer, nullable=False)
+    difficulty_level = db.Column(db.String(64), nullable=False)
 
     def hashPassword(self):
         self.password_hash = generate_password_hash(self.password_hash)
 
     def check_password(self, password):
         return check_password_hash(self.password_hash, password)
-    
+
     def get_id(self):
         return str(self.user_id)
     
-    def difficulty_level_status(self):
-        return self.difficulty_level
+    def difficulty_level_status(self,quiz_id):
+        return json.loads(str(self.difficulty_level).replace("'",'"'))[str(quiz_id)]["difficulty"]
+    
+    def set_difficulty_level_status(self,quiz_id,difficulty):
+        all_difficulties = json.loads(str(self.difficulty_level).replace("'",'"'))
+        all_difficulties[str(quiz_id)].update({"difficulty":int(difficulty)})
+        self.difficulty_level = json.dumps(all_difficulties)
+        return True
     
 @login.user_loader
 def load_user(user_id):

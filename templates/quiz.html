@@ -5,8 +5,11 @@
 {% block content %} 
 
         <div>
-            <h1> Quiz </h1>
-            <h3>{{QUIZZES | safe}}</h3>
+            <h1> Quizzes </h1>
+            <div class="quiz-container">
+                {{QUIZZES | safe}}
+            </div>
+            <!-- <h3>{{QUIZZES | safe}}</h3> -->
         </div>
 
 

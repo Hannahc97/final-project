@@ -1,4 +1,5 @@
 from datetime import datetime, timedelta
+import json
 from flask import Flask
 from flask import render_template, redirect, url_for, flash, request, jsonify, make_response
 from forms import LoginForm, RegistrationForm
@@ -12,6 +13,7 @@ from urllib.parse import urlsplit
 from extensions import login
 from data import quizzes
 from logic import quiz as quizbuilder
+from logic import calculateDifficulty
 
 QUIZZES = quizzes.QUIZZES
 
@@ -89,7 +91,6 @@ def dashboard():
 @app.route('/quiz')
 @login_required
 def quiz():
-    
 
     # Get the full URL
     if "http"  == request.url.split(":")[0]:
@@ -103,12 +104,24 @@ def quiz():
         quizTitle = quiz["title"] # Retrieves the quiz title, description, and ID.
         quizDescription = quiz["description"]
         quiz_id = quiz["quiz_id"]
-        adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status())
-        non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" # Constructs URLs for both adaptive and non-adaptive quizzes
-        quiz_info += f"Title: {quizTitle}<br> Description: {quizDescription}<br><a href='{adaptive_url}'>Adaptive Quiz</a><br><a href='{non_adaptive_url}'>Non Adaptive Quiz</a><br><br>" 
-        # Each quiz's information is formatted into a string that includes the title, description, and links to both types of quizzes, appending it to quiz_info.
+        adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status(quiz_id))
+        # Constructs URLs for both adaptive and non-adaptive quizzes
+        non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" 
 
-    return render_template('quiz.html',QUIZZES=quiz_info) # renders the quiz.html template, passing the accumulated quiz_info string as a context variable named QUIZZES. This will be used in the template to display the list of quizzes.
+        quiz_info += f"""
+        <div class="quiz-card">
+            <h2>{quizTitle}</h2>
+            <p>{quizDescription}</p>
+            <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
+            <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
+        </div>
+        """ 
+
+        # Each quiz's information is formatted into a string that includes the title, description, and links to both types of quizzes, appending it to quiz_info.
+        # quiz_info += f"Title: {quizTitle}<br> Description: {quizDescription}<br><a href='{adaptive_url}'>Adaptive Quiz</a><br><a href='{non_adaptive_url}'>Non Adaptive Quiz</a><br><br>" 
+
+    # renders the quiz.html template, passing the accumulated quiz_info string as a context variable named QUIZZES. This will be used in the template to display the list of quizzes.
+    return render_template('quiz.html',QUIZZES=quiz_info) 
 
 @app.route('/quiz-page')
 @login_required
@@ -135,14 +148,21 @@ def quizresults():
     quiz_id = data.get("quiz_id")
     quiz_difficulty = data.get("quiz_difficulty")
     if quiz_difficulty == "None":
-        quiz_difficulty = "0"
+        quiz_difficulty = "1"
     title = data.get("title")
     results = str(data.get("results"))
     try:
         quiz_submission = quizResults(user_id=uuid, results=results, quiz_title=title, quiz_id=quiz_id, difficulty_level=int(quiz_difficulty))
         db.session.add(quiz_submission)
         db.session.commit()
-    
+        if data.get("quiz_difficulty") != "None":
+            new_difficulty = calculateDifficulty(int(quiz_difficulty), results)
+            user_info = userRegister.query.filter_by(user_id=uuid).first()
+            user_info.set_difficulty_level_status(quiz_id,new_difficulty)
+            db.session.add(user_info)
+            db.session.commit()
+        
+
         return "Saved Successfully" ,200
     except Exception as e:
         return f"Error Saving Results: {e}", 500

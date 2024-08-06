@@ -245,7 +245,7 @@
         <title>Quiz - {{TITLE}}</title>
 
         <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Roboto:300" rel="stylesheet">
+        <link href="https://fonts.googleapris.com/css?family=Roboto:300" rel="stylesheet">
     </head>
 
     <body>
@@ -305,6 +305,10 @@
 
     <script>
         const userAnswers = [];
+
+        function sleep(milliseconds) {
+            return new Promise(resolve => setTimeout(resolve, milliseconds));
+        }
         function getCookie(name) {
             // Split the cookies into an array
             const cookies = document.cookie.split('; ');
@@ -323,7 +327,7 @@
             return null;
         }
         // Function to send the payload as JSON
-        function sendResults(results) {
+        function  sendResults(results) {
             const xhr = new XMLHttpRequest();
             const url = '/quiz-results';
             xhr.open("POST", url, true);
@@ -346,41 +350,13 @@
                 }
             };
         }
-        function submitQuiz(){
-            var quiz_title = "{{TITLE}}"
-            var quiz_description = "{{DESCRIPTION}}"
-            var difficulty = "{{QUIZ_DIFFICULTY}}"
-            var quiz_id = {{QUIZ_ID}}
-            current_url = window.location.origin
-            results = []
-            userAnswers.forEach((answer, index) => {
+        
+        async function submitQuiz(){
+            document.getElementById("restart-button").innerHTML = "Submitting Quiz Results..."
 
-                var isTrue = true
-                var user_answer = answer.yourAnswer;
-                var correct_answer = answer.correctAnswer;
-                if (user_answer != correct_answer){
-                    isTrue = false
-                }
-                var question = answer.question
-                results.push({
-                    "question":question,
-                    "answer":correct_answer,
-                    "user_answer":user_answer,
-                    "isTrue":isTrue
-                })
-                
-
-            });
-            payload = {
-                "uuid":getCookie("uuid"),
-                "quiz_id":quiz_id,
-                "quiz_difficulty":difficulty,
-                "title":quiz_description,
-                "description":quiz_description,
-                "results":results
-            }
-            sendResults(payload)
-            window.location.href = current_url + "/quiz"
+            await sleep(1000)
+            localStorage.removeItem("quizProgress"); // Clear saved progress on restart
+            window.open(current_url + "/quiz", "_self");
         }
         document.addEventListener("DOMContentLoaded", () => {
         const quizData = {{QUIZ_INFORMATION | safe}}
@@ -543,6 +519,39 @@
         }
 
         function displayResults() {
+            var quiz_title = "{{TITLE}}"
+            var quiz_description = "{{DESCRIPTION}}"
+            var difficulty = "{{QUIZ_DIFFICULTY}}"
+            var quiz_id = {{QUIZ_ID}}
+            current_url = window.location.origin
+            results = []
+            userAnswers.forEach((answer, index) => {
+
+                var isTrue = true
+                var user_answer = answer.yourAnswer;
+                var correct_answer = answer.correctAnswer;
+                if (user_answer != correct_answer){
+                    isTrue = false
+                }
+                var question = answer.question
+                results.push({
+                    "question":question,
+                    "answer":correct_answer,
+                    "user_answer":user_answer,
+                    "isTrue":isTrue
+                })
+                
+
+            });
+            payload = {
+                "uuid":getCookie("uuid"),
+                "quiz_id":quiz_id,
+                "quiz_difficulty":difficulty,
+                "title":quiz_description,
+                "description":quiz_description,
+                "results":results
+            }
+            sendResults(payload)
             clearInterval(timerInterval);
             questionNumberElement.textContent = "Quiz Completed";
             questionTextElement.textContent = `Your score is ${score}/${quizData.length}`;
@@ -573,22 +582,8 @@
             });
         }
 
-        function restartQuiz() {
-            currentQuestionIndex = 0;
-            score = 0;
-            userAnswers.length = 0;
-            scoreElement.textContent = `Score: ${score}`;
-            nextButton.textContent = "Continue";
-            nextButton.style.display = "block";
-            scoreboardContainer.style.display = "none";
-            nextButton.removeEventListener("click", restartQuiz);
-            nextButton.addEventListener("click", handleNextButtonClick);
-            localStorage.removeItem("quizProgress"); // Clear saved progress on restart
-            initializeQuiz();
-        }
 
         nextButton.addEventListener("click", handleNextButtonClick);
-        restartButton.addEventListener("click", restartQuiz);
 
         // Check localStorage for saved progress when DOM is loaded
         retrieveProgress();
