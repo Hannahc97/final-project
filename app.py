@@ -104,6 +104,7 @@ def quiz():
         quizTitle = quiz["title"] # Retrieves the quiz title, description, and ID.
         quizDescription = quiz["description"]
         quiz_id = quiz["quiz_id"]
+        current_difficulty = user.difficulty_level_status(quiz_id)
         adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status(quiz_id))
         # Constructs URLs for both adaptive and non-adaptive quizzes
         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" 
@@ -112,6 +113,7 @@ def quiz():
         <div class="quiz-card">
             <h2>{quizTitle}</h2>
             <p>{quizDescription}</p>
+            <p class="difficulty">Adaptive Difficulty Level: {current_difficulty}</p>
             <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
         </div>
