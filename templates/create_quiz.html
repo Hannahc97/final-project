@@ -1,0 +1,134 @@
+{% extends "base.html" %} 
+
+{% block title %}Create Quiz{% endblock %}
+
+{% block content %}
+
+<div class="create_quiz-page">
+    <div class="formquiz">
+        <h5>Create a New Quiz</h5>
+        <form method="POST" action="">
+            {{ form.hidden_tag() }}
+            <div>
+                {{ form.quizTitle.label (class="form-label") }}<br>{{ form.quizTitle(size=32, class="form-control") }}<br>
+            </div>
+            <div>
+                {{ form.quizDescription.label (class="form-label") }}<br>{{ form.quizDescription(class="form-control",rows=4) }}<br>
+            </div>
+            <div id="difficulty-div">
+                {{ form.difficulty.label (class="form-label") }}<br>{{ form.difficulty(class="form-control difficulty-dropdown") }}<br>
+            </div>
+            <h3>Questions</h3>
+            <div id="questions">
+                {% for question in form.questions %}
+                    <div class="question">
+                        {{ question.text.label (class="form-label") }}<br>{{ question.text (class="form-control") }}<br>
+                        {{ question.correct.label (class="form-label") }}<br>{{ question.correct (class="form-control") }}<br>
+                        {{ question.wrong1.label (class="form-label") }}<br>{{ question.wrong1 (class="form-control") }}<br>
+                        {{ question.wrong2.label (class="form-label") }}<br>{{ question.wrong2 (class="form-control") }}<br>
+                        {{ question.wrong3.label (class="form-label") }}<br>{{ question.wrong3 (class="form-control") }}<br><br>
+                    </div>
+                {% endfor %}
+            </div>
+            <div id="submit-buttons">
+                <input type="button" id="next-question" class="btn btn-primary" onclick="buildQuestions()" value="Next Questions Set">
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+
+<script>
+    var QUIZ_QUESTIONS = 2
+    var allQuestions = {
+        "quiz_id": Math.floor(Math.random() * 10000),
+        "title": "",
+        "description": "",
+        "questions": []
+    }
+    var questionIndex = 0
+
+    function sleep(milliseconds) {
+        return new Promise(resolve => setTimeout(resolve, milliseconds));
+    }
+        // Function to send the payload as JSON
+    function sendResults() {
+        const xhr = new XMLHttpRequest();
+        const url = '/create_quiz';
+        xhr.open("POST", url, true);
+        xhr.setRequestHeader("Content-Type", "application/json");
+
+        // Convert the results array to a JSON string
+        allQuestions.title = document.getElementById("quizTitle").value
+        allQuestions.description = document.getElementById("quizDescription").value
+        const data = JSON.stringify(allQuestions);
+
+        // Send the request with the JSON payload
+        xhr.send(data);
+
+        // Optional: handle the response
+        xhr.onreadystatechange = function() {
+            if (xhr.readyState === XMLHttpRequest.DONE) {
+                if (xhr.status === 200) {
+                    console.log("Quiz successfully sent");
+
+                } else {
+                    console.error("Error sending results");
+                }
+            }
+        };
+    }
+  
+
+    function buildQuestions(){
+        var questions = document.querySelectorAll(".form-control")
+        var index = 0
+        var questionPayload = {
+            "question_id": 1,
+            "text":"",
+            "difficulty_level": Math.floor(document.getElementById("difficulty").value),
+            "answers": []
+        }
+        for (var i = 0; i < questions.length; i++){
+            var correctAnswer = false
+            if (questions[i].id.includes("questions")){
+                if (index == 0){
+                    questionPayload.text = questions[i].value
+                }
+                if (index == 1){
+                    correctAnswer = true
+                }
+                if (index != 0){
+                    questionPayload.answers.push({"answer_id": index, "text": questions[i].value, "is_correct": correctAnswer})
+                }
+                index++
+
+            }
+        }
+        allQuestions.questions.push(questionPayload)
+        for (var i = 0; i < questions.length; i++){
+            if (questions[i].id.includes("questions")){
+                questions[i].value = ""
+            }
+        }
+        questionIndex++
+        if (questionIndex == QUIZ_QUESTIONS){
+            document.querySelector("h3").innerText = ""
+            document.getElementById("questions").innerText = ""
+            document.getElementById("difficulty-div").innerText = ""
+            document.getElementById("submit-buttons").innerHTML = `<input id="question-submit" type="button" class="btn btn-primary" onclick="submitQuestions()" value="Submit Questions">`
+        }
+    }
+    async function submitQuestions(){
+        console.log(JSON.stringify(allQuestions))
+        document.getElementById("question-submit").value="Submitting..."
+        sendResults()
+        await sleep(1000)
+        window.open(window.location.origin + "/quiz", "_self");
+    }
+ 
+</script>
+
+{% endblock %}

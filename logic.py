@@ -19,12 +19,12 @@ def calculateDifficulty(current_difficulty, results):
         if current_difficulty == 3:
             return 2
 
-    if score <= 6:
+    if score <= 7:
         if current_difficulty == 1:
             return 1
         if current_difficulty == 2 or current_difficulty == 3:
             return 2
-    if score >= 7 and score < 10:
+    if score >= 8 and score < 10:
         if current_difficulty == 1:
             return 2
         if current_difficulty == 2 or current_difficulty == 3:

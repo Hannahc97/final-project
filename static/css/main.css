@@ -137,3 +137,38 @@ p {
     color: black;
     margin-bottom: 10px;
 }
+
+.create_quiz-page {
+    /* width: 340px; */
+    padding: 5% 0 0;
+    margin: auto;
+    max-width: 900px;
+    width: 80%;
+  }
+
+.formquiz {
+    position: relative;
+    z-index: 1;
+    background: #FFFFFF;
+    /* max-width: 500%; */
+    margin: 0 auto 100px;
+    padding: 40px;
+    text-align: center;
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2), 0 5px 5px 0 rgba(0, 0, 0, 0.24);
+    font-size: 20px;
+    width: 100%;
+}
+
+.form-control {
+    width: 100%; /* Make input fields full width */
+    max-width: 600px; /* Set a maximum width for larger screens */
+    margin: 0 auto;
+}
+
+.form-control.difficulty-dropdown {
+    width: auto; /* Set width to auto to let it adjust based on content */
+    max-width: 100px; /* Limit the maximum width */
+    padding: 10px; /* Adjust padding for a smaller look */
+    font-size: 20px; /* Adjust font size if needed */
+}
+

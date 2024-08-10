@@ -2,8 +2,10 @@ from datetime import datetime, timedelta
 import json
 from flask import Flask
 from flask import render_template, redirect, url_for, flash, request, jsonify, make_response
-from forms import LoginForm, RegistrationForm
+from forms import LoginForm, RegistrationForm, QuizForm
 from flask_sqlalchemy import SQLAlchemy
+from sqlalchemy.sql import text
+import itertools
 import os
 import database
 import sys
@@ -21,7 +23,7 @@ app = Flask(__name__)
 
 db = database.buildDb().build(app)
 
-from models import userRegister, quizResults
+from models import userRegister, quizResults, UserQuizzes
 
 app.config['SECRET_KEY'] =  b'WR#&f&+%78er0we=%799eww+#7^90-;s'
 
@@ -97,15 +99,25 @@ def quiz():
         domain = "http://127.0.0.1:5000"
     else:
         domain = "https://" + request.host
-    uuid_cookie = request.cookies.get('uuid') # retrieves a cookie named uuid, which stores a unique identifier for the user.
-    user = userRegister.query.filter_by(user_id=uuid_cookie).first() # queries the db to find the user associated with the uuid cookie
-    quiz_info = "" # Initializes an empty string that will be used to accumulate HTML content for each quiz.
-    for quiz in QUIZZES: # For each quiz in the QUIZZES list:
-        quizTitle = quiz["title"] # Retrieves the quiz title, description, and ID.
+    # retrieves a cookie named uuid, which stores a unique identifier for the user.
+    uuid_cookie = request.cookies.get('uuid') 
+    # queries the db to find the user associated with the uuid cookie
+    user = userRegister.query.filter_by(user_id=uuid_cookie).first() 
+    # Initializes an empty string that will be used to accumulate HTML content for each quiz.
+    
+    quiz_info = "" 
+    # For each quiz in the QUIZZES list:
+    ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
+    for quiz in QUIZZES: 
+        # Retrieves the quiz title, description, and ID.
+        quizTitle = quiz["title"] 
         quizDescription = quiz["description"]
         quiz_id = quiz["quiz_id"]
-        current_difficulty = user.difficulty_level_status(quiz_id)
-        adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status(quiz_id))
+        try:
+            current_difficulty = user.difficulty_level_status(quiz_id)
+            adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status(quiz_id))
+        except:
+            adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
         # Constructs URLs for both adaptive and non-adaptive quizzes
         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" 
 
@@ -118,10 +130,32 @@ def quiz():
             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
         </div>
         """ 
+    with db.engine.connect() as connection:
+        user_quizzes  = list(itertools.chain(*connection.execute(text("SELECT ALL quiz FROM user_quizzes;")).fetchall()))
+    if len(user_quizzes) > 0:
+        for each_quiz in user_quizzes:
+            formatted_quiz = json.loads(each_quiz)
+            quizTitle = formatted_quiz["title"] 
+            quizDescription = formatted_quiz["description"]
+            quiz_id = formatted_quiz["quiz_id"]
+            if int(quiz_id) in ALL_QUIZ_IDS:
+                continue
 
+            adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
+            # Constructs URLs for both adaptive and non-adaptive quizzes
+            non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" 
+
+            quiz_info += f"""
+            <div class="quiz-card">
+                <h2>{quizTitle}</h2>
+                <p>{quizDescription}</p>
+                <p class="difficulty">Adaptive Difficulty Level: {current_difficulty}</p>
+                <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
+                <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
+            </div>
+            """ 
+        # Extract the unique quiz names
         # Each quiz's information is formatted into a string that includes the title, description, and links to both types of quizzes, appending it to quiz_info.
-        # quiz_info += f"Title: {quizTitle}<br> Description: {quizDescription}<br><a href='{adaptive_url}'>Adaptive Quiz</a><br><a href='{non_adaptive_url}'>Non Adaptive Quiz</a><br><br>" 
-
     # renders the quiz.html template, passing the accumulated quiz_info string as a context variable named QUIZZES. This will be used in the template to display the list of quizzes.
     return render_template('quiz.html',QUIZZES=quiz_info) 
 
@@ -130,6 +164,11 @@ def quiz():
 def quizpage(): 
     quiz_id = request.args.get("quiz_id") # retrieves the quiz_id parameter from the URL query string.
     difficulty_level = request.args.get("difficulty_level") # retrieves the difficulty_level parameter from the URL query string, if provided.
+    
+    ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
+    if not int(quiz_id) in ALL_QUIZ_IDS:
+        user_quiz = UserQuizzes.query.filter_by(quiz_id=int(quiz_id)).first() 
+        QUIZZES.append(json.loads(user_quiz.getQuiz()))
     if not difficulty_level:  # If difficulty_level is not provided, it creates an instance of the quizbuilder class with the quiz_id and calls the generateNonAdaptive method to generate a non-adaptive quiz.
         quiz = quizbuilder(int(quiz_id))
         generated_quiz = quiz.generateNonAdaptive()
@@ -168,6 +207,24 @@ def quizresults():
         return "Saved Successfully" ,200
     except Exception as e:
         return f"Error Saving Results: {e}", 500
+
+
+@app.route('/create_quiz', methods=['GET', 'POST'])
+@login_required
+def create_quiz():
+    form = QuizForm()
+    if request.method == 'POST':
+        data = request.get_json()
+        index = 1
+        for question in data["questions"]:
+            question["question_id"] = index
+            index += 1
+        user_quizzes = UserQuizzes(quiz_id=data["quiz_id"],quiz=json.dumps(data))
+        db.session.add(user_quizzes)
+        db.session.commit()    
+        return "Quiz Added", 200
+    
+    return render_template('create_quiz.html', form=form)
 
 
 

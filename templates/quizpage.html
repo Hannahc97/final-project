@@ -356,7 +356,7 @@
 
             await sleep(1000)
             localStorage.removeItem("quizProgress"); // Clear saved progress on restart
-            window.open(current_url + "/quiz", "_self");
+            window.open(window.location.origin + "/quiz", "_self");
         }
         document.addEventListener("DOMContentLoaded", () => {
         const quizData = {{QUIZ_INFORMATION | safe}}
