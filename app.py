@@ -163,80 +163,6 @@ def quiz():
     # renders the quiz.html template, passing the accumulated quiz_info string as a context variable named QUIZZES. This will be used in the template to display the list of quizzes.
     return render_template('quiz.html',QUIZZES=quiz_info) 
 
-# @app.route('/quiz')
-# @login_required
-# def quiz():
-#     # Get the full URL
-#     if "http" == request.url.split(":")[0]:
-#         domain = "http://127.0.0.1:5000"
-#     else:
-#         domain = "https://" + request.host
-    
-#     # Retrieves a cookie named uuid, which stores a unique identifier for the user.
-#     uuid_cookie = request.cookies.get('uuid')
-    
-#     # Queries the db to find the user associated with the uuid cookie
-#     user = userRegister.query.filter_by(user_id=uuid_cookie).first()
-    
-#     # Initializes an empty string that will be used to accumulate HTML content for each quiz.
-#     quiz_info = ""
-    
-#     # Collect all global quiz IDs to check against
-#     ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
-    
-#     # Fetch and display global quizzes (if applicable)
-#     for quiz in QUIZZES:
-#         quizTitle = quiz["title"]
-#         quizDescription = quiz["description"]
-#         quiz_id = quiz["quiz_id"]
-#         try:
-#             current_difficulty = user.difficulty_level_status(quiz_id)
-#             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(current_difficulty)
-#         except:
-#             current_difficulty = "1"
-#             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
-        
-#         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}"
-
-#         quiz_info += f"""
-#         <div class="quiz-card">
-#             <h2>{quizTitle}</h2>
-#             <p>{quizDescription}</p>
-#             <p class="difficulty">Adaptive Difficulty Level: {current_difficulty}</p>
-#             <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
-#             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
-#         </div>
-#         """
-    
-#     # Fetch and display user-specific quizzes
-#     user_quizzes = UserQuizzes.query.filter_by(user_id=user.user_id).all()
-    
-#     for each_quiz in user_quizzes:
-#         formatted_quiz = json.loads(each_quiz.quiz)
-#         quizTitle = formatted_quiz["title"]
-#         quizDescription = formatted_quiz["description"]
-#         quiz_id = formatted_quiz["quiz_id"]
-        
-#         # Ensure user quizzes don't duplicate global ones
-#         if int(quiz_id) in ALL_QUIZ_IDS:
-#             continue
-
-#         adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
-#         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}"
-
-#         quiz_info += f"""
-#         <div class="quiz-card">
-#             <h2>{quizTitle}</h2>
-#             <p>{quizDescription}</p>
-#             <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
-#             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
-#         </div>
-#         """
-    
-#     # Render the quiz.html template, passing the accumulated quiz_info string
-#     return render_template('quiz.html', QUIZZES=quiz_info)
-
-
 
 @app.route('/quiz-page')
 @login_required
@@ -316,7 +242,3 @@ if __name__ == '__main__':
     app.run(debug=True)
 
 # DATABASE_URL = sys.argv["DATABASE_URL"]
-
-
-# insert the code pen and adapt it to my quiz
-# 
