@@ -108,6 +108,7 @@ def quiz():
     quiz_info = "" 
     # For each quiz in the QUIZZES list:
     ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
+
     for quiz in QUIZZES: 
         # Retrieves the quiz title, description, and ID.
         quizTitle = quiz["title"] 
@@ -131,13 +132,15 @@ def quiz():
         </div>
         """ 
     with db.engine.connect() as connection:
-        user_quizzes  = list(itertools.chain(*connection.execute(text("SELECT ALL quiz FROM user_quizzes;")).fetchall()))
+        user_quizzes  = list(itertools.chain(*connection.execute(text(f"SELECT ALL quiz FROM user_quizzes WHERE user_id = '{uuid_cookie}';")).fetchall()))
     if len(user_quizzes) > 0:
         for each_quiz in user_quizzes:
             formatted_quiz = json.loads(each_quiz)
             quizTitle = formatted_quiz["title"] 
             quizDescription = formatted_quiz["description"]
             quiz_id = formatted_quiz["quiz_id"]
+            if formatted_quiz["uuid"] != uuid_cookie:
+                continue
             if int(quiz_id) in ALL_QUIZ_IDS:
                 continue
 
@@ -156,19 +159,96 @@ def quiz():
             """ 
         # Extract the unique quiz names
         # Each quiz's information is formatted into a string that includes the title, description, and links to both types of quizzes, appending it to quiz_info.
+    
     # renders the quiz.html template, passing the accumulated quiz_info string as a context variable named QUIZZES. This will be used in the template to display the list of quizzes.
     return render_template('quiz.html',QUIZZES=quiz_info) 
+
+# @app.route('/quiz')
+# @login_required
+# def quiz():
+#     # Get the full URL
+#     if "http" == request.url.split(":")[0]:
+#         domain = "http://127.0.0.1:5000"
+#     else:
+#         domain = "https://" + request.host
+    
+#     # Retrieves a cookie named uuid, which stores a unique identifier for the user.
+#     uuid_cookie = request.cookies.get('uuid')
+    
+#     # Queries the db to find the user associated with the uuid cookie
+#     user = userRegister.query.filter_by(user_id=uuid_cookie).first()
+    
+#     # Initializes an empty string that will be used to accumulate HTML content for each quiz.
+#     quiz_info = ""
+    
+#     # Collect all global quiz IDs to check against
+#     ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
+    
+#     # Fetch and display global quizzes (if applicable)
+#     for quiz in QUIZZES:
+#         quizTitle = quiz["title"]
+#         quizDescription = quiz["description"]
+#         quiz_id = quiz["quiz_id"]
+#         try:
+#             current_difficulty = user.difficulty_level_status(quiz_id)
+#             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(current_difficulty)
+#         except:
+#             current_difficulty = "1"
+#             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
+        
+#         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}"
+
+#         quiz_info += f"""
+#         <div class="quiz-card">
+#             <h2>{quizTitle}</h2>
+#             <p>{quizDescription}</p>
+#             <p class="difficulty">Adaptive Difficulty Level: {current_difficulty}</p>
+#             <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
+#             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
+#         </div>
+#         """
+    
+#     # Fetch and display user-specific quizzes
+#     user_quizzes = UserQuizzes.query.filter_by(user_id=user.user_id).all()
+    
+#     for each_quiz in user_quizzes:
+#         formatted_quiz = json.loads(each_quiz.quiz)
+#         quizTitle = formatted_quiz["title"]
+#         quizDescription = formatted_quiz["description"]
+#         quiz_id = formatted_quiz["quiz_id"]
+        
+#         # Ensure user quizzes don't duplicate global ones
+#         if int(quiz_id) in ALL_QUIZ_IDS:
+#             continue
+
+#         adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
+#         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}"
+
+#         quiz_info += f"""
+#         <div class="quiz-card">
+#             <h2>{quizTitle}</h2>
+#             <p>{quizDescription}</p>
+#             <a href='{adaptive_url}' class="quiz-link">Adaptive Quiz</a>
+#             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
+#         </div>
+#         """
+    
+#     # Render the quiz.html template, passing the accumulated quiz_info string
+#     return render_template('quiz.html', QUIZZES=quiz_info)
+
+
 
 @app.route('/quiz-page')
 @login_required
 def quizpage(): 
     quiz_id = request.args.get("quiz_id") # retrieves the quiz_id parameter from the URL query string.
     difficulty_level = request.args.get("difficulty_level") # retrieves the difficulty_level parameter from the URL query string, if provided.
-    
+    uuid_cookie = request.cookies.get('uuid') 
     ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
     if not int(quiz_id) in ALL_QUIZ_IDS:
         user_quiz = UserQuizzes.query.filter_by(quiz_id=int(quiz_id)).first() 
-        QUIZZES.append(json.loads(user_quiz.getQuiz()))
+        user_quiz = json.loads(user_quiz.getQuiz())
+        QUIZZES.append(user_quiz)
     if not difficulty_level:  # If difficulty_level is not provided, it creates an instance of the quizbuilder class with the quiz_id and calls the generateNonAdaptive method to generate a non-adaptive quiz.
         quiz = quizbuilder(int(quiz_id))
         generated_quiz = quiz.generateNonAdaptive()
@@ -215,11 +295,15 @@ def create_quiz():
     form = QuizForm()
     if request.method == 'POST':
         data = request.get_json()
+        uuid_cookie = request.cookies.get('uuid') 
+        if not uuid_cookie:
+            return "Error Authenticating", 500
         index = 1
         for question in data["questions"]:
             question["question_id"] = index
             index += 1
-        user_quizzes = UserQuizzes(quiz_id=data["quiz_id"],quiz=json.dumps(data))
+        data["uuid"] = uuid_cookie
+        user_quizzes = UserQuizzes(quiz_id=data["quiz_id"],quiz=json.dumps(data), user_id=current_user.get_id()) 
         db.session.add(user_quizzes)
         db.session.commit()    
         return "Quiz Added", 200

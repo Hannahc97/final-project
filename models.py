@@ -135,6 +135,7 @@ class UserQuizzes(db.Model):
     __tablename__ = 'user_quizzes'
     quiz_id = db.Column(db.Integer, nullable=False,primary_key=True)
     quiz = db.Column(db.String(64), nullable=False)
+    user_id = db.Column(db.String(64), db.ForeignKey('users.user_id'), nullable=False)
 
     def getQuiz(self):
         return self.quiz

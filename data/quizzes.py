@@ -2028,7 +2028,7 @@ QUIZZES = [
     },
     {
         "quiz_id": 7,
-        "title": "Conceptual & Logical Design",
+        "title": "Databases - Conceptual & Logical Design",
         "description": "Test your knowledge on Conceptual & Logical Design!",
         "questions":[        
             {
@@ -2297,13 +2297,13 @@ QUIZZES = [
             },
             {
                 "question_id": 205,
-                "text": "Which of the following best describes a 'many-to-many' relationship?",
+                "text": "When designing the schema for a weak entity in a relational database, which of the following is true regarding the primary key?",
                 "difficulty_level": 3,
                 "answers": [
-                    {"answer_id": 817, "text": "Each entity instance in one entity set is associated with zero or one instance in another entity set", "is_correct": false},
-                    {"answer_id": 818, "text": "Each entity instance in one entity set is associated with one or more instances in another entity set", "is_correct": false},
-                    {"answer_id": 819, "text": "Multiple instances in one entity set are associated with multiple instances in another entity set", "is_correct": true},
-                    {"answer_id": 820, "text": "Each entity instance in one entity set is associated with only one instance in another entity set", "is_correct": false}
+                    {"answer_id": 817, "text": "The primary key of the weak entity is the same as that of its strong entity", "is_correct": false},
+                    {"answer_id": 818, "text": "The primary key of the weak entity only consists of its own attributes", "is_correct": false},
+                    {"answer_id": 819, "text": "The primary key of the weak entity includes both the primary key of the strong entity and its own distinguishing attributes", "is_correct": true},
+                    {"answer_id": 820, "text": "The weak entity does not have a primary key, relying entirely on the strong entity for identification", "is_correct": false}
                 ]
             },
             {
@@ -2319,13 +2319,13 @@ QUIZZES = [
             },
             {
                 "question_id": 207,
-                "text": "What does 'BCNF' stand for in database normalization?",
+                "text": "In an ER model, you have a Student entity with two subtypes: Undergraduate and Postgraduate. The Undergraduate and Postgraduate entities are mutually exclusive and together cover all possible Student instances. Which of the following best describes this scenario?",
                 "difficulty_level": 3,
                 "answers": [
-                    {"answer_id": 825, "text": "Basic Column Normal Form", "is_correct": false},
-                    {"answer_id": 826, "text": "Boyce-Codd Normal Form", "is_correct": true},
-                    {"answer_id": 827, "text": "Binary Code Normal Form", "is_correct": false},
-                    {"answer_id": 828, "text": "Base Column Normal Form", "is_correct": false}
+                    {"answer_id": 825, "text": "Partial coverage with overlapping subtypes", "is_correct": false},
+                    {"answer_id": 826, "text": "Total coverage with mutually exclusive subtypes", "is_correct": true},
+                    {"answer_id": 827, "text": "Total coverage with overlapping subtypes", "is_correct": false},
+                    {"answer_id": 828, "text": "Partial coverage with mutually exclusive subtypes", "is_correct": false}
                 ]
             },
             {
@@ -2341,13 +2341,13 @@ QUIZZES = [
             },
             {
                 "question_id": 209,
-                "text": "Which of the following is NOT a type of SQL join?",
+                "text": "Consider a library system where each 'Book' entity can be borrowed by multiple 'Members', but each 'Copy' of a book is unique and can only be borrowed by one 'Member' at a time. What is the correct multiplicity for the borrowed relationship between 'Copy' and 'Member' in the ER diagram?",
                 "difficulty_level": 3,
                 "answers": [
-                    {"answer_id": 833, "text": "INNER JOIN", "is_correct": false},
-                    {"answer_id": 834, "text": "OUTER JOIN", "is_correct": false},
-                    {"answer_id": 835, "text": "LEFT JOIN", "is_correct": false},
-                    {"answer_id": 836, "text": "TOP JOIN", "is_correct": true}
+                    {"answer_id": 833, "text": "(1,1) on both sides", "is_correct": false},
+                    {"answer_id": 834, "text": "(0,n) on 'Copy' side and (1,1) on 'Member' side", "is_correct": false},
+                    {"answer_id": 835, "text": "(1,n) on 'Copy' side and (0,1) on 'Member' side", "is_correct": false},
+                    {"answer_id": 836, "text": "(0,1) on 'Copy' side and (0,n) on 'Member' side", "is_correct": true}
                 ]
             },
             {
@@ -2634,7 +2634,7 @@ QUIZZES = [
             },
             {
                 "question_id": 235,
-                "text": "In the context of heaps, what is the ‘extract-max’ operation?",
+                "text": "In the context of heaps, what is the extract-max operation?",
                 "difficulty_level": 3,
                 "answers": [
                     {"answer_id": 937, "text": "It removes and returns the root of a max-heap", "is_correct": true},
