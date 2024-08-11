@@ -111,6 +111,8 @@ def quiz():
 
     for quiz in QUIZZES: 
         # Retrieves the quiz title, description, and ID.
+        if quiz.get("uuid"):
+            continue
         quizTitle = quiz["title"] 
         quizDescription = quiz["description"]
         quiz_id = quiz["quiz_id"]
