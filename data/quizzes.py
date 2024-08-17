@@ -1908,10 +1908,10 @@ QUIZZES = [
                 "text": "Which of the following is true for a node with two children in a BST?",
                 "difficulty_level": 2,
                 "answers": [
-                    {"answer_id": 677, "text": "It can be deleted without reordering", "is_correct": false},
-                    {"answer_id": 678, "text": "Its in-order predecessor is the maximum value node in its left subtree.", "is_correct": false},
-                    {"answer_id": 679, "text": "Its in-order successor is the minimum value node in its right subtree", "is_correct": false},
-                    {"answer_id": 680, "text": "Both B and C are correct", "is_correct": true}
+                    {"answer_id": 677, "text": "A. It can be deleted without reordering", "is_correct": false},
+                    {"answer_id": 678, "text": "B. Its in-order predecessor is the maximum value node in its left subtree.", "is_correct": false},
+                    {"answer_id": 679, "text": "C. Its in-order successor is the minimum value node in its right subtree", "is_correct": false},
+                    {"answer_id": 680, "text": "D. Both B and C are correct", "is_correct": true}
                 ]
             },
             {
