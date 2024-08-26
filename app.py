@@ -65,7 +65,7 @@ def signup():
     form = RegistrationForm()
     if form.validate_on_submit():
         user_id = str(uuid.uuid4())
-        new_user = userRegister(email=form.email.data, password_hash=form.password.data, user_id=user_id)
+        new_user = userRegister(email=form.email.data, password_hash=form.password.data, user_id=user_id, difficulty_level=json.dumps({"1": {"difficulty": 1}, "2": {"difficulty": 1}, "3": {"difficulty": 1}, "4": {"difficulty": 1}, "5": {"difficulty": 1}, "6": {"difficulty": 1}, "7": {"difficulty": 1}, "8": {"difficulty": 1}, "9": {"difficulty": 1}}))
         new_user.hashPassword()
         db.session.add(new_user)
         try:
