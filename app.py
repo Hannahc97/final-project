@@ -25,7 +25,7 @@ db = database.buildDb().build(app)
 
 from models import userRegister, quizResults, UserQuizzes
 
-app.config['SECRET_KEY'] =  b'WR#&f&+%78er0we=%799eww+#7^90-;s'
+app.config['SECRET_KEY'] =  os.environ.get("SECRET_KEY")
 
 basedir = os.path.abspath(os.path.dirname(__file__))
 
