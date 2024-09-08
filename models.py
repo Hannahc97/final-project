@@ -84,51 +84,10 @@ class quizResults(db.Model):
     quiz_id = db.Column(db.Integer, nullable=False)
     difficulty_level = db.Column(db.Integer, nullable=False)
 
-# Tracks which quizzes a user has taken and their scores.
-# Records the relationship between a user and a quiz, including the score and completion time
-# user_quiz_id: A unique identifier for each user-quiz relationship
-# user_id: A foreign key linking to a specific user
-# quiz_id: A foreign key linking to a specific quiz
-# score: The score the user achieved on the quiz
-# completed_at: The date and time when the user completed the quiz
-# class UserQuiz(db.Model):
-#     __tablename__ = 'user_quizzes'
-#     user_quiz_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-#     user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
-#     quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
-#     score = db.Column(db.Integer)
-#     completed_at = db.Column(db.DateTime)
 
-# Tracks the answers provided by users for each question in a quiz.
-# Records the selected answers for each question by a user during a quiz attempt.
-# user_answer_id: A unique identifier for each user answer
-# user_quiz_id: A foreign key linking to a specific user-quiz relationship
-# question_id: A foreign key linking to a specific question
-# answer_id: A foreign key linking to a specific answer
-# answered_at: The date and time when the user answered the question
-# class UserAnswer(db.Model):
-#     __tablename__ = 'user_answers'
-#     user_answer_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-#     user_quiz_id = db.Column(db.Integer, db.ForeignKey('user_quizzes.user_quiz_id'), nullable=False)
-#     question_id = db.Column(db.Integer, db.ForeignKey('questions.question_id'), nullable=False)
-#     answer_id = db.Column(db.Integer, db.ForeignKey('answers.answer_id'), nullable=False)
-#     answered_at = db.Column(db.DateTime)
 
-# Track the performance of a user on different difficulty levels
-# user_performance_id: A unique identifier for each performance record.
-# user_id: A foreign key linking to the user.
-# quiz_id: A foreign key linking to the quiz.
-# difficulty_level: The difficulty level being tracked.
-# correct_answers: The number of correct answers given by the user at this difficulty level.
-# total_answers: The total number of answers given by the user at this difficulty level.
-class UserPerformance(db.Model):
-    __tablename__ = 'user_performance'
-    user_performance_id = db.Column(db.Integer, primary_key=True, unique=True, nullable=False)
-    user_id = db.Column(db.Integer, db.ForeignKey('users.user_id'), nullable=False)
-    quiz_id = db.Column(db.Integer, db.ForeignKey('quizzes.quiz_id'), nullable=False)
-    difficulty_level = db.Column(db.Integer, nullable=False)
-    correct_answers = db.Column(db.Integer, nullable=False, default=0)
-    total_answers = db.Column(db.Integer, nullable=False, default=0)
+
+
 
 
 class UserQuizzes(db.Model):

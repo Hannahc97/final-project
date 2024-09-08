@@ -94,36 +94,38 @@ def dashboard():
 @login_required
 def quiz():
 
-    # Get the full URL
+    #  checks if the request URL starts with "http", splits the URL by (:) and compares the first part with "http".
     if "http"  == request.url.split(":")[0]:
-        domain = "http://127.0.0.1:5000"
-    else:
-        domain = "https://" + request.host
+        domain = "http://127.0.0.1:5000" #If "http", assumes domain is local development server, used during development
+    else: #  If not "http", then assumed to be "https".
+        domain = "https://" + request.host # domain is set to the current host with "https" as the protocol.
     # retrieves a cookie named uuid, which stores a unique identifier for the user.
     uuid_cookie = request.cookies.get('uuid') 
-    # queries the db to find the user associated with the uuid cookie
+    # queries the db to find first user whose user_id matches the uuid_cookie.
     user = userRegister.query.filter_by(user_id=uuid_cookie).first() 
-    # Initializes an empty string that will be used to accumulate HTML content for each quiz.
     
+    # Initialises an empty string that will be used to store HTML content for each quiz.
     quiz_info = "" 
-    # For each quiz in the QUIZZES list:
+    #  creates a list of all quiz IDs from the QUIZZES data, which is presumably loaded from the JSON file
     ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
 
-    for quiz in QUIZZES: 
-        # Retrieves the quiz title, description, and ID.
-        if quiz.get("uuid"):
+    for quiz in QUIZZES: # Loops through each quiz in the QUIZZES list.
+        if quiz.get("uuid"): #If the quiz has a uuid key, it skips this iteration of the loop.
             continue
-        quizTitle = quiz["title"] 
-        quizDescription = quiz["description"]
-        quiz_id = quiz["quiz_id"]
-        try:
-            current_difficulty = user.difficulty_level_status(quiz_id)
+        quizTitle = quiz["title"] # Retrieves the title of the current quiz.
+        quizDescription = quiz["description"] # Retrieves the description of the current quiz.
+        quiz_id = quiz["quiz_id"] # Retrieves the quiz ID of the current quiz
+        try: # Attempts to execute the code within this block to determine the adaptive URL.
+            current_difficulty = user.difficulty_level_status(quiz_id) # Retrieves the current difficulty level for the quiz from the user's data.
+            # Constructs the URL for the adaptive quiz version using the user's current difficulty level.
             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=" + str(user.difficulty_level_status(quiz_id))
-        except:
+        except: # If there's an error this block is executed
+            # If there's an exception, the adaptive URL defaults to difficulty level 1
             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
-        # Constructs URLs for both adaptive and non-adaptive quizzes
+        # Constructs URLs for non-adaptive quizzes
         non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" 
 
+        # Appends HTML block to quiz_info that represents quiz card, including title, description, difficulty level, and links to both adaptive and non-adaptive versions of the quiz
         quiz_info += f"""
         <div class="quiz-card">
             <h2>{quizTitle}</h2>
@@ -133,23 +135,26 @@ def quiz():
             <a href='{non_adaptive_url}' class="quiz-link">Non Adaptive Quiz</a>
         </div>
         """ 
-    with db.engine.connect() as connection:
+    with db.engine.connect() as connection: # Opens a connection to the database
+        # Executes a SQL query to get all quizzes associated with the current user from the user_quizzes table and flattens the result into a list.
         user_quizzes  = list(itertools.chain(*connection.execute(text(f"SELECT ALL quiz FROM user_quizzes WHERE user_id = '{uuid_cookie}';")).fetchall()))
-    if len(user_quizzes) > 0:
-        for each_quiz in user_quizzes:
-            formatted_quiz = json.loads(each_quiz)
-            quizTitle = formatted_quiz["title"] 
+    if len(user_quizzes) > 0: # Checks if there are any quizzes associated with the user.
+        for each_quiz in user_quizzes: # Loops through each quiz from the database
+            formatted_quiz = json.loads(each_quiz) # Parses each quiz string into a JSON object.
+            quizTitle = formatted_quiz["title"] # Retrieves the title of the quiz
             quizDescription = formatted_quiz["description"]
             quiz_id = formatted_quiz["quiz_id"]
-            if formatted_quiz["uuid"] != uuid_cookie:
+            if formatted_quiz["uuid"] != uuid_cookie: # Skips the quiz if the uuid in the quiz does not match the user's uuid
                 continue
-            if int(quiz_id) in ALL_QUIZ_IDS:
+            if int(quiz_id) in ALL_QUIZ_IDS: # Skips the quiz if its ID is already in the list of all quiz IDs (to avoid duplicates).
                 continue
 
+            # Generates adaptive URL with difficulty level 1 for the user-specific quiz.   
             adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}&difficulty_level=1"
-            # Constructs URLs for both adaptive and non-adaptive quizzes
+            # Constructs URLs for non-adaptive quizzes
             non_adaptive_url = f"{domain}/quiz-page?quiz_id={quiz_id}" 
 
+            # Appends another HTML block for the user-specific quiz to quiz_info.
             quiz_info += f"""
             <div class="quiz-card">
                 <h2>{quizTitle}</h2>
@@ -169,18 +174,19 @@ def quiz():
 @app.route('/quiz-page')
 @login_required
 def quizpage(): 
-    quiz_id = request.args.get("quiz_id") # retrieves the quiz_id parameter from the URL query string.
+    quiz_id = request.args.get("quiz_id") # retrieves the quiz_id parameter from the URL query string, identifies which quiz the user is trying to access
     difficulty_level = request.args.get("difficulty_level") # retrieves the difficulty_level parameter from the URL query string, if provided.
-    uuid_cookie = request.cookies.get('uuid') 
-    ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES]
-    if not int(quiz_id) in ALL_QUIZ_IDS:
-        user_quiz = UserQuizzes.query.filter_by(quiz_id=int(quiz_id)).first() 
-        user_quiz = json.loads(user_quiz.getQuiz())
-        QUIZZES.append(user_quiz)
+    uuid_cookie = request.cookies.get('uuid') # retrieves a cookie named uuid, which stores a unique identifier for the user
+    ALL_QUIZ_IDS = [quiz_id_arr["quiz_id"] for quiz_id_arr in QUIZZES] # creates a list of all quiz IDs from the QUIZZES data, which is assumed to be a list of quiz data loaded from a JSON file.
+
+    if not int(quiz_id) in ALL_QUIZ_IDS: # Checks if the quiz_id is not in the list of all quiz IDs.
+        user_quiz = UserQuizzes.query.filter_by(quiz_id=int(quiz_id)).first() # If the quiz ID is not found in ALL_QUIZ_IDS, it queries the UserQuizzes database for a quiz with the matching quiz_id.
+        user_quiz = json.loads(user_quiz.getQuiz()) # Converts the quiz data retrieved from the database into a Python dictionary.
+        QUIZZES.append(user_quiz) # Adds this user-specific quiz to the QUIZZES list, so it can be processed like the other quizzes
     if not difficulty_level:  # If difficulty_level is not provided, it creates an instance of the quizbuilder class with the quiz_id and calls the generateNonAdaptive method to generate a non-adaptive quiz.
         quiz = quizbuilder(int(quiz_id))
         generated_quiz = quiz.generateNonAdaptive()
-        formattedQuiz = quiz.jsFormat()
+        formattedQuiz = quiz.jsFormat() # Formats the quiz data into a JavaScript-compatible format, likely for embedding within the HTML.
     else: # If difficulty_level is provided, it creates an instance of the quizbuilder with quiz_id and difficulty_level, and calls the generateAdaptive method to generate an adaptive quiz.
         quiz = quizbuilder(int(quiz_id),int(difficulty_level))
         generated_quiz = quiz.generateAdaptive()

@@ -304,12 +304,12 @@
     </html>
 
     <script>
-        const userAnswers = [];
+        const userAnswers = []; // Initializes an empty array to store the user's answers as they progress through the quiz.
 
         function sleep(milliseconds) {
-            return new Promise(resolve => setTimeout(resolve, milliseconds));
+            return new Promise(resolve => setTimeout(resolve, milliseconds)); // pauses execution for a specified number of milliseconds. This is used to create a delay before performing an action.
         }
-        function getCookie(name) {
+        function getCookie(name) { // used to fetch the uuid cookie to identify the user when submitting quiz results
             // Split the cookies into an array
             const cookies = document.cookie.split('; ');
             
@@ -519,12 +519,13 @@
         }
 
         function displayResults() {
-            var quiz_title = "{{TITLE}}"
-            var quiz_description = "{{DESCRIPTION}}"
-            var difficulty = "{{QUIZ_DIFFICULTY}}"
+            var quiz_title = "{{TITLE}}" // Retrieves the quiz title from the template.
+            var quiz_description = "{{DESCRIPTION}}" //Retrieves the quiz description from the template.
+            var difficulty = "{{QUIZ_DIFFICULTY}}" 
             var quiz_id = {{QUIZ_ID}}
             current_url = window.location.origin
-            results = []
+            results = [] // Initializes an array to store the results.
+            // Processes each user answer, checking if it is correct, and stores it in the results array.
             userAnswers.forEach((answer, index) => {
 
                 var isTrue = true
@@ -551,18 +552,21 @@
                 "description":quiz_description,
                 "results":results
             }
-            sendResults(payload)
+            sendResults(payload) // Sends the quiz results to the server.
             clearInterval(timerInterval);
-            questionNumberElement.textContent = "Quiz Completed";
-            questionTextElement.textContent = `Your score is ${score}/${quizData.length}`;
+            questionNumberElement.textContent = "Quiz Completed"; // Updates the interface to show that the quiz is completed.
+            questionTextElement.textContent = `Your score is ${score}/${quizData.length}`; // Displays the user's score.
 
+            //  Clears the options, hides the next button, and shows the scoreboard.
             optionsContainer.innerHTML = "";
             nextButton.style.display = "none";
             scoreboardContainer.style.display = "block";
-            renderScoreboard();
-            localStorage.removeItem("quizProgress"); // Clear saved progress after displaying results
+            renderScoreboard(); // Calls a function to render the detailed scoreboard.
+            // Clear saved progress after displaying results
+            localStorage.removeItem("quizProgress"); 
         }
 
+        // Renders a detailed scoreboard with the user's answers, displaying the question, their answer, and the correct answer.
         function renderScoreboard() {
             scoreboardBody.innerHTML = "";
             userAnswers.forEach((answer, index) => {
@@ -582,10 +586,11 @@
             });
         }
 
-
+        // Adds an event listener to the "Next" button, so it triggers the function to handle moving to the next question.
         nextButton.addEventListener("click", handleNextButtonClick);
 
-        // Check localStorage for saved progress when DOM is loaded
+        // Check localStorage for saved progress when DOM is loaded 
+        //At the end of the DOM content loaded event listener, this function checks localStorage for any saved quiz progress and either restores it or starts a new quiz.
         retrieveProgress();
         });
 
